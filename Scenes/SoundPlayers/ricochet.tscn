@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dkjkr6c5l10nl"]
+
+[ext_resource type="AudioStream" uid="uid://c4suiv8mtlmlb" path="res://Sounds/Impacts/bullet_ricochet_1.ogg" id="1_us3oi"]
+[ext_resource type="AudioStream" uid="uid://d1ybdxmggff8o" path="res://Sounds/Impacts/bullet_ricochet_2.ogg" id="2_pu2ai"]
+[ext_resource type="AudioStream" uid="uid://bc4fn2jtqmh62" path="res://Sounds/Impacts/bullet_ricochet_3.ogg" id="3_m0agb"]
+[ext_resource type="Script" uid="uid://ef2e1pi4cnpb" path="res://Scripts/Gameplay/Dynamic_Objects/ricochet.gd" id="4_7vib4"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5semw"]
+streams_count = 3
+stream_0/stream = ExtResource("1_us3oi")
+stream_1/stream = ExtResource("2_pu2ai")
+stream_2/stream = ExtResource("3_m0agb")
+
+[node name="Ricochet" type="AudioStreamPlayer3D" unique_id=2125529762]
+stream = SubResource("AudioStreamRandomizer_5semw")
+script = ExtResource("4_7vib4")
+
+[node name="Timeout" type="Timer" parent="." unique_id=461415509]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timeout" to="." method="_on_timeout_timeout"]

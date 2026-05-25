@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://vqwl65lkgkva"
+path="res://.godot/imported/Flagpole_2_export.obj-6b651889e5323d37c60e66da657ac6eb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Flagpole_2_export.obj-6b651889e5323d37c60e66da657ac6eb.mesh"]
+
+source_file="res://Models/Buildings/Mountains/BellMechanism_Bake/Flagpole_2_export.obj"
+dest_files=["res://.godot/imported/Flagpole_2_export.obj-6b651889e5323d37c60e66da657ac6eb.mesh", "res://.godot/imported/Flagpole_2_export.obj-6b651889e5323d37c60e66da657ac6eb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

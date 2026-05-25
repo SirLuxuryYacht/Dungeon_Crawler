@@ -1,0 +1,427 @@
+[gd_scene format=3 uid="uid://jv33nmvwdy5u"]
+
+[ext_resource type="Script" uid="uid://cdq6n841xtwit" path="res://Scripts/Gameplay/Pause_Menu/pause_menu.gd" id="1_vft5p"]
+[ext_resource type="Theme" uid="uid://1qb3glsvs1b8" path="res://Fonts/Themes/Theme_1.tres" id="2_ngcwn"]
+
+[node name="PauseMenu" type="Control" unique_id=585624334]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vft5p")
+
+[node name="GameMenu" type="Control" parent="." unique_id=198589431]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameMenu" unique_id=593052366]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5686275)
+
+[node name="GameMenuLabel" type="Label" parent="GameMenu" unique_id=2111960707]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.1
+anchor_right = 0.6
+anchor_bottom = 0.1
+theme = ExtResource("2_ngcwn")
+text = "Game Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SystemMenuButton" type="Button" parent="GameMenu" unique_id=747731129]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.3
+anchor_bottom = 0.1
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("2_ngcwn")
+text = "System Menu"
+
+[node name="weapon1" type="Button" parent="GameMenu" unique_id=1947075044]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.5
+anchor_right = 0.45
+anchor_bottom = 0.5
+offset_right = 4.000061
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="weapon2" type="Button" parent="GameMenu" unique_id=136265830]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.5
+anchor_right = 0.55
+anchor_bottom = 0.5
+offset_right = 4.0
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="weapon3" type="Button" parent="GameMenu" unique_id=1701499096]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 0.5
+anchor_right = 0.65
+anchor_bottom = 0.5
+offset_right = 4.0
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="usable1" type="Button" parent="GameMenu" unique_id=1884891862]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.6
+anchor_right = 0.45
+anchor_bottom = 0.6
+offset_right = 4.000061
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="usable2" type="Button" parent="GameMenu" unique_id=1859855733]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.6
+anchor_right = 0.55
+anchor_bottom = 0.6
+offset_right = 4.0
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="usable3" type="Button" parent="GameMenu" unique_id=1896034918]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 0.6
+anchor_right = 0.65
+anchor_bottom = 0.6
+offset_right = 4.0
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="armor1" type="Button" parent="GameMenu" unique_id=742796737]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 0.3
+offset_right = 3.999878
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="armor2" type="Button" parent="GameMenu" unique_id=450182955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.35
+anchor_right = 0.9
+anchor_bottom = 0.35
+offset_right = 3.999878
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="armor3" type="Button" parent="GameMenu" unique_id=390901478]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.4
+anchor_right = 0.9
+anchor_bottom = 0.4
+offset_right = 3.999878
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="armor4" type="Button" parent="GameMenu" unique_id=852456566]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.45
+anchor_right = 0.9
+anchor_bottom = 0.45
+offset_right = 3.999878
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="armor5" type="Button" parent="GameMenu" unique_id=2055443542]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+offset_right = 3.999878
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="shield" type="Button" parent="GameMenu" unique_id=976226810]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.6
+anchor_right = 0.9
+anchor_bottom = 0.6
+offset_right = 3.999878
+offset_bottom = 23.0
+theme = ExtResource("2_ngcwn")
+
+[node name="CoinLabel" type="Label" parent="GameMenu" unique_id=1391761467]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 0.75
+anchor_bottom = 0.8
+theme = ExtResource("2_ngcwn")
+text = "Coins:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinCountLabel" type="Label" parent="GameMenu" unique_id=588493661]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.775
+anchor_top = 0.8
+anchor_right = 0.9
+anchor_bottom = 0.8
+theme = ExtResource("2_ngcwn")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="InventoryBackground" type="ColorRect" parent="GameMenu" unique_id=1362902443]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.53333336)
+
+[node name="ItemPicture" type="TextureRect" parent="GameMenu/InventoryBackground" unique_id=1421368694]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.4
+anchor_bottom = 0.2
+expand_mode = 4
+stretch_mode = 4
+
+[node name="ItemName" type="Label" parent="GameMenu/InventoryBackground" unique_id=2003486865]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.7
+anchor_right = 0.1
+anchor_bottom = 0.7
+grow_vertical = 2
+theme = ExtResource("2_ngcwn")
+
+[node name="DropButton" type="Button" parent="GameMenu/InventoryBackground" unique_id=1733698002]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.8
+anchor_right = 0.7
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ngcwn")
+text = "Drop"
+
+[node name="DescriptionBackground" type="ColorRect" parent="GameMenu/InventoryBackground" unique_id=218447217]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.65
+color = Color(0, 0, 0, 1)
+
+[node name="DescriptionLabel" type="Label" parent="GameMenu/InventoryBackground/DescriptionBackground" unique_id=865349442]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+autowrap_mode = 3
+
+[node name="Amount" type="Label" parent="GameMenu/InventoryBackground" unique_id=1891766082]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.8
+anchor_right = 0.3
+anchor_bottom = 0.8
+text = "Amount:"
+
+[node name="AmountLabel" type="Label" parent="GameMenu/InventoryBackground/Amount" unique_id=1950555004]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SystemMenu" type="Control" parent="." unique_id=847830272]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="SystemMenu" unique_id=1608979139]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5686275)
+
+[node name="Continue" type="Button" parent="SystemMenu" unique_id=1149393671]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.4
+anchor_right = 0.6
+anchor_bottom = 0.4
+theme = ExtResource("2_ngcwn")
+text = "Continue"
+icon_alignment = 1
+
+[node name="GameMenuButton" type="Button" parent="SystemMenu" unique_id=1110352625]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.6
+anchor_right = 0.6
+anchor_bottom = 0.6
+theme = ExtResource("2_ngcwn")
+text = "Game Menu"
+icon_alignment = 1
+
+[node name="ReturnToMenu" type="Button" parent="SystemMenu" unique_id=1142783933]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.8
+theme = ExtResource("2_ngcwn")
+text = "Main Menu"
+icon_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="SystemMenu" unique_id=550218457]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.7
+anchor_right = 0.6
+anchor_bottom = 0.7
+theme = ExtResource("2_ngcwn")
+text = "Settings"
+icon_alignment = 1
+
+[node name="SystemMenuLabel" type="Label" parent="SystemMenu" unique_id=496546780]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.1
+anchor_right = 0.6
+anchor_bottom = 0.1
+text = "System Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveGameButton" type="Button" parent="SystemMenu" unique_id=410816481]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.5
+anchor_right = 0.6
+anchor_bottom = 0.5
+theme = ExtResource("2_ngcwn")
+text = "Save"
+icon_alignment = 1
+
+[node name="SaveGameScreenHandler" type="Control" parent="." unique_id=775478681]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsMenuHandler" type="Control" parent="." unique_id=133234192]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseRefusal" type="Timer" parent="." unique_id=275107546]
+wait_time = 0.075
+one_shot = true
+autostart = true
+
+[node name="Button" type="Button" parent="." unique_id=1694105647]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.165
+anchor_bottom = 0.14600001
+offset_right = 242.92
+offset_bottom = 161.392
+text = "adsf"
+
+[connection signal="button_up" from="GameMenu/SystemMenuButton" to="." method="_on_system_menu_button_button_up"]
+[connection signal="button_up" from="GameMenu/weapon1" to="." method="_on_weapon_1_button_up"]
+[connection signal="button_up" from="GameMenu/weapon2" to="." method="_on_weapon_2_button_up"]
+[connection signal="button_up" from="GameMenu/weapon3" to="." method="_on_weapon_3_button_up"]
+[connection signal="button_up" from="GameMenu/usable1" to="." method="_on_usable_1_button_up"]
+[connection signal="button_up" from="GameMenu/usable2" to="." method="_on_usable_2_button_up"]
+[connection signal="button_up" from="GameMenu/usable3" to="." method="_on_usable_3_button_up"]
+[connection signal="button_up" from="GameMenu/armor1" to="." method="_on_armor_1_button_up"]
+[connection signal="button_up" from="GameMenu/armor2" to="." method="_on_armor_2_button_up"]
+[connection signal="button_up" from="GameMenu/armor3" to="." method="_on_armor_3_button_up"]
+[connection signal="button_up" from="GameMenu/armor4" to="." method="_on_armor_4_button_up"]
+[connection signal="button_up" from="GameMenu/armor5" to="." method="_on_armor_5_button_up"]
+[connection signal="button_up" from="GameMenu/shield" to="." method="_on_shield_button_up"]
+[connection signal="button_up" from="GameMenu/InventoryBackground/DropButton" to="." method="_on_drop_button_button_up"]
+[connection signal="button_up" from="SystemMenu/Continue" to="." method="_on_continue_button_up"]
+[connection signal="button_up" from="SystemMenu/GameMenuButton" to="." method="_on_game_menu_button_button_up"]
+[connection signal="button_up" from="SystemMenu/ReturnToMenu" to="." method="_on_return_to_menu_button_up"]
+[connection signal="button_up" from="SystemMenu/SettingsButton" to="." method="_on_settings_button_button_up"]
+[connection signal="button_up" from="SystemMenu/SaveGameButton" to="." method="_on_save_game_button_button_up"]
+[connection signal="timeout" from="CloseRefusal" to="." method="_on_close_refusal_timeout"]

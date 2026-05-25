@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bgqpksdx6ecv4"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_vy80d"]
+[ext_resource type="Texture2D" uid="uid://dqdh521r8qjf7" path="res://Textures/Atlas_Textures/Institute/Door_Frame/door_frame_color.png" id="2_16qo2"]
+[ext_resource type="Texture2D" uid="uid://dca4aix3lm2xp" path="res://Textures/Generic/flat_normal.png" id="3_gkrus"]
+[ext_resource type="Texture2D" uid="uid://u5k0bllia8ac" path="res://Textures/Atlas_Textures/Institute/Door_Frame/door_frame_roughness.png" id="4_83lm8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vy80d")
+shader_parameter/Albedo_2 = ExtResource("2_16qo2")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Roughness_2 = ExtResource("4_83lm8")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.0
+shader_parameter/Normal_Map_2 = ExtResource("3_gkrus")

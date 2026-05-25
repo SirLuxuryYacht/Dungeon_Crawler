@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bu7tgffbjhx4f"
+path="res://.godot/imported/mountain_entrance_slot_canyon.obj-4002efb156f3886cd6802da946aa0c31.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mountain_entrance_slot_canyon.obj-4002efb156f3886cd6802da946aa0c31.mesh"]
+
+source_file="res://Models/Items/Weapons/Player/mountain_entrance_slot_canyon.obj"
+dest_files=["res://.godot/imported/mountain_entrance_slot_canyon.obj-4002efb156f3886cd6802da946aa0c31.mesh", "res://.godot/imported/mountain_entrance_slot_canyon.obj-4002efb156f3886cd6802da946aa0c31.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

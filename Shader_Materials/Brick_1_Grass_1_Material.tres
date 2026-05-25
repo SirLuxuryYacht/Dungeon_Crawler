@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://neprvcxwc7fx"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_a1kkk"]
+[ext_resource type="Texture2D" uid="uid://clhloe4jnif6p" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/brick_grass_atlas_color.png" id="2_pu2gi"]
+[ext_resource type="Texture2D" uid="uid://4tygrmno4bd7" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/brick_grass_atlas_normal.png" id="3_5sfwa"]
+[ext_resource type="Texture2D" uid="uid://bje22omfvj680" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/brick_grass_atlas_roughness.png" id="4_sccsf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_a1kkk")
+shader_parameter/Albedo_1 = ExtResource("2_pu2gi")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("4_sccsf")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("3_5sfwa")

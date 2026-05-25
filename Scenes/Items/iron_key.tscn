@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bwfho3rifyclp"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_6q4k4"]
+[ext_resource type="ArrayMesh" uid="uid://dbbcclvov73f7" path="res://Models/Collectables/iron_key.obj" id="2_6vwjh"]
+[ext_resource type="Material" uid="uid://c02jdr5vn8y27" path="res://Shader_Materials/Doors/Iron_Door.tres" id="3_w1err"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tvrwh"]
+radius = 0.15
+height = 0.48971558
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_q3sni"]
+radius = 0.35
+
+[node name="IronKey" type="Area3D" unique_id=187850819]
+script = ExtResource("1_6q4k4")
+type = "item"
+item_name = "iron_key"
+
+[node name="Usable" type="Node" parent="." unique_id=1791212312]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1028285324]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -0.0031269789)
+mesh = ExtResource("2_6vwjh")
+surface_material_override/0 = ExtResource("3_w1err")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=570827584]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.0050243735)
+shape = SubResource("CapsuleShape3D_tvrwh")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1915668558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13811001, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=186122290]
+shape = SubResource("SphereShape3D_q3sni")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1586789138]

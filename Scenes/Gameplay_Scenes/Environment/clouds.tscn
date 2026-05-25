@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b8ryixcacmoom"]
+
+[ext_resource type="Texture2D" uid="uid://dryjaqf6o3fph" path="res://Textures/Sky/clouds_2.png" id="1_i2uu8"]
+[ext_resource type="Script" uid="uid://bug7u7l3glwk0" path="res://Scripts/Gameplay/Environment/clouds.gd" id="2_i2uu8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ap37h"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2uu8"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_i2uu8")
+emission_enabled = true
+emission_energy_multiplier = 0.5
+emission_texture = ExtResource("1_i2uu8")
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
+
+[node name="Clouds" type="MeshInstance3D" unique_id=1518604759]
+transform = Transform3D(1, 1.7484555e-07, 0, -2.0843214e-14, 1.1920929e-07, -1, -1.7484555e-07, 1, 1.1920929e-07, 0, 0, 0)
+mesh = SubResource("QuadMesh_ap37h")
+surface_material_override/0 = SubResource("StandardMaterial3D_i2uu8")
+script = ExtResource("2_i2uu8")

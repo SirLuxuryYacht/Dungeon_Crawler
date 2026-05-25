@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c8jw1lj3qqjg0"
+path="res://.godot/imported/RoofAccessRoof_export.obj-52160a72d1d39a48193106de6789c520.mesh"
+
+[deps]
+
+files=["res://.godot/imported/RoofAccessRoof_export.obj-52160a72d1d39a48193106de6789c520.mesh"]
+
+source_file="res://Models/Buildings/Mountains/GothicTower_Bake/RoofAccessRoof_export.obj"
+dest_files=["res://.godot/imported/RoofAccessRoof_export.obj-52160a72d1d39a48193106de6789c520.mesh", "res://.godot/imported/RoofAccessRoof_export.obj-52160a72d1d39a48193106de6789c520.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://8rxuc4p1or5r"]
+
+[ext_resource type="ArrayMesh" uid="uid://bmhcaqu51vtsk" path="res://Models/VisualAid/non_tiling_two_fol.obj" id="1_1e8gi"]
+[ext_resource type="Material" uid="uid://0478jlhg7vrt" path="res://Shader_Materials/Mountains/Mountain_Path_1.tres" id="2_4lkmb"]
+
+[node name="TestSurface" type="MeshInstance3D" unique_id=1406525678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("1_1e8gi")
+surface_material_override/0 = ExtResource("2_4lkmb")

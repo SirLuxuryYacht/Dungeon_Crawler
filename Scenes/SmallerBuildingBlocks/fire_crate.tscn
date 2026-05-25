@@ -1,0 +1,41 @@
+[gd_scene load_steps=12 format=3 uid="uid://bfno6fdut6kva"]
+
+[ext_resource type="ArrayMesh" uid="uid://h3pa21k5a8i3" path="res://Models/Small_Stuff/fire_crate.obj" id="1_8ah7n"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="2_dpu0p"]
+[ext_resource type="Texture2D" uid="uid://ct1ferigpui1l" path="res://Textures/Atlas_Textures/Cast_Iron/cast_iron_color.png" id="3_tm02r"]
+[ext_resource type="Texture2D" uid="uid://ddboa1co2h4hu" path="res://Textures/Atlas_Textures/Cast_Iron/cast_iron_bake_normal.png" id="4_4wj15"]
+[ext_resource type="Texture2D" uid="uid://dtklganln5aao" path="res://Textures/Atlas_Textures/Cast_Iron/cast_iron_bake_roughness.png" id="5_4sp5g"]
+[ext_resource type="Shader" uid="uid://bvd8r2pu1orh5" path="res://Shader_Materials/Wood_Burn_Shader.tres" id="6_27dh6"]
+[ext_resource type="Texture2D" uid="uid://b6krdwhqll6tx" path="res://Textures/Atlas_Textures/Burning_Wood/burning_wood.png" id="7_8emg3"]
+[ext_resource type="PackedScene" uid="uid://dgq00gk5w7ed5" path="res://Scenes/Sprites/flame_1.tscn" id="8_dpu0p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tm02r"]
+radius = 0.2944336
+height = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0low0"]
+render_priority = 0
+shader = ExtResource("2_dpu0p")
+shader_parameter/Albedo_2 = ExtResource("3_tm02r")
+shader_parameter/Roughness_2 = ExtResource("5_4sp5g")
+shader_parameter/Normal_Map_2 = ExtResource("4_4wj15")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_da3ar"]
+render_priority = 0
+shader = ExtResource("6_27dh6")
+shader_parameter/Texture = ExtResource("7_8emg3")
+shader_parameter/Time_Scale = 0.5
+
+[node name="FireCrate" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_tm02r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_8ah7n")
+surface_material_override/0 = SubResource("ShaderMaterial_0low0")
+surface_material_override/1 = SubResource("ShaderMaterial_da3ar")
+
+[node name="Flame1" parent="." instance=ExtResource("8_dpu0p")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0.5180874, 0)

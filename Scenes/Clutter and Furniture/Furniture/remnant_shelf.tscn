@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8hl1hxqiwv07"]
+
+[ext_resource type="ArrayMesh" uid="uid://b08kxb41hacmk" path="res://Models/Furniture/Remnant/office_shelf.obj" id="1_eunwc"]
+[ext_resource type="Material" uid="uid://chfqisohq7uwn" path="res://Shader_Materials/Institute/green_surface_metal.tres" id="2_d8tb3"]
+[ext_resource type="Material" uid="uid://dinnxxalt2ih0" path="res://Shader_Materials/Institute/metal_handles.tres" id="3_inklv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2alx7"]
+size = Vector3(0.5, 2, 1)
+
+[node name="RemnantShelf" type="StaticBody3D" unique_id=138178514]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Metal" type="Node" parent="." unique_id=648848482]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1128308666]
+mesh = ExtResource("1_eunwc")
+surface_material_override/0 = ExtResource("2_d8tb3")
+surface_material_override/1 = ExtResource("3_inklv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=797460419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1, -0.5)
+shape = SubResource("BoxShape3D_2alx7")

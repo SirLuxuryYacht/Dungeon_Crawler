@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://pl104s5q1ss5"]
+
+[ext_resource type="Script" uid="uid://b7w6xfqqbcbyp" path="res://Scripts/Gameplay/Enemies/Bat/bat_test.gd" id="1_jyamw"]
+[ext_resource type="PackedScene" uid="uid://btgbsi2p24ogj" path="res://Models/Enemy/Bat/bat.glb" id="2_jyamw"]
+[ext_resource type="PackedScene" uid="uid://j71bprns1gmy" path="res://Scenes/Enemies/Weapons/bat_jaw.tscn" id="3_1aty1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1aty1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_thvt3"]
+
+[node name="bat_test" type="CharacterBody3D" unique_id=2038979076]
+script = ExtResource("1_jyamw")
+
+[node name="bat" parent="." unique_id=958523300 instance=ExtResource("2_jyamw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=351832849]
+shape = SubResource("SphereShape3D_1aty1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=822061084]
+
+[node name="HitBox" type="Area3D" parent="." unique_id=463825958]
+collision_layer = 16
+collision_mask = 16
+
+[node name="HitBox" type="CollisionShape3D" parent="HitBox" unique_id=1821922982]
+shape = SubResource("SphereShape3D_thvt3")
+
+[node name="RightHand" type="Node3D" parent="." unique_id=623541818]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.5)
+
+[node name="BatJaw" parent="RightHand" unique_id=976293545 instance=ExtResource("3_1aty1")]
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

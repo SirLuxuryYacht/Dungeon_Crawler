@@ -1,0 +1,392 @@
+[gd_scene format=3 uid="uid://b0ysajdqudie1"]
+
+[ext_resource type="Script" uid="uid://y245rdq7fq8l" path="res://Scripts/Weapons/melee_weapon.gd" id="1_thsi8"]
+[ext_resource type="ArrayMesh" uid="uid://cmu1h3r2bioa5" path="res://Models/Items/Weapons/Player/chinese_sword.obj" id="2_v12j1"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="3_2wreo"]
+[ext_resource type="Texture2D" uid="uid://damr2t82ho8ea" path="res://Textures/Atlas_Textures/Weapon_Textures/Hilt/hilt_bandages_bake_color.png" id="4_7qcow"]
+[ext_resource type="AudioStream" uid="uid://8k76yjsshot0" path="res://Sounds/Weapon_Swing/fast_swing_light.ogg" id="5_7wtai"]
+[ext_resource type="Texture2D" uid="uid://cyu3q6d5c3y0d" path="res://Textures/Atlas_Textures/Weapon_Textures/Hilt/hilt_bandages_bake_normal.png" id="5_x5psx"]
+[ext_resource type="Texture2D" uid="uid://b32bw4vjg8b80" path="res://Textures/Atlas_Textures/Weapon_Textures/Hilt/hilt_bandages_bake_roughness.png" id="6_1rbr2"]
+[ext_resource type="AudioStream" uid="uid://b2nu4sinswiui" path="res://Sounds/Weapon_Swing/fast_swing_heavy.ogg" id="6_kbjh0"]
+[ext_resource type="Texture2D" uid="uid://dca4aix3lm2xp" path="res://Textures/Generic/flat_normal.png" id="7_tfqu2"]
+[ext_resource type="Texture2D" uid="uid://css3gc62md7wg" path="res://Textures/Atlas_Textures/Weapon_Textures/Blades/blade_horizontal_unsharpened_bake_normal.png" id="8_bspxp"]
+[ext_resource type="Texture2D" uid="uid://ckvry1q66rtc8" path="res://Textures/Atlas_Textures/Weapon_Textures/Blades/blade_horizontal_streaks_bake_roughness.png" id="9_21mkh"]
+[ext_resource type="Texture2D" uid="uid://dmhv7ubpboqlb" path="res://Textures/Atlas_Textures/Weapon_Textures/Blades/blade_horizontal_unsharpened_bake_roughness.png" id="10_lps3q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2wreo"]
+radius = 0.1
+height = 1.3483398
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bklcb"]
+render_priority = 0
+shader = ExtResource("3_2wreo")
+shader_parameter/Albedo_1 = ExtResource("4_7qcow")
+shader_parameter/Albedo_2 = ExtResource("4_7qcow")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Roughness_1 = ExtResource("6_1rbr2")
+shader_parameter/Roughness_2 = ExtResource("6_1rbr2")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.2
+shader_parameter/Normal_Map_1 = ExtResource("5_x5psx")
+shader_parameter/Normal_Map_2 = ExtResource("5_x5psx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xi26"]
+render_priority = 0
+shader = ExtResource("3_2wreo")
+shader_parameter/Generic_Albedo = Color(0.24313726, 0.2784314, 0.29803923, 1)
+shader_parameter/Roughness_1 = ExtResource("9_21mkh")
+shader_parameter/Roughness_2 = ExtResource("10_lps3q")
+shader_parameter/RoughnessEffect = 0.6000000285
+shader_parameter/RoughnesMultiplier = true
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 1.0
+shader_parameter/MapBrightness = 0.2
+shader_parameter/Normal_Map_1 = ExtResource("7_tfqu2")
+shader_parameter/Normal_Map_2 = ExtResource("8_bspxp")
+
+[sub_resource type="Animation" id="Animation_odpha"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.4901163e-08, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Weapon/HurtBox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vg6n5"]
+resource_name = "heavy_1"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("../Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0), Vector3(-0.24551812, -4.772275e-08, -1.0917693)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0.24701643, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0), Vector3(-0.24551812, -4.772275e-08, -1.0917693)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0.24701643, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Weapon/HurtBox:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.033333335, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_5uagt"]
+resource_name = "heavy_2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("../Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.8, 0, 0), Vector3(-0.6107606, -3.5690388e-08, -0.8165009)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, -0.16662659, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.8, 0, 0), Vector3(-0.6107606, -3.5690388e-08, -0.8165009)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, -0.16662659, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Weapon/HurtBox:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.03333333, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_n3r2i"]
+resource_name = "light_1"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("../Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.0041952883), Vector3(0, 0.1, -0.004), Vector3(-0.38222834, -0.49988937, -0.4542696)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 0.25),
+"update": 0,
+"values": [Vector3(0, 1.4901163e-08, 0), Vector3(-0.97332203, 2.8035748, -2.2700274)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.0041952883), Vector3(0, 0.1, -0.004), Vector3(-0.38222834, -0.49988937, -0.4542696)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 0.25),
+"update": 0,
+"values": [Vector3(0, 1.4901163e-08, 0), Vector3(-0.97332203, 2.8035748, -2.2700274)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Weapon/HurtBox:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.06666668, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_taygl"]
+resource_name = "light_2"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("../Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39979997, 0.3999, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.6, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -0.0041952883), Vector3(0, 0, -0.0041952883)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.054301, -3.1415927, 2.8782923)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.39979997, 0.3999, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.6, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -0.0041952883), Vector3(0, 0, -0.0041952883)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.054301, -3.1415927, 2.8782923)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Weapon/HurtBox:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.06666668, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x5psx"]
+_data = {
+&"RESET": SubResource("Animation_odpha"),
+&"heavy_1": SubResource("Animation_vg6n5"),
+&"heavy_2": SubResource("Animation_5uagt"),
+&"light_1": SubResource("Animation_n3r2i"),
+&"light_2": SubResource("Animation_taygl")
+}
+
+[node name="ChineseBlade" type="Node3D" unique_id=472183329]
+script = ExtResource("1_thsi8")
+item_name = "chinese_blade"
+light_damage = [100, 0, 0, 0]
+heavy_damage = [150, 0, 0, 0]
+light_stamina_cost = 140
+heavy_stamina_cost = 200
+
+[node name="Weapon" type="Area3D" parent="." unique_id=1844312150]
+transform = Transform3D(0.99999994, 0, 1.4901161e-08, 0, 0.9999999, 0, -1.4901161e-08, 0, 0.99999994, 0, 0, 0)
+collision_layer = 528
+collision_mask = 0
+
+[node name="HurtBox" type="CollisionShape3D" parent="Weapon" unique_id=1540985939]
+transform = Transform3D(0.99999624, 0, -5.5067062e-14, 0, 1, 0, 5.5067062e-14, 0, 0.99999624, 0, 0.63637686, 0)
+shape = SubResource("CapsuleShape3D_2wreo")
+disabled = true
+debug_color = Color(0.78971916, 0.42991757, 0, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Weapon" unique_id=1094503410]
+mesh = ExtResource("2_v12j1")
+surface_material_override/0 = SubResource("ShaderMaterial_bklcb")
+surface_material_override/1 = SubResource("ShaderMaterial_2xi26")
+surface_material_override/2 = SubResource("ShaderMaterial_2xi26")
+
+[node name="Light" type="AudioStreamPlayer3D" parent="Weapon" unique_id=1317085341]
+stream = ExtResource("5_7wtai")
+
+[node name="Heavy" type="AudioStreamPlayer3D" parent="Weapon" unique_id=1630726634]
+stream = ExtResource("6_kbjh0")
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="Weapon" unique_id=530950325]
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1620296693]
+transform = Transform3D(0.99999976, 0, 1.4901163e-08, 0, 0.9999999, 0, -1.4901159e-08, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=697187672]
+root_node = NodePath("../Pivot")
+libraries/ = SubResource("AnimationLibrary_x5psx")

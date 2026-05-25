@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ccma35r0bsta4"]
+
+[ext_resource type="ArrayMesh" uid="uid://cgqtdpfwxcuri" path="res://Models/Collectables/coin.obj" id="1_gdwro"]
+[ext_resource type="Script" uid="uid://cy5q7tvdb0gge" path="res://Scripts/Items/coin.gd" id="1_jacsx"]
+[ext_resource type="Texture2D" uid="uid://daa37na2xfu24" path="res://Textures/Collectables/Coin/sin_color.png" id="2_jacsx"]
+[ext_resource type="Texture2D" uid="uid://cn8htx6j12y2" path="res://Textures/Collectables/Coin/sin_normal.png" id="3_21vsh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_003we"]
+albedo_texture = ExtResource("2_jacsx")
+metallic = 0.82
+roughness = 0.05
+emission_enabled = true
+emission = Color(0.11324809, 0.08887293, 0, 1)
+emission_energy_multiplier = 3.0
+normal_enabled = true
+normal_texture = ExtResource("3_21vsh")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jacsx"]
+radius = 0.25
+height = 0.65527344
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_21vsh"]
+radius = 1.0
+
+[node name="coin" type="Area3D" unique_id=518610339]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_jacsx")
+
+[node name="Coin" type="Node" parent="." unique_id=1118907627]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1311226350]
+mesh = ExtResource("1_gdwro")
+surface_material_override/0 = SubResource("StandardMaterial3D_003we")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="." unique_id=873626935]
+shape = SubResource("CapsuleShape3D_jacsx")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=7111644]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=177824377]
+shape = SubResource("SphereShape3D_21vsh")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=893076779]

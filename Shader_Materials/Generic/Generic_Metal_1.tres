@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c4arcvms3vghl"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_73pj8"]
+[ext_resource type="Texture2D" uid="uid://dca4aix3lm2xp" path="res://Textures/Generic/flat_normal.png" id="2_b6fmj"]
+[ext_resource type="Texture2D" uid="uid://bh4nqvu80au60" path="res://Textures/Generic/dark_grey_plane.png" id="3_0g3h0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_73pj8")
+shader_parameter/Generic_Albedo = Color(0.69747, 0, 0.075919665, 1)
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 1.0
+shader_parameter/Roughness_2 = ExtResource("3_0g3h0")
+shader_parameter/MapBrightness = 0.5
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_2 = ExtResource("2_b6fmj")

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://60rr7e25wjcu"
+path="res://.godot/imported/TowerFloor_1_export.obj-66f0be8c6d46d30e6fe660db019af725.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TowerFloor_1_export.obj-66f0be8c6d46d30e6fe660db019af725.mesh"]
+
+source_file="res://Models/Buildings/Mountains/GothicTower_Bake/TowerFloor_1_export.obj"
+dest_files=["res://.godot/imported/TowerFloor_1_export.obj-66f0be8c6d46d30e6fe660db019af725.mesh", "res://.godot/imported/TowerFloor_1_export.obj-66f0be8c6d46d30e6fe660db019af725.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

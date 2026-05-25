@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://0nlu4lk481fp"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_auaa4"]
+[ext_resource type="Texture2D" uid="uid://1whhn0n4y87f" path="res://Textures/Atlas_Textures/Marble/marble_color.png" id="2_xo74a"]
+[ext_resource type="Texture2D" uid="uid://d6xqq4jnlj1i" path="res://Textures/Atlas_Textures/Marble/marble_bake_normal.png" id="3_oxkko"]
+[ext_resource type="Texture2D" uid="uid://d3t6o6slljqty" path="res://Textures/Atlas_Textures/Marble/marble_bake_roughness.png" id="4_4jneg"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_auaa4")
+shader_parameter/Albedo_1 = ExtResource("2_xo74a")
+shader_parameter/Albedo_2 = ExtResource("2_xo74a")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("4_4jneg")
+shader_parameter/Roughness_2 = ExtResource("4_4jneg")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("3_oxkko")
+shader_parameter/Normal_Map_2 = ExtResource("3_oxkko")

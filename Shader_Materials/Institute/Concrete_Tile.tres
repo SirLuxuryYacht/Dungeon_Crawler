@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://5qob6jacruj7"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_vf86r"]
+[ext_resource type="Texture2D" uid="uid://dtyswcmtajxwn" path="res://Textures/Atlas_Textures/Institute/Concrete_Tile/concrete_tile_color.png" id="2_pe5w1"]
+[ext_resource type="Texture2D" uid="uid://dod7x24q3gfys" path="res://Textures/Atlas_Textures/Institute/Concrete_Tile/concrete_tile_bake_normal.png" id="3_cxpis"]
+[ext_resource type="Texture2D" uid="uid://bd2ae7n10dcea" path="res://Textures/Atlas_Textures/Institute/Concrete_Tile/concrete_tile_bake_roughness.png" id="4_sttsb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vf86r")
+shader_parameter/Albedo_2 = ExtResource("2_pe5w1")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Roughness_2 = ExtResource("4_sttsb")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.0
+shader_parameter/Normal_Map_2 = ExtResource("3_cxpis")

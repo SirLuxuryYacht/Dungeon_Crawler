@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2hiv5kbhej5e"]
+
+[ext_resource type="Script" uid="uid://cpffurk58ndie" path="res://Scripts/Gameplay/GameOverScreen/game_over_screen.gd" id="1_8dpeg"]
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8dpeg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="YouDiedLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -11.5
+offset_right = 34.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You died"
+
+[node name="LoadLastSaveButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = 0.6
+anchor_right = 0.575
+anchor_bottom = 0.6
+text = "Load last save"
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = 0.7
+anchor_right = 0.575
+anchor_bottom = 0.7
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Quit to Main Menu"

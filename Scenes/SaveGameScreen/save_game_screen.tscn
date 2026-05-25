@@ -1,0 +1,651 @@
+[gd_scene format=3 uid="uid://br4logyykih7n"]
+
+[ext_resource type="Theme" uid="uid://1qb3glsvs1b8" path="res://Fonts/Themes/Theme_1.tres" id="1_0dcbq"]
+[ext_resource type="Script" uid="uid://c2pj6tewjecut" path="res://Scripts/Main/UI/save_game_screen.gd" id="1_rhje3"]
+
+[sub_resource type="Animation" id="Animation_rhje3"]
+resource_name = "GameSavedSlideAndFade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameSaved:anchor_bottom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 3),
+"update": 0,
+"values": [0.9, 0.9, 0.85]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameSaved:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 3),
+"update": 0,
+"values": [0.9, 0.9, 0.85]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameSaved:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameSaved:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.06666666, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_b17e3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameSaved:anchor_bottom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameSaved:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameSaved:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameSaved:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5emcc"]
+_data = {
+&"GameSavedSlideAndFade": SubResource("Animation_rhje3"),
+&"RESET": SubResource("Animation_b17e3")
+}
+
+[node name="SaveGameScreen" type="Control" unique_id=668479228]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rhje3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=469645457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="File1" type="Button" parent="." unique_id=193062623]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.25
+anchor_right = 0.7
+anchor_bottom = 0.35
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_0dcbq")
+text = "Empty"
+
+[node name="Level" type="Label" parent="File1" unique_id=1534596037]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.4
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Level"
+
+[node name="Exp" type="Label" parent="File1" unique_id=1103263527]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.4
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Exp"
+
+[node name="LevelAmount" type="Label" parent="File1" unique_id=141918088]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="ExpAmount" type="Label" parent="File1" unique_id=282780467]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Phys" type="Label" parent="File1" unique_id=2044805447]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Phys"
+
+[node name="Mag" type="Label" parent="File1" unique_id=1769511169]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Mag"
+
+[node name="PhysAmount" type="Label" parent="File1" unique_id=1842123932]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="MagAmount" type="Label" parent="File1" unique_id=26350639]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Map" type="Label" parent="File1" unique_id=496589478]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+
+[node name="File2" type="Button" parent="." unique_id=1294596520]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.45
+anchor_right = 0.7
+anchor_bottom = 0.55
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_0dcbq")
+text = "Empty"
+
+[node name="Level" type="Label" parent="File2" unique_id=1367912327]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.4
+anchor_bottom = 0.2
+offset_left = -1.5258789e-05
+offset_right = -1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Level"
+
+[node name="Exp" type="Label" parent="File2" unique_id=1002934531]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.4
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Exp"
+
+[node name="LevelAmount" type="Label" parent="File2" unique_id=87661968]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="ExpAmount" type="Label" parent="File2" unique_id=415874579]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Phys" type="Label" parent="File2" unique_id=703127552]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Phys"
+
+[node name="Mag" type="Label" parent="File2" unique_id=383012686]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Mag"
+
+[node name="PhysAmount" type="Label" parent="File2" unique_id=749158700]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="MagAmount" type="Label" parent="File2" unique_id=294107814]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Map" type="Label" parent="File2" unique_id=1120390326]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+
+[node name="File3" type="Button" parent="." unique_id=92174716]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.65
+anchor_right = 0.7
+anchor_bottom = 0.75
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_0dcbq")
+text = "Empty
+"
+
+[node name="Level" type="Label" parent="File3" unique_id=1325937260]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.4
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Level"
+
+[node name="Exp" type="Label" parent="File3" unique_id=2076123109]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.4
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Exp"
+
+[node name="LevelAmount" type="Label" parent="File3" unique_id=594466865]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="ExpAmount" type="Label" parent="File3" unique_id=1661388838]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Phys" type="Label" parent="File3" unique_id=2056214632]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Phys"
+
+[node name="Mag" type="Label" parent="File3" unique_id=170437650]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Mag"
+
+[node name="PhysAmount" type="Label" parent="File3" unique_id=1783582425]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="MagAmount" type="Label" parent="File3" unique_id=234818501]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Map" type="Label" parent="File3" unique_id=1620756998]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="." unique_id=2031999512]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.875
+anchor_right = 0.25
+anchor_bottom = 0.875
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0dcbq")
+text = "Return"
+
+[node name="GameSaved" type="Label" parent="." unique_id=1398144628]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -63.5
+offset_top = -26.0
+offset_right = 63.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_0dcbq")
+text = "Game Saved"
+
+[node name="Timer" type="Timer" parent="." unique_id=1012487479]
+wait_time = 2.0
+one_shot = true
+
+[node name="GameSavedAnimation" type="AnimationPlayer" parent="." unique_id=808994871]
+libraries/ = SubResource("AnimationLibrary_5emcc")
+
+[node name="SaveOverlay" type="Control" parent="." unique_id=1282973690]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="SaveOverlay" unique_id=869912690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.42365062, 0.42365065, 0.42365062, 0.53333336)
+
+[node name="ColorRect2" type="ColorRect" parent="SaveOverlay" unique_id=2091871998]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.35
+anchor_right = 0.65
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="SaveOverlay" unique_id=165998197]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.4
+offset_left = -94.5
+offset_top = -11.5
+offset_right = 94.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0dcbq")
+text = "Overwrite Savefile?
+(Currently creates folder on desktop)"
+horizontal_alignment = 1
+
+[node name="Confirm" type="Button" parent="SaveOverlay" unique_id=636173415]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.5
+anchor_right = 0.55
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0dcbq")
+text = "Confirm"
+
+[node name="Back" type="Button" parent="SaveOverlay" unique_id=1862566726]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.6
+anchor_right = 0.55
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0dcbq")
+text = "Back"
+
+[connection signal="pressed" from="File1" to="." method="_on_file_1_pressed"]
+[connection signal="pressed" from="File2" to="." method="_on_file_2_pressed"]
+[connection signal="pressed" from="File3" to="." method="_on_file_3_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="SaveOverlay/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="SaveOverlay/Back" to="." method="_on_back_pressed"]

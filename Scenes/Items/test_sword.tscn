@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cgido3fiavuqw"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_qeb34"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ub5en"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeb34"]
+radius = 0.068847656
+height = 1.2308655
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7a05f"]
+radius = 1.0
+
+[node name="test_sword" type="Area3D" unique_id=1024684678]
+script = ExtResource("1_qeb34")
+type = "item"
+item_name = null
+
+[node name="Weapon" type="Node" parent="." unique_id=248012562]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1378136645]
+mesh = SubResource("CylinderMesh_ub5en")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="." unique_id=1016339780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.031234741, 0)
+shape = SubResource("CapsuleShape3D_qeb34")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1938070208]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=1163632161]
+shape = SubResource("SphereShape3D_7a05f")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1775377700]

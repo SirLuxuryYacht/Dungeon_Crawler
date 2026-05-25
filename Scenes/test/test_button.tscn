@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cwo2hyi1f1puw"]
+
+[node name="Control" type="Control" unique_id=261960997]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=1115873414]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.36600003
+anchor_bottom = 0.33800003
+offset_right = 95.36798
+offset_bottom = 65.97598
+text = "asdfasdf"

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://74uxulyd3vk7"]
+
+[ext_resource type="ArrayMesh" uid="uid://dxcw3cqb6bi2j" path="res://Models/Collectables/institute_heavy_key1.obj" id="1_1b8oh"]
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_1g8d2"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="2_sssbv"]
+[ext_resource type="Texture2D" uid="uid://dsta8t5jx8xje" path="res://Textures/Atlas_Textures/Iron_Door/iron_door_bake_normal.png" id="3_1g8d2"]
+[ext_resource type="Texture2D" uid="uid://bxbtgxe34apqj" path="res://Textures/Atlas_Textures/Iron_Door/iron_door_bake_roughness.png" id="4_nl3r5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxduf"]
+render_priority = 0
+shader = ExtResource("2_sssbv")
+shader_parameter/Generic_Albedo = Color(0.5021631, 0.3633591, 0.17761168, 1)
+shader_parameter/Roughness_1 = ExtResource("4_nl3r5")
+shader_parameter/Roughness_2 = ExtResource("4_nl3r5")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = true
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 1.0
+shader_parameter/MapBrightness = 0.50000002375
+shader_parameter/Normal_Map_1 = ExtResource("3_1g8d2")
+shader_parameter/Normal_Map_2 = ExtResource("3_1g8d2")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sssbv"]
+radius = 0.15
+height = 0.48971558
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1g8d2"]
+radius = 0.35
+
+[node name="InstituteHeavyKey" type="Area3D" unique_id=140292634]
+script = ExtResource("1_1g8d2")
+type = "item"
+item_name = "institute_heavy_key"
+
+[node name="Usable" type="Node" parent="." unique_id=1186279908]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2028824439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0031269789)
+mesh = ExtResource("1_1b8oh")
+surface_material_override/0 = SubResource("ShaderMaterial_rxduf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=901588029]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.0050243735)
+shape = SubResource("CapsuleShape3D_sssbv")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=626903818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13811001, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=343701444]
+shape = SubResource("SphereShape3D_1g8d2")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1397381915]

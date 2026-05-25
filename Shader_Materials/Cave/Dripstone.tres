@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bljpg0a35u5kc"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_iu05w"]
+[ext_resource type="Texture2D" uid="uid://c2ke1y1qjqa80" path="res://Textures/Atlas_Textures/_Large_Textures/Dripstone/dripstone_flat_color.png" id="2_hy7cy"]
+[ext_resource type="Texture2D" uid="uid://5w354r2e2407" path="res://Textures/Atlas_Textures/_Large_Textures/Dripstone/dripstone_wall_color.png" id="3_cg4w1"]
+[ext_resource type="Texture2D" uid="uid://bxxttd4l3a0d1" path="res://Textures/Atlas_Textures/_Large_Textures/Dripstone/dripstone_flat_bake_normal.png" id="4_vvbed"]
+[ext_resource type="Texture2D" uid="uid://cdofb2gmcrv3v" path="res://Textures/Atlas_Textures/_Large_Textures/Dripstone/dripstone_wall_bake_normal.png" id="5_b47sc"]
+[ext_resource type="Texture2D" uid="uid://trdcpxgi2vbd" path="res://Textures/Atlas_Textures/_Large_Textures/Dripstone/dripstone_flat_bake_roughness.png" id="6_2ao5t"]
+[ext_resource type="Texture2D" uid="uid://776rxl8cgj6q" path="res://Textures/Atlas_Textures/_Large_Textures/Dripstone/dripstone_wall_bake_roughness.png" id="7_rmeqi"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_iu05w")
+shader_parameter/Albedo_1 = ExtResource("2_hy7cy")
+shader_parameter/Albedo_2 = ExtResource("3_cg4w1")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("6_2ao5t")
+shader_parameter/Roughness_2 = ExtResource("7_rmeqi")
+shader_parameter/MapBrightness = 1.0
+shader_parameter/UseVertexColor = false
+shader_parameter/Normal_Map_1 = ExtResource("4_vvbed")
+shader_parameter/Normal_Map_2 = ExtResource("5_b47sc")

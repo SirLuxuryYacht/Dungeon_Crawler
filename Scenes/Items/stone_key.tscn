@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://20ql4t0bjnme"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_p2fih"]
+[ext_resource type="ArrayMesh" uid="uid://cwxiq0m2ckqxk" path="res://Models/Collectables/stone_key.obj" id="2_p2fih"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="3_txa38"]
+[ext_resource type="Texture2D" uid="uid://dgf278dhcteoj" path="res://Textures/Collectables/Stone_Key/stone_key_color.png" id="4_eljh3"]
+[ext_resource type="Texture2D" uid="uid://b41ibpctnev1" path="res://Textures/Collectables/Stone_Key/stone_key_bake_normal.png" id="5_18xoc"]
+[ext_resource type="Texture2D" uid="uid://cub3d0bjvvhrs" path="res://Textures/Collectables/Stone_Key/stone_key_bake_roughness.png" id="6_e7ijn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eemn6"]
+render_priority = 0
+shader = ExtResource("3_txa38")
+shader_parameter/Albedo_2 = ExtResource("4_eljh3")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_2 = ExtResource("6_e7ijn")
+shader_parameter/MapBrightness = 1.0
+shader_parameter/UseVertexColor = false
+shader_parameter/Normal_Map_2 = ExtResource("5_18xoc")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v5gi8"]
+radius = 0.15
+height = 0.48971558
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wfsrl"]
+radius = 0.35
+
+[node name="StoneKey" type="Area3D" unique_id=2082685921]
+script = ExtResource("1_p2fih")
+type = "item"
+item_name = "stone_key"
+persistent = true
+
+[node name="Usable" type="Node" parent="." unique_id=1232438986]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=521398241]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.18718518)
+mesh = ExtResource("2_p2fih")
+surface_material_override/0 = SubResource("ShaderMaterial_eemn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1082778704]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.0050243735)
+shape = SubResource("CapsuleShape3D_v5gi8")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=841348731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13811001, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=2032682346]
+shape = SubResource("SphereShape3D_wfsrl")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1064549935]

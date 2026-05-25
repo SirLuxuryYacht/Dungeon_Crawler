@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dxhl4wxqnm185"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_kmek7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kmek7")

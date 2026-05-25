@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dc2d63qt8mc83"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_qph00"]
+[ext_resource type="Texture2D" uid="uid://rp5xmnq735cb" path="res://Textures/Atlas_Textures/Cloth/red_cloth_color.png" id="2_a23uo"]
+[ext_resource type="Texture2D" uid="uid://b5oxh07spqilm" path="res://Textures/Atlas_Textures/Cloth/cloth_bake_height.png" id="3_gth6r"]
+[ext_resource type="Texture2D" uid="uid://b1700l4lpbnr7" path="res://Textures/Atlas_Textures/Cloth/cloth_bake_roughness.png" id="4_vjjsx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qph00")
+shader_parameter/Albedo_1 = ExtResource("2_a23uo")
+shader_parameter/Albedo_2 = ExtResource("2_a23uo")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("4_vjjsx")
+shader_parameter/Roughness_2 = ExtResource("4_vjjsx")
+shader_parameter/MapBrightness = 0.2
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("3_gth6r")
+shader_parameter/Normal_Map_2 = ExtResource("3_gth6r")

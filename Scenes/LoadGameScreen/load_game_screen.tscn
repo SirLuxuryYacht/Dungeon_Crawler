@@ -1,0 +1,565 @@
+[gd_scene format=3 uid="uid://b8fs5k33iiw65"]
+
+[ext_resource type="Script" uid="uid://cju060bs5w275" path="res://Scripts/Main/UI/load_game_screen.gd" id="1_kd5lo"]
+[ext_resource type="Theme" uid="uid://1qb3glsvs1b8" path="res://Fonts/Themes/Theme_1.tres" id="2_bwdb6"]
+
+[node name="LoadGameScreen" type="Control" unique_id=1640237541]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kd5lo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2021761846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="File1" type="Button" parent="." unique_id=1621960721]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.25
+anchor_right = 0.7
+anchor_bottom = 0.35
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("2_bwdb6")
+text = "Empty"
+
+[node name="Level" type="Label" parent="File1" unique_id=1044038587]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.4
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Level"
+
+[node name="Exp" type="Label" parent="File1" unique_id=119839477]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.4
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Exp"
+
+[node name="LevelAmount" type="Label" parent="File1" unique_id=1536136649]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="ExpAmount" type="Label" parent="File1" unique_id=487860377]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Phys" type="Label" parent="File1" unique_id=1245151094]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Phys"
+
+[node name="Mag" type="Label" parent="File1" unique_id=1296502996]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Mag"
+
+[node name="PhysAmount" type="Label" parent="File1" unique_id=772000954]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="MagAmount" type="Label" parent="File1" unique_id=1335472451]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Map" type="Label" parent="File1" unique_id=1206726225]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+
+[node name="File2" type="Button" parent="." unique_id=1324297461]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.45
+anchor_right = 0.7
+anchor_bottom = 0.55
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("2_bwdb6")
+text = "Empty"
+
+[node name="Level" type="Label" parent="File2" unique_id=725981701]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.4
+anchor_bottom = 0.2
+offset_left = -1.5258789e-05
+offset_right = -1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Level"
+
+[node name="Exp" type="Label" parent="File2" unique_id=1191862625]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.4
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Exp"
+
+[node name="LevelAmount" type="Label" parent="File2" unique_id=1182418508]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="ExpAmount" type="Label" parent="File2" unique_id=991990007]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Phys" type="Label" parent="File2" unique_id=1662749514]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Phys"
+
+[node name="Mag" type="Label" parent="File2" unique_id=46195592]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Mag"
+
+[node name="PhysAmount" type="Label" parent="File2" unique_id=1860317565]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="MagAmount" type="Label" parent="File2" unique_id=107146049]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Map" type="Label" parent="File2" unique_id=1337292396]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+
+[node name="File3" type="Button" parent="." unique_id=1927545500]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.65
+anchor_right = 0.7
+anchor_bottom = 0.75
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("2_bwdb6")
+text = "Empty
+"
+
+[node name="Level" type="Label" parent="File3" unique_id=506447923]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.4
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Level"
+
+[node name="Exp" type="Label" parent="File3" unique_id=1828281535]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.4
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Exp"
+
+[node name="LevelAmount" type="Label" parent="File3" unique_id=188957027]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="ExpAmount" type="Label" parent="File3" unique_id=2065481618]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Phys" type="Label" parent="File3" unique_id=795369889]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Phys"
+
+[node name="Mag" type="Label" parent="File3" unique_id=2070804081]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Mag"
+
+[node name="PhysAmount" type="Label" parent="File3" unique_id=1486934053]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "3"
+horizontal_alignment = 2
+
+[node name="MagAmount" type="Label" parent="File3" unique_id=1158841400]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "61065"
+horizontal_alignment = 2
+
+[node name="Map" type="Label" parent="File3" unique_id=1233311940]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+
+[node name="SelectedFile" type="Label" parent="." unique_id=1716157336]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.15
+anchor_right = 0.55
+anchor_bottom = 0.15
+grow_vertical = 2
+theme = ExtResource("2_bwdb6")
+text = "Selected File:"
+
+[node name="SelectedFileNumber" type="Label" parent="." unique_id=1522682202]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.15
+anchor_right = 0.7
+anchor_bottom = 0.15
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_bwdb6")
+horizontal_alignment = 2
+
+[node name="LoadFile" type="Button" parent="." unique_id=1588310230]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.875
+anchor_right = 0.6
+anchor_bottom = 0.875
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bwdb6")
+disabled = true
+text = "Load Selected File"
+
+[node name="DeleteFile" type="Button" parent="." unique_id=1110308123]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.875
+anchor_right = 0.85
+anchor_bottom = 0.875
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bwdb6")
+disabled = true
+text = "Delete Selected File"
+
+[node name="Return" type="Button" parent="." unique_id=788291559]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.875
+anchor_right = 0.25
+anchor_bottom = 0.875
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bwdb6")
+text = "Return"
+
+[node name="DeleteConfirmer" type="Control" parent="." unique_id=868300373]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DeleteConfirmer" unique_id=1306506923]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.26666668)
+
+[node name="ColorRect2" type="ColorRect" parent="DeleteConfirmer" unique_id=1589557835]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.35
+anchor_right = 0.65
+anchor_bottom = 0.65
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="DeleteConfirmer" unique_id=904232964]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.4
+offset_left = -94.5
+offset_top = -11.5
+offset_right = 94.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bwdb6")
+text = "Delete Savefile?"
+horizontal_alignment = 1
+
+[node name="Confirm" type="Button" parent="DeleteConfirmer" unique_id=1572206755]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.5
+anchor_right = 0.55
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bwdb6")
+text = "Confirm"
+
+[node name="Back" type="Button" parent="DeleteConfirmer" unique_id=1261509870]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.6
+anchor_right = 0.55
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bwdb6")
+text = "Back"
+
+[connection signal="pressed" from="File1" to="." method="_on_file_1_pressed"]
+[connection signal="pressed" from="File2" to="." method="_on_file_2_pressed"]
+[connection signal="pressed" from="File3" to="." method="_on_file_3_pressed"]
+[connection signal="pressed" from="LoadFile" to="." method="_on_load_file_pressed"]
+[connection signal="pressed" from="DeleteFile" to="." method="_on_delete_file_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="DeleteConfirmer/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="DeleteConfirmer/Back" to="." method="_on_back_pressed"]

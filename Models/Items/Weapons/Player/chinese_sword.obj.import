@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cmu1h3r2bioa5"
+path="res://.godot/imported/chinese_sword.obj-04d647e8a717e0336b919fb4afb842d6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/chinese_sword.obj-04d647e8a717e0336b919fb4afb842d6.mesh"]
+
+source_file="res://Models/Items/Weapons/Player/chinese_sword.obj"
+dest_files=["res://.godot/imported/chinese_sword.obj-04d647e8a717e0336b919fb4afb842d6.mesh", "res://.godot/imported/chinese_sword.obj-04d647e8a717e0336b919fb4afb842d6.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

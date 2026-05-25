@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b0iaa8kbkjvyb"]
+
+[ext_resource type="Theme" uid="uid://1qb3glsvs1b8" path="res://Fonts/Themes/Theme_1.tres" id="1_b8td7"]
+[ext_resource type="Script" uid="uid://cno1pnbw6ibu3" path="res://Scripts/Gameplay/HUD/level_up_label_.gd" id="1_bfeqt"]
+
+[sub_resource type="Animation" id="Animation_bfeqt"]
+resource_name = "MoveAndFade"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7333333, 2.5),
+"transitions": PackedFloat32Array(1, 1, 3),
+"update": 0,
+"values": [0.9, 0.9, 0.85]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:anchor_bottom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.7333333, 2.5),
+"transitions": PackedFloat32Array(1, 1, 3),
+"update": 0,
+"values": [0.9, 0.9, 0.85]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.23333335, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0ufsc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:anchor_bottom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cbp52"]
+_data = {
+&"MoveAndFade": SubResource("Animation_bfeqt"),
+&"RESET": SubResource("Animation_0ufsc")
+}
+
+[node name="LevelUpLabel" type="Control" unique_id=1990188884]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bfeqt")
+
+[node name="Label" type="Label" parent="." unique_id=615432714]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -45.0
+offset_top = -13.0
+offset_right = 45.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_b8td7")
+text = "Level Up"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=495266379]
+libraries/ = SubResource("AnimationLibrary_cbp52")
+
+[node name="Timer" type="Timer" parent="." unique_id=277243175]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

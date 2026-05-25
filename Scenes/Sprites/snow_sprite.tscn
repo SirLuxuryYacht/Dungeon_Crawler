@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://baax6q50mymce"]
+
+[ext_resource type="Texture2D" uid="uid://pyrfy5n8qmfb" path="res://Textures/Sprite/Snow/snow_2.png" id="1_4fden"]
+[ext_resource type="Script" uid="uid://blucgh0bg1a26" path="res://Scripts/Gameplay/Sprites/snow_sprite.gd" id="2_1siip"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4fden"]
+radius = 0.25
+
+[node name="SnowSprite" type="Sprite3D" unique_id=2055831936]
+billboard = 2
+texture = ExtResource("1_4fden")
+script = ExtResource("2_1siip")
+
+[node name="Lifetime" type="Timer" parent="." unique_id=889213353]
+one_shot = true
+
+[node name="CollisionArea" type="Area3D" parent="." unique_id=928074831]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionArea" unique_id=992563414]
+shape = SubResource("SphereShape3D_4fden")
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]

@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://dgq00gk5w7ed5"]
+
+[ext_resource type="Script" uid="uid://bhctgn4kuw6g2" path="res://Scripts/Gameplay/Sprites/flame_1.gd" id="1_ll4sc"]
+[ext_resource type="Texture2D" uid="uid://ve6kh5k6pb3c" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_1.png" id="1_n6ohb"]
+[ext_resource type="Texture2D" uid="uid://1ouor1w35mca" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_2.png" id="2_6t15v"]
+[ext_resource type="AudioStream" uid="uid://dq4cj3ygnsbwg" path="res://Sounds/Impacts/flame_hit.ogg" id="2_a0ewf"]
+[ext_resource type="Texture2D" uid="uid://ccxb2krd5higc" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_3.png" id="3_ll4sc"]
+[ext_resource type="Texture2D" uid="uid://de44lhj10o64u" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_4.png" id="4_a0ewf"]
+[ext_resource type="Texture2D" uid="uid://cdhjxn4ysp5tt" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_5.png" id="5_8v52b"]
+[ext_resource type="Texture2D" uid="uid://7jpe2iwdfa6n" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_6.png" id="6_lducj"]
+[ext_resource type="Texture2D" uid="uid://dwyrxoqgek6cl" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_7.png" id="7_rmgwk"]
+[ext_resource type="Texture2D" uid="uid://b8mixadvyiyhw" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_8.png" id="8_tlscn"]
+[ext_resource type="Texture2D" uid="uid://dv5n3fpimne14" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_9.png" id="9_cesfb"]
+[ext_resource type="Texture2D" uid="uid://pv5pry4a6f4q" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_10.png" id="10_sr2fr"]
+[ext_resource type="Texture2D" uid="uid://coefqowedvded" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_11.png" id="11_kqpnw"]
+[ext_resource type="Texture2D" uid="uid://bjh1aovf42mij" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_12.png" id="12_yiovo"]
+[ext_resource type="Texture2D" uid="uid://vlge2wcic3b6" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_13.png" id="13_46m8j"]
+[ext_resource type="Texture2D" uid="uid://dk47wyon4cbtp" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_14.png" id="14_neoi8"]
+[ext_resource type="Texture2D" uid="uid://d2j7poqdtnlik" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_15.png" id="15_txpmp"]
+[ext_resource type="Texture2D" uid="uid://coyrfngb64d5h" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_16.png" id="16_3w42w"]
+[ext_resource type="Texture2D" uid="uid://b5uswli3swn0p" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_17.png" id="17_mh56r"]
+[ext_resource type="Texture2D" uid="uid://bls7b4dfbx74b" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_18.png" id="18_6v4ay"]
+[ext_resource type="Texture2D" uid="uid://cx78poqee7hak" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_19.png" id="19_4u3f3"]
+[ext_resource type="Texture2D" uid="uid://i1ab34gqxq5q" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_20.png" id="20_w88y1"]
+[ext_resource type="Texture2D" uid="uid://ba8gvqm3j5otn" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_21.png" id="21_kbtdu"]
+[ext_resource type="Texture2D" uid="uid://uxyjye2gh41b" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_22.png" id="22_84t5e"]
+[ext_resource type="Texture2D" uid="uid://l2aj22a4d26o" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_23.png" id="23_a3s2r"]
+[ext_resource type="Texture2D" uid="uid://bki36q5q8isqk" path="res://Textures/Sprite/Flame_1/flame_1_bake_color_24.png" id="24_a02rw"]
+[ext_resource type="Script" uid="uid://c5mjvafvylb6q" path="res://Scripts/Gameplay/Sprites/sprite.gd" id="25_6t15v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a0ewf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ll4sc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n6ohb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6t15v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ll4sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a0ewf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8v52b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lducj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rmgwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tlscn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cesfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sr2fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kqpnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yiovo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_46m8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_neoi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_txpmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3w42w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mh56r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6v4ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4u3f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_w88y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kbtdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_84t5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_a3s2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_a02rw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Flame1" type="Node3D" unique_id=1044676207]
+script = ExtResource("1_ll4sc")
+
+[node name="Weapon" type="Area3D" parent="." unique_id=1963282260]
+collision_layer = 24
+collision_mask = 24
+
+[node name="HurtBox" type="CollisionShape3D" parent="Weapon" unique_id=1951418258]
+shape = SubResource("CapsuleShape3D_a0ewf")
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="Weapon" unique_id=216092505]
+stream = ExtResource("2_a0ewf")
+volume_db = -10.0
+max_polyphony = 4
+
+[node name="FlameAnimation1" type="AnimatedSprite3D" parent="." unique_id=337809855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043649912, -1, 0)
+centered = false
+offset = Vector2(-128, 0)
+pixel_size = 0.0078
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ll4sc")
+script = ExtResource("25_6t15v")
+
+[node name="FlameAnimation2" type="AnimatedSprite3D" parent="." unique_id=1010725244]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -0.07339749, -1, 0)
+centered = false
+offset = Vector2(-128, 0)
+pixel_size = 0.0078
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ll4sc")
+script = ExtResource("25_6t15v")
+
+[node name="FlameAnimation3" type="AnimatedSprite3D" parent="." unique_id=843508834]
+transform = Transform3D(-0.4999999, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, -0.4999999, 0, -1, 0.1357165)
+centered = false
+offset = Vector2(-128, 0)
+pixel_size = 0.0078
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ll4sc")
+script = ExtResource("25_6t15v")
+
+[node name="Light" type="OmniLight3D" parent="." unique_id=42344102]
+light_color = Color(0.783903, 0.39694372, 0, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+omni_range = 50.0
+omni_attenuation = 2.0

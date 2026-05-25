@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://df1q7edjx7hva"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxgm1tgf8r1bs" path="res://Models/Furniture/Remnant/blackboard.obj" id="1_bmhoe"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="2_bmhoe"]
+[ext_resource type="Script" uid="uid://cfm7eg7ei75tk" path="res://Scripts/Decals/Blackboard/blackboard.gd" id="2_sic0v"]
+[ext_resource type="Texture2D" uid="uid://dca4aix3lm2xp" path="res://Textures/Generic/flat_normal.png" id="3_xdm8a"]
+[ext_resource type="Texture2D" uid="uid://cayobt46b28ql" path="res://Textures/Generic/white_plane.png" id="4_t80ul"]
+[ext_resource type="Texture2D" uid="uid://bh4nqvu80au60" path="res://Textures/Generic/dark_grey_plane.png" id="5_5fpuu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sic0v"]
+render_priority = 0
+shader = ExtResource("2_bmhoe")
+shader_parameter/Generic_Albedo = Color(0.12979779, 0.27638692, 0.24389553, 1)
+shader_parameter/Roughness_2 = ExtResource("4_t80ul")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.0
+shader_parameter/Normal_Map_2 = ExtResource("3_xdm8a")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2eqcs"]
+render_priority = 0
+shader = ExtResource("2_bmhoe")
+shader_parameter/Generic_Albedo = Color(0.5251013, 0.5251013, 0.5251013, 1)
+shader_parameter/Roughness_2 = ExtResource("5_5fpuu")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.0
+shader_parameter/Normal_Map_2 = ExtResource("3_xdm8a")
+
+[node name="Blackboard" type="MeshInstance3D" unique_id=1979170568]
+mesh = ExtResource("1_bmhoe")
+surface_material_override/0 = SubResource("ShaderMaterial_sic0v")
+surface_material_override/1 = SubResource("ShaderMaterial_2eqcs")
+script = ExtResource("2_sic0v")
+
+[node name="Decal" type="Decal" parent="." unique_id=1456483792]
+transform = Transform3D(6.794811e-08, 0.9, -3.934025e-08, 0, -3.934025e-08, -0.9, -0.9, 6.794811e-08, -2.9701062e-15, 0.05, 0.75, 0)
+size = Vector3(3, 0.2, 1.5)

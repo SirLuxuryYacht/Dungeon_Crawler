@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cbtu8woxrjw0e"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_51ffs"]
+[ext_resource type="ArrayMesh" uid="uid://h4rjeid6fsfw" path="res://Models/Items/Weapons/Player/katana.obj" id="2_51ffs"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="3_jbel8"]
+[ext_resource type="Texture2D" uid="uid://damr2t82ho8ea" path="res://Textures/Atlas_Textures/Weapon_Textures/Hilt/hilt_bandages_bake_color.png" id="4_y6md3"]
+[ext_resource type="Texture2D" uid="uid://cyu3q6d5c3y0d" path="res://Textures/Atlas_Textures/Weapon_Textures/Hilt/hilt_bandages_bake_normal.png" id="5_ad7jy"]
+[ext_resource type="Texture2D" uid="uid://b32bw4vjg8b80" path="res://Textures/Atlas_Textures/Weapon_Textures/Hilt/hilt_bandages_bake_roughness.png" id="6_dopn5"]
+[ext_resource type="Texture2D" uid="uid://dca4aix3lm2xp" path="res://Textures/Generic/flat_normal.png" id="7_pe4lt"]
+[ext_resource type="Texture2D" uid="uid://css3gc62md7wg" path="res://Textures/Atlas_Textures/Weapon_Textures/Blades/blade_horizontal_unsharpened_bake_normal.png" id="8_h352p"]
+[ext_resource type="Texture2D" uid="uid://ckvry1q66rtc8" path="res://Textures/Atlas_Textures/Weapon_Textures/Blades/blade_horizontal_streaks_bake_roughness.png" id="9_upkml"]
+[ext_resource type="Texture2D" uid="uid://dmhv7ubpboqlb" path="res://Textures/Atlas_Textures/Weapon_Textures/Blades/blade_horizontal_unsharpened_bake_roughness.png" id="10_qbw5y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ys0x6"]
+render_priority = 0
+shader = ExtResource("3_jbel8")
+shader_parameter/Albedo_1 = ExtResource("4_y6md3")
+shader_parameter/Albedo_2 = ExtResource("4_y6md3")
+shader_parameter/Generic_Albedo = Color(0.11764706, 0.14901961, 0.17254902, 1)
+shader_parameter/Roughness_1 = ExtResource("6_dopn5")
+shader_parameter/Roughness_2 = ExtResource("6_dopn5")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.2
+shader_parameter/Normal_Map_1 = ExtResource("5_ad7jy")
+shader_parameter/Normal_Map_2 = ExtResource("5_ad7jy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iruxg"]
+render_priority = 0
+shader = ExtResource("3_jbel8")
+shader_parameter/Generic_Albedo = Color(0.61866987, 0.65310216, 0.6248101, 1)
+shader_parameter/Roughness_1 = ExtResource("9_upkml")
+shader_parameter/Roughness_2 = ExtResource("10_qbw5y")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = true
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 1.0
+shader_parameter/MapBrightness = 0.2
+shader_parameter/Normal_Map_1 = ExtResource("7_pe4lt")
+shader_parameter/Normal_Map_2 = ExtResource("8_h352p")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_43dml"]
+radius = 0.068847656
+height = 1.1013432
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k8myy"]
+radius = 1.0
+
+[node name="Katana" type="Area3D" unique_id=1657559279]
+script = ExtResource("1_51ffs")
+type = "item"
+item_name = "katana"
+
+[node name="Weapon" type="Node" parent="." unique_id=1734372204]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=197488106]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("2_51ffs")
+surface_material_override/0 = SubResource("ShaderMaterial_ys0x6")
+surface_material_override/1 = SubResource("ShaderMaterial_iruxg")
+surface_material_override/2 = SubResource("ShaderMaterial_iruxg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1703950919]
+transform = Transform3D(1, 0, 0, 0, 0.9988701, 0.047524855, 0, -0.047524855, 0.9988701, 0, 0.5488393, -0.028392982)
+shape = SubResource("CapsuleShape3D_43dml")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1798369429]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=1271720104]
+shape = SubResource("SphereShape3D_k8myy")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1792666386]

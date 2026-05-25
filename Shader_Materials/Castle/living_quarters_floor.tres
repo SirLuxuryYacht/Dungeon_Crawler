@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://wmx8numxy1e8"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_52ovq"]
+[ext_resource type="Texture2D" uid="uid://dbt0o8sxjh5sf" path="res://Textures/Atlas_Textures/Living_Quarters/Floor/floor_pattern_color.png" id="2_4p3lh"]
+[ext_resource type="Texture2D" uid="uid://cyxsllcw8u4t2" path="res://Textures/Atlas_Textures/Living_Quarters/Floor/floor_pattern_bake_normal.png" id="3_60ew2"]
+[ext_resource type="Texture2D" uid="uid://c7ee87twyt28g" path="res://Textures/Atlas_Textures/Living_Quarters/Floor/floor_pattern_bake_roughness.png" id="4_08dcc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_52ovq")
+shader_parameter/Albedo_1 = ExtResource("2_4p3lh")
+shader_parameter/Albedo_2 = ExtResource("2_4p3lh")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("4_08dcc")
+shader_parameter/Roughness_2 = ExtResource("4_08dcc")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("3_60ew2")
+shader_parameter/Normal_Map_2 = ExtResource("3_60ew2")

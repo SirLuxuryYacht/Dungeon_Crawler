@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://j71bprns1gmy"]
+
+[ext_resource type="Script" uid="uid://b3vwnrb4g75bo" path="res://Scripts/Gameplay/Enemies/Weapons/bat_jaw.gd" id="1_xepyy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8mrbp"]
+radius = 0.2
+
+[node name="BatJaw" type="Node3D"]
+script = ExtResource("1_xepyy")
+
+[node name="Weapon" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="HurtBox" type="CollisionShape3D" parent="Weapon"]
+shape = SubResource("SphereShape3D_8mrbp")
+
+[node name="Pivot" type="Node3D" parent="."]

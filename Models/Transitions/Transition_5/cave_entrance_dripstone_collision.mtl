@@ -1,0 +1,22 @@
+# Blender 5.0.1 MTL File: 'transition_5.blend'
+# www.blender.org
+
+newmtl Dripstone
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd /media/olai/Volume/Kreativprojekte/Gimp Projekte/Gimp - Game Textures/1024-Textures/Dripstone/Usables/dripstone_wall_color.png
+map_Ns /media/olai/Volume/Kreativprojekte/Gimp Projekte/Gimp - Game Textures/1024-Textures/Dripstone/Usables/dripstone_wall_bake_roughness.png
+
+newmtl Material
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd /media/olai/Volume/Kreativprojekte/Gimp Projekte/Gimp - Game Textures/Texture Atlases/Brick_1/Brick_1_small_color..png

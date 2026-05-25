@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://0wsub8yjrca3"]
+
+[ext_resource type="Texture2D" uid="uid://buehwkdtahfj2" path="res://Textures/Geometry/Architecture/Brick_4/brick_4_color.png" id="1_yyy3f"]
+[ext_resource type="Texture2D" uid="uid://dw3o0mh5otlh6" path="res://Textures/Geometry/Architecture/Brick_4/brick_4_bake_normal.png" id="2_ihfo5"]
+[ext_resource type="Texture2D" uid="uid://drttogto1svnu" path="res://Textures/Geometry/Architecture/Brick_4/brick_4_bake_roughness.png" id="3_yyy3f"]
+
+[resource]
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_yyy3f")
+roughness_texture = ExtResource("3_yyy3f")
+normal_enabled = true
+normal_texture = ExtResource("2_ihfo5")
+detail_blend_mode = 3

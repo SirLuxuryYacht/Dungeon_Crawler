@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b31mcdlycao6f"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_1hagf"]
+[ext_resource type="ArrayMesh" uid="uid://dfuanx4gylepr" path="res://Models/Items/Weapons/Player/rusty_bar.obj" id="2_8ysff"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="3_8ysff"]
+[ext_resource type="Texture2D" uid="uid://dt0h3h05n21y4" path="res://Textures/Geometry/Architecture/Rust_1/rust_1_color.png" id="4_8o864"]
+[ext_resource type="Texture2D" uid="uid://c4ehw06nkyrii" path="res://Textures/Geometry/Architecture/Rust_1/rust_1_bake_normal.png" id="5_qwqse"]
+[ext_resource type="Texture2D" uid="uid://d3bj4pdw224vu" path="res://Textures/Geometry/Architecture/Rust_1/rust_1_bake_roughness.png" id="6_kplkp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50ay3"]
+render_priority = 0
+shader = ExtResource("3_8ysff")
+shader_parameter/Albedo_2 = ExtResource("4_8o864")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.800000038
+shader_parameter/Roughness_2 = ExtResource("6_kplkp")
+shader_parameter/MapBrightness = 0.5
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_2 = ExtResource("5_qwqse")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bohwv"]
+radius = 0.068847656
+height = 1.2308655
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_llml3"]
+radius = 1.0
+
+[node name="rusty_bar" type="Area3D" unique_id=604610939]
+script = ExtResource("1_1hagf")
+type = "item"
+item_name = "rusty_bar"
+
+[node name="Weapon" type="Node" parent="." unique_id=21165111]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=805005209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = ExtResource("2_8ysff")
+surface_material_override/0 = SubResource("ShaderMaterial_50ay3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1839055207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.031234741, 0)
+shape = SubResource("CapsuleShape3D_bohwv")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1221596027]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=882508166]
+shape = SubResource("SphereShape3D_llml3")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1372718425]

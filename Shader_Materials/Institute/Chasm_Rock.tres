@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://x0m1uu2bskj6"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_mn1pe"]
+[ext_resource type="Texture2D" uid="uid://cra6tfjpee61w" path="res://Textures/Atlas_Textures/Institute/Chasm_Rock/chasm_rock_light_color.png" id="2_pll8x"]
+[ext_resource type="Texture2D" uid="uid://dca4aix3lm2xp" path="res://Textures/Generic/flat_normal.png" id="3_xhy5k"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mn1pe")
+shader_parameter/Albedo_1 = ExtResource("2_pll8x")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 1.0
+shader_parameter/Normal_Map_1 = ExtResource("3_xhy5k")

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://c42u6tny4lfj5"]
+
+[ext_resource type="Texture2D" uid="uid://b2o1iro4uex3s" path="res://Textures/Geometry/Architecture/Rusty_Metal_1/rusty_metal_bake_color.png" id="1_0j6bb"]
+[ext_resource type="Texture2D" uid="uid://86xce4feqpkx" path="res://Textures/Geometry/Architecture/Rusty_Metal_1/rusty_metal_bake_normal.png" id="2_5s22p"]
+[ext_resource type="Texture2D" uid="uid://but11recrsqgf" path="res://Textures/Geometry/Architecture/Rusty_Metal_1/rusty_metal_bake_roughness_metallic.png" id="3_g0sv7"]
+
+[resource]
+albedo_texture = ExtResource("1_0j6bb")
+roughness_texture = ExtResource("3_g0sv7")
+normal_enabled = true
+normal_texture = ExtResource("2_5s22p")

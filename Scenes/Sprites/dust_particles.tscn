@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://mcdgx0dty5se"]
+
+[ext_resource type="Script" uid="uid://fb6pxiuhlsip" path="res://Scripts/Gameplay/Dynamic_Objects/dust_particles.gd" id="1_a2h28"]
+
+[node name="DustParticles" type="Node3D" unique_id=1763874096]
+script = ExtResource("1_a2h28")
+particle_amount = 100
+effect_duration = 1.5
+area_radius = 0.5
+damping = 0.1
+
+[node name="Particles" type="Node3D" parent="." unique_id=1055047739]
+
+[node name="EffectDuration" type="Timer" parent="." unique_id=611623429]
+
+[connection signal="timeout" from="EffectDuration" to="." method="_on_effect_duration_timeout"]

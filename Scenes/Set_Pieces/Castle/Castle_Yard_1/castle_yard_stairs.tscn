@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://xr0e3begcvn1"]
+
+[ext_resource type="ArrayMesh" uid="uid://bu3xjs66iemve" path="res://Models/Buildings/Castle/Castle_Yard_1/castle_yard_1_stairs.obj" id="1_tsvm7"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="2_0nhs3"]
+[ext_resource type="Texture2D" uid="uid://cur05veuwvfp6" path="res://Textures/Atlas_Textures/Bare_Stone/bare_stone_color.png" id="3_fcyot"]
+[ext_resource type="Texture2D" uid="uid://b1dtskkw8t6cr" path="res://Textures/Atlas_Textures/Bare_Stone/bare_stone_bake_normal.png" id="4_hqc80"]
+[ext_resource type="Texture2D" uid="uid://e1r648bh1gqr" path="res://Textures/Atlas_Textures/Bare_Stone/bare_stone_bake_roughness.png" id="5_y1btd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rl8xu"]
+render_priority = 0
+shader = ExtResource("2_0nhs3")
+shader_parameter/Albedo_1 = ExtResource("3_fcyot")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("5_y1btd")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("4_hqc80")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q7mvy"]
+points = PackedVector3Array(0, 0, 0, 2, 0, 0, 2, 2, 4, 0, 2, 4)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1btg3"]
+points = PackedVector3Array(0, 0, 0, 2, 0, 2, 2, 0, 0, 0, 0, 2)
+
+[node name="CastleYardStairs" type="StaticBody3D" unique_id=1534057602]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Stone" type="Node" parent="." unique_id=627244606]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1659240402]
+mesh = ExtResource("1_tsvm7")
+surface_material_override/0 = SubResource("ShaderMaterial_rl8xu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1599725012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1.5)
+shape = SubResource("ConvexPolygonShape3D_q7mvy")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=343124298]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.5, 2, 5.5)
+shape = SubResource("ConvexPolygonShape3D_q7mvy")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1058571908]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5, 4, 5.5)
+shape = SubResource("ConvexPolygonShape3D_q7mvy")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=8600627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2, 5.5)
+shape = SubResource("ConvexPolygonShape3D_1btg3")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1263082586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4, 5.5)
+shape = SubResource("ConvexPolygonShape3D_1btg3")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=1772171218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6, -0.5)
+shape = SubResource("ConvexPolygonShape3D_1btg3")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=2111877997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 6, -0.5)
+shape = SubResource("ConvexPolygonShape3D_1btg3")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="." unique_id=694441064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 6, -0.5)
+shape = SubResource("ConvexPolygonShape3D_1btg3")

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://duactvodvbrb3"]
+
+[ext_resource type="ArrayMesh" uid="uid://bgy4jpv7hqfpj" path="res://Models/Test/flag.obj" id="1_1ykrx"]
+[ext_resource type="Shader" uid="uid://dqdts0smhohci" path="res://Shader_Materials/Flag_Shader.gdshader" id="2_mr2qj"]
+[ext_resource type="Texture2D" uid="uid://d4euy6rolc7n3" path="res://Textures/Generic/1mx1m_16pxx16px_checkerboard.png" id="3_nyih4"]
+[ext_resource type="Texture2D" uid="uid://dca4aix3lm2xp" path="res://Textures/Generic/flat_normal.png" id="4_bsx55"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w52el"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_mr2qj")
+shader_parameter/wind_strength = 2.0
+shader_parameter/flag_width = 3.0
+shader_parameter/map_brightness = 0.8
+shader_parameter/orientation = 1
+shader_parameter/Albedo = ExtResource("3_nyih4")
+shader_parameter/Roughness = ExtResource("3_nyih4")
+shader_parameter/Normal = ExtResource("4_bsx55")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ykrx"]
+render_priority = 0
+shader = ExtResource("2_mr2qj")
+shader_parameter/wind_strength = 2.0
+shader_parameter/flag_width = 3.0
+shader_parameter/map_brightness = 0.8
+shader_parameter/orientation = -1
+shader_parameter/Albedo = ExtResource("3_nyih4")
+shader_parameter/Roughness = ExtResource("3_nyih4")
+shader_parameter/Normal = ExtResource("4_bsx55")
+
+[node name="TriangleFlag" type="Node3D" unique_id=190707645]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1700271378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.75, 0.01)
+mesh = ExtResource("1_1ykrx")
+surface_material_override/0 = SubResource("ShaderMaterial_w52el")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=742348971]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 1.5, -0.75, -0.01)
+mesh = ExtResource("1_1ykrx")
+surface_material_override/0 = SubResource("ShaderMaterial_1ykrx")

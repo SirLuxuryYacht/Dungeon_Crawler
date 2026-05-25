@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b2qprebrcef1r"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_ax8gb"]
+[ext_resource type="ArrayMesh" uid="uid://qslx6np8t78x" path="res://Models/Items/Weapons/Player/poleaxe.obj" id="2_otf70"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="3_86gs3"]
+[ext_resource type="Texture2D" uid="uid://cnby7oq1y8214" path="res://Textures/Collectables/Weapons/Poleaxe/polearm_head_bake_normal.png" id="4_d61a6"]
+[ext_resource type="Texture2D" uid="uid://colqksxt2ifir" path="res://Textures/Collectables/Weapons/Poleaxe/polearm_head_bake_roughness_alt1.png" id="5_d61a6"]
+[ext_resource type="Texture2D" uid="uid://b0q28vavi618s" path="res://Textures/Collectables/Weapons/Poleaxe/polearm_head_bake_roughness.png" id="5_te1oc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dgkym"]
+render_priority = 0
+shader = ExtResource("3_86gs3")
+shader_parameter/Generic_Albedo = Color(0.2302058, 0.22190273, 0.20731476, 1)
+shader_parameter/Roughness_1 = ExtResource("5_d61a6")
+shader_parameter/Roughness_2 = ExtResource("5_d61a6")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = true
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 1.0
+shader_parameter/MapBrightness = 1.0
+shader_parameter/Normal_Map_1 = ExtResource("4_d61a6")
+shader_parameter/Normal_Map_2 = ExtResource("4_d61a6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7iml"]
+render_priority = 0
+shader = ExtResource("3_86gs3")
+shader_parameter/Generic_Albedo = Color(0.23293683, 0.13871321, 0.017802265, 1)
+shader_parameter/Roughness_1 = ExtResource("5_te1oc")
+shader_parameter/Roughness_2 = ExtResource("5_te1oc")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = true
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 1.0
+shader_parameter/Normal_Map_1 = ExtResource("4_d61a6")
+shader_parameter/Normal_Map_2 = ExtResource("4_d61a6")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwbmi"]
+radius = 0.068847656
+height = 1.8527374
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ok2rw"]
+radius = 1.0
+
+[node name="Poleaxe" type="Area3D" unique_id=1617857927]
+script = ExtResource("1_ax8gb")
+type = "item"
+item_name = "poleaxe"
+
+[node name="Weapon" type="Node" parent="." unique_id=1719396528]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1034289982]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("2_otf70")
+surface_material_override/0 = SubResource("ShaderMaterial_dgkym")
+surface_material_override/1 = SubResource("ShaderMaterial_p7iml")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=759221378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34217072, 0)
+shape = SubResource("CapsuleShape3D_fwbmi")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=113031549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3078465, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=1804246236]
+shape = SubResource("SphereShape3D_ok2rw")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1369698848]

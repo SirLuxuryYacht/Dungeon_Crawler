@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqfg6oruk134c"
+path="res://.godot/imported/big_tree_1.obj-70db47c6e10d0fef05afbd1efdce3dde.mesh"
+
+[deps]
+
+files=["res://.godot/imported/big_tree_1.obj-70db47c6e10d0fef05afbd1efdce3dde.mesh"]
+
+source_file="res://Models/Vegetation/big_tree_1.obj"
+dest_files=["res://.godot/imported/big_tree_1.obj-70db47c6e10d0fef05afbd1efdce3dde.mesh", "res://.godot/imported/big_tree_1.obj-70db47c6e10d0fef05afbd1efdce3dde.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

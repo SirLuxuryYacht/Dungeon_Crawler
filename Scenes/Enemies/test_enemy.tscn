@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://qhk6k25ahnxq"]
+
+[ext_resource type="Script" uid="uid://cfn20ayvycw86" path="res://Scripts/Design_Aid/Test/test_enemy.gd" id="1_kksxm"]
+[ext_resource type="PackedScene" uid="uid://x8evpwwiwwfj" path="res://Scenes/Weapons/test_sword.tscn" id="2_v1mop"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v6ga8"]
+radius = 0.25
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_obelp"]
+radius = 0.25
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w1lb2"]
+radius = 0.25
+height = 1.8
+
+[node name="TestEnemy" type="CharacterBody3D"]
+script = ExtResource("1_kksxm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_v6ga8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_obelp")
+
+[node name="HitBox" type="Area3D" parent="."]
+collision_layer = 48
+collision_mask = 16
+
+[node name="HitBox" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("CapsuleShape3D_w1lb2")
+
+[node name="RightHand" type="Node3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.70516956, 0, 0)
+
+[node name="TestSword" parent="RightHand" instance=ExtResource("2_v1mop")]
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

@@ -1,0 +1,25 @@
+[gd_resource type="Environment" format=3 uid="uid://bj3btc3dgd0wa"]
+
+[ext_resource type="Texture2D" uid="uid://cy85e2k2ki5dm" path="res://Textures/Sky/red_clouds_sunset_render.hdr" id="1_4qxma"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_40bug"]
+panorama = ExtResource("1_4qxma")
+
+[sub_resource type="Sky" id="Sky_h0kst"]
+sky_material = SubResource("PanoramaSkyMaterial_40bug")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_h0kst")
+sky_rotation = Vector3(0, 0.08726646, 0)
+ambient_light_source = 1
+ambient_light_color = Color(0.8113066, 0.72725517, 0.727282, 1)
+reflected_light_source = 2
+fog_enabled = true
+fog_light_color = Color(0.76125646, 0.4215058, 0.55166626, 1)
+fog_light_energy = 0.48
+fog_density = 0.0025
+fog_sky_affect = 0.025
+fog_depth_begin = 25.0
+fog_depth_end = 60.0
+volumetric_fog_density = 0.1898

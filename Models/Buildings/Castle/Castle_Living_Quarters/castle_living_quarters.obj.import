@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnckj6y40gm4"
+path="res://.godot/imported/castle_living_quarters.obj-55ba36d75fee98415362558148059ad7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/castle_living_quarters.obj-55ba36d75fee98415362558148059ad7.mesh"]
+
+source_file="res://Models/Buildings/Castle/Castle_Living_Quarters/castle_living_quarters.obj"
+dest_files=["res://.godot/imported/castle_living_quarters.obj-55ba36d75fee98415362558148059ad7.mesh", "res://.godot/imported/castle_living_quarters.obj-55ba36d75fee98415362558148059ad7.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

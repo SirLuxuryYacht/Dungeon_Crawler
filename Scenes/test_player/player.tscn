@@ -1,0 +1,287 @@
+[gd_scene format=3 uid="uid://d1qmsi67tjmt2"]
+
+[ext_resource type="Script" uid="uid://bn63jvas3s28f" path="res://Scripts/Movement/Player/player.gd" id="1_p6vqv"]
+[ext_resource type="AudioStream" uid="uid://1p3klovbn6r2" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_1.ogg" id="2_dmxs1"]
+[ext_resource type="Script" uid="uid://63ss8u4wdavj" path="res://Scripts/Items/torch.gd" id="2_qd2lx"]
+[ext_resource type="AudioStream" uid="uid://da6a5uv0hfodj" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_2.ogg" id="3_omf6y"]
+[ext_resource type="AudioStream" uid="uid://cn55hhpwkbucv" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_3.ogg" id="4_oht17"]
+[ext_resource type="AudioStream" uid="uid://bredmpy22kaky" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_4.ogg" id="5_vost5"]
+[ext_resource type="AudioStream" uid="uid://drgfhxdrdsm5w" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_5.ogg" id="6_udqwm"]
+[ext_resource type="AudioStream" uid="uid://bqea406o8870f" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_6.ogg" id="7_57xng"]
+[ext_resource type="AudioStream" uid="uid://deqviowqnq2b3" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_7.ogg" id="8_2djut"]
+[ext_resource type="AudioStream" uid="uid://dnjoy2qfpwe7o" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_8.ogg" id="9_invgf"]
+[ext_resource type="AudioStream" uid="uid://cx2l64hro0bl3" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_9.ogg" id="10_ji7ww"]
+[ext_resource type="AudioStream" uid="uid://capl8yw3v0age" path="res://Sounds/Player/Movement/Footsteps/Stone/stone_10.ogg" id="11_d6v6w"]
+[ext_resource type="AudioStream" uid="uid://ct2ppajf2ces6" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_1.ogg" id="12_4utar"]
+[ext_resource type="AudioStream" uid="uid://b7763sd3qf2c5" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_2.ogg" id="13_o7kft"]
+[ext_resource type="AudioStream" uid="uid://cywhdfajrsubu" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_3.ogg" id="14_mg551"]
+[ext_resource type="AudioStream" uid="uid://cqwqksue0b71f" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_4.ogg" id="15_n42fp"]
+[ext_resource type="AudioStream" uid="uid://8yg4mqne2eq8" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_5.ogg" id="16_rmqtp"]
+[ext_resource type="AudioStream" uid="uid://b23kr1a5h5tyk" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_6.ogg" id="17_ijcid"]
+[ext_resource type="AudioStream" uid="uid://c2uoohydlsdkp" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_7.ogg" id="18_b0muh"]
+[ext_resource type="AudioStream" uid="uid://dajnjk743rm71" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_8.ogg" id="19_kplfo"]
+[ext_resource type="AudioStream" uid="uid://brkp7besmsh6l" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_9.ogg" id="20_bm8ul"]
+[ext_resource type="AudioStream" uid="uid://djim4kdnk5ps6" path="res://Sounds/Player/Movement/Footsteps/Dirt/dirt_10.ogg" id="21_lys81"]
+[ext_resource type="AudioStream" uid="uid://b6npyiiym6mcm" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_1.ogg" id="22_1yq8q"]
+[ext_resource type="AudioStream" uid="uid://du1ylpfhbh7b8" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_2.ogg" id="23_ui1xp"]
+[ext_resource type="AudioStream" uid="uid://bxcswb2kqrgpn" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_3.ogg" id="24_tgtti"]
+[ext_resource type="AudioStream" uid="uid://c3qj5d140g3as" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_4.ogg" id="25_st6ju"]
+[ext_resource type="AudioStream" uid="uid://cq45ckrki3cpm" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_5.ogg" id="26_x1nxt"]
+[ext_resource type="AudioStream" uid="uid://cql6512vn4tff" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_6.ogg" id="27_6r5sa"]
+[ext_resource type="AudioStream" uid="uid://cp05iqya4ovux" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_7.ogg" id="28_ge8bt"]
+[ext_resource type="AudioStream" uid="uid://br8l63vbcxmse" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_8.ogg" id="29_y67g2"]
+[ext_resource type="AudioStream" uid="uid://b4lt5aa3s8n85" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_9.ogg" id="30_qd2lx"]
+[ext_resource type="AudioStream" uid="uid://l0ejwr6i8csc" path="res://Sounds/Player/Movement/Footsteps/Wood/wood_10.ogg" id="31_a8iy7"]
+[ext_resource type="Theme" uid="uid://1qb3glsvs1b8" path="res://Fonts/Themes/Theme_1.tres" id="32_tgtti"]
+[ext_resource type="PackedScene" uid="uid://bo8f28f8cmeb" path="res://Scenes/HUD/hud.tscn" id="32_ui1xp"]
+[ext_resource type="AudioStream" uid="uid://cfor07g383ps" path="res://Sounds/Player/Movement/Footsteps/Metal/metal_1.ogg" id="32_y67g2"]
+[ext_resource type="AudioStream" uid="uid://c2koj2x1rpbgk" path="res://Sounds/Player/Movement/Footsteps/Metal/metal_2.ogg" id="33_qd2lx"]
+[ext_resource type="AudioStream" uid="uid://ck3lpvt2h8co" path="res://Sounds/Player/Movement/Footsteps/Metal/metal_3.ogg" id="34_a8iy7"]
+[ext_resource type="AudioStream" uid="uid://bs5fyjtxl14h2" path="res://Sounds/Player/Movement/Footsteps/Metal/metal_4.ogg" id="35_opfxo"]
+[ext_resource type="AudioStream" uid="uid://8y47h6xa1yme" path="res://Sounds/Player/Movement/Footsteps/Metal/metal_5.ogg" id="36_mnaj0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1yq8q"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ui1xp"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y70op"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p6vqv"]
+radius = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qd2lx"]
+radius = 0.225
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4utar"]
+streams_count = 10
+stream_0/stream = ExtResource("2_dmxs1")
+stream_1/stream = ExtResource("3_omf6y")
+stream_2/stream = ExtResource("4_oht17")
+stream_3/stream = ExtResource("5_vost5")
+stream_4/stream = ExtResource("6_udqwm")
+stream_5/stream = ExtResource("7_57xng")
+stream_6/stream = ExtResource("8_2djut")
+stream_7/stream = ExtResource("9_invgf")
+stream_8/stream = ExtResource("10_ji7ww")
+stream_9/stream = ExtResource("11_d6v6w")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1yq8q"]
+streams_count = 10
+stream_0/stream = ExtResource("12_4utar")
+stream_1/stream = ExtResource("13_o7kft")
+stream_2/stream = ExtResource("14_mg551")
+stream_3/stream = ExtResource("15_n42fp")
+stream_4/stream = ExtResource("16_rmqtp")
+stream_5/stream = ExtResource("17_ijcid")
+stream_6/stream = ExtResource("18_b0muh")
+stream_7/stream = ExtResource("19_kplfo")
+stream_8/stream = ExtResource("20_bm8ul")
+stream_9/stream = ExtResource("21_lys81")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_opfxo"]
+streams_count = 10
+stream_0/stream = ExtResource("22_1yq8q")
+stream_1/stream = ExtResource("23_ui1xp")
+stream_2/stream = ExtResource("24_tgtti")
+stream_3/stream = ExtResource("25_st6ju")
+stream_4/stream = ExtResource("26_x1nxt")
+stream_5/stream = ExtResource("27_6r5sa")
+stream_6/stream = ExtResource("28_ge8bt")
+stream_7/stream = ExtResource("29_y67g2")
+stream_8/stream = ExtResource("30_qd2lx")
+stream_9/stream = ExtResource("31_a8iy7")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_exb1l"]
+streams_count = 5
+stream_0/stream = ExtResource("32_y67g2")
+stream_1/stream = ExtResource("33_qd2lx")
+stream_2/stream = ExtResource("34_a8iy7")
+stream_3/stream = ExtResource("35_opfxo")
+stream_4/stream = ExtResource("36_mnaj0")
+
+[sub_resource type="AudioStream" id="AudioStream_1yq8q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qd2lx"]
+radius = 0.3
+height = 1.9
+
+[node name="Player" type="CharacterBody3D" unique_id=221654239]
+collision_layer = 481
+collision_mask = 449
+script = ExtResource("1_p6vqv")
+
+[node name="HitBox" type="Area3D" parent="." unique_id=1236293700]
+collision_layer = 8
+collision_mask = 8
+
+[node name="HitBoxLower" type="CollisionShape3D" parent="HitBox" unique_id=1805370743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_1yq8q")
+
+[node name="HitBoxUpper" type="CollisionShape3D" parent="HitBox" unique_id=1388464796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+shape = SubResource("CapsuleShape3D_ui1xp")
+
+[node name="LowerBodyCollision" type="CollisionShape3D" parent="." unique_id=926257507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_y70op")
+
+[node name="GroundDetector" type="Area3D" parent="LowerBodyCollision" unique_id=1716987523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="GroundDetectorShape" type="CollisionShape3D" parent="LowerBodyCollision/GroundDetector" unique_id=771847807]
+shape = SubResource("SphereShape3D_p6vqv")
+
+[node name="UpperBodyCollision" type="CollisionShape3D" parent="." unique_id=1788300254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+shape = SubResource("CapsuleShape3D_y70op")
+
+[node name="CeilingDetector" type="Area3D" parent="UpperBodyCollision" unique_id=607010898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UpperBodyCollision/CeilingDetector" unique_id=909060330]
+shape = SubResource("SphereShape3D_qd2lx")
+
+[node name="RightHand" type="Node3D" parent="." unique_id=123435601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1, -0.2)
+
+[node name="ItemSounds" type="AudioStreamPlayer3D" parent="." unique_id=719722433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1, -0.2)
+
+[node name="Camera" type="Camera3D" parent="." unique_id=2093056516]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.6, 0)
+fov = 80.0
+
+[node name="Torch" type="OmniLight3D" parent="Camera" unique_id=542305202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65, 0)
+visible = false
+light_color = Color(1, 0.7077822, 0.53466487, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 15.0
+omni_attenuation = 2.0
+script = ExtResource("2_qd2lx")
+
+[node name="PanicLight" type="OmniLight3D" parent="Camera" unique_id=301696322]
+light_color = Color(0.62372875, 0.73239326, 0.78575057, 1)
+light_energy = 0.5
+omni_range = 2.5
+omni_attenuation = 2.0
+
+[node name="InteractionRay" type="RayCast3D" parent="Camera" unique_id=1439397183]
+transform = Transform3D(-1, 8.742277e-08, 0, 3.821371e-15, 4.3711385e-08, 0.99999994, 8.742278e-08, 0.99999994, -4.3711385e-08, 0, 0, 0)
+target_position = Vector3(0, -1.5, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="FootstepSoundsStone" type="AudioStreamPlayer3D" parent="." unique_id=659139028]
+stream = SubResource("AudioStreamRandomizer_4utar")
+max_polyphony = 2
+
+[node name="FootstepSoundsDirt" type="AudioStreamPlayer3D" parent="." unique_id=1078186173]
+stream = SubResource("AudioStreamRandomizer_1yq8q")
+max_polyphony = 2
+
+[node name="FootstepSoundsWood" type="AudioStreamPlayer3D" parent="." unique_id=112107405]
+stream = SubResource("AudioStreamRandomizer_opfxo")
+
+[node name="FootstepSoundsMetal" type="AudioStreamPlayer3D" parent="." unique_id=843726611]
+stream = SubResource("AudioStreamRandomizer_exb1l")
+
+[node name="PickUpSoundPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1082177927]
+stream = SubResource("AudioStream_1yq8q")
+
+[node name="GameplayPromptHandler" type="Control" parent="." unique_id=1611715543]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PickUpPrompt" type="Label" parent="GameplayPromptHandler" unique_id=1777892701]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.8
+anchor_right = 0.55
+anchor_bottom = 0.8
+theme = ExtResource("32_tgtti")
+text = "Pick Up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TalkPrompt" type="Label" parent="GameplayPromptHandler" unique_id=1335118805]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.8
+anchor_right = 0.55
+anchor_bottom = 0.8
+theme = ExtResource("32_tgtti")
+text = "Talk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialoguePause" type="Timer" parent="GameplayPromptHandler" unique_id=1627135194]
+wait_time = 0.5
+one_shot = true
+
+[node name="PickedItemInfo" type="Control" parent="GameplayPromptHandler" unique_id=1940372692]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hud" parent="." unique_id=673879155 instance=ExtResource("32_ui1xp")]
+
+[node name="Timers" type="Node" parent="." unique_id=1731604957]
+
+[node name="ChargeHeavy" type="Timer" parent="Timers" unique_id=411496995]
+wait_time = 0.5
+one_shot = true
+
+[node name="AttackTimer" type="Timer" parent="Timers" unique_id=1904555327]
+one_shot = true
+
+[node name="AttackBlocker" type="Timer" parent="Timers" unique_id=845005679]
+one_shot = true
+
+[node name="SpawnTimer" type="Timer" parent="Timers" unique_id=871432813]
+wait_time = 0.075
+one_shot = true
+autostart = true
+
+[node name="SpawnHurtBox" type="Area3D" parent="." unique_id=1766856351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnHurtBox" unique_id=1006695961]
+shape = SubResource("CapsuleShape3D_qd2lx")
+debug_color = Color(0.59442407, 0.546325, 7.70092e-07, 0.41960785)
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="LowerBodyCollision/GroundDetector" to="." method="_on_ground_detector_body_entered"]
+[connection signal="body_entered" from="UpperBodyCollision/CeilingDetector" to="." method="_on_ceiling_detector_body_entered"]
+[connection signal="body_exited" from="UpperBodyCollision/CeilingDetector" to="." method="_on_ceiling_detector_body_exited"]
+[connection signal="timeout" from="GameplayPromptHandler/DialoguePause" to="." method="_on_dialogue_pause_timeout"]
+[connection signal="timeout" from="Timers/ChargeHeavy" to="." method="_on_charge_heavy_timeout"]
+[connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timers/AttackBlocker" to="." method="_on_attack_blocker_timeout"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="." method="_on_spawn_timer_timeout"]

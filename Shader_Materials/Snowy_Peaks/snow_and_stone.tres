@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://2hfptjceudxr"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_7gulv"]
+[ext_resource type="Texture2D" uid="uid://ckk14c7l1nsu1" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_3/mountain_rock_3_color.png" id="2_1yxta"]
+[ext_resource type="Texture2D" uid="uid://bq77ae5tw2tkq" path="res://Textures/Atlas_Textures/_Large_Textures/Snow/snow_color.png" id="3_efsmu"]
+[ext_resource type="Texture2D" uid="uid://c7cr3k2q1362p" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_3/mountain_rock_3_bake_normal.png" id="4_41knd"]
+[ext_resource type="Texture2D" uid="uid://c27m8ly11lft6" path="res://Textures/Atlas_Textures/_Large_Textures/Snow/snow_bake_normal.png" id="5_23txi"]
+[ext_resource type="Texture2D" uid="uid://xsgfl3lcakr6" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_3/mountain_rock_3_bake_roughness.png" id="6_oq2ff"]
+[ext_resource type="Texture2D" uid="uid://b7h5qk2hbh17r" path="res://Textures/Atlas_Textures/_Large_Textures/Snow/snow_bake_roughness.png" id="7_c2i4x"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7gulv")
+shader_parameter/Albedo_1 = ExtResource("2_1yxta")
+shader_parameter/Albedo_2 = ExtResource("3_efsmu")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("6_oq2ff")
+shader_parameter/Roughness_2 = ExtResource("7_c2i4x")
+shader_parameter/MapBrightness = 0.1
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("4_41knd")
+shader_parameter/Normal_Map_2 = ExtResource("5_23txi")

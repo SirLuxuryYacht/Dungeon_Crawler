@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://df7or0fa2wuxs"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_hlxfd"]
+[ext_resource type="Texture2D" uid="uid://8p7i1vm804y0" path="res://Textures/Atlas_Textures/Forest_Bricks/forest_bricks_color.png" id="2_ravd2"]
+[ext_resource type="Texture2D" uid="uid://c8nm1t3t4bqgd" path="res://Textures/Atlas_Textures/Forest_Bricks/forest_bricks_ivy_color.png" id="3_7q2wl"]
+[ext_resource type="Texture2D" uid="uid://c3ep6mb0birkm" path="res://Textures/Atlas_Textures/Forest_Bricks/forest_bricks_stairs_bake_normal.png" id="4_yhrkb"]
+[ext_resource type="Texture2D" uid="uid://ccnlx4ocwimyk" path="res://Textures/Atlas_Textures/Forest_Bricks/forest_bricks_ivy_bake_normal.png" id="5_5ntve"]
+[ext_resource type="Texture2D" uid="uid://dtsc3ayuwo4sd" path="res://Textures/Atlas_Textures/Forest_Bricks/forest_bricks_bake_roughness.png" id="6_3f3ct"]
+[ext_resource type="Texture2D" uid="uid://b1na6wsoayll0" path="res://Textures/Atlas_Textures/Forest_Bricks/forest_bricks_ivy_bake_roughness.png" id="7_rkhf8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hlxfd")
+shader_parameter/Albedo_1 = ExtResource("2_ravd2")
+shader_parameter/Albedo_2 = ExtResource("3_7q2wl")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Roughness_1 = ExtResource("6_3f3ct")
+shader_parameter/Roughness_2 = ExtResource("7_rkhf8")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 1.0
+shader_parameter/Normal_Map_1 = ExtResource("4_yhrkb")
+shader_parameter/Normal_Map_2 = ExtResource("5_5ntve")

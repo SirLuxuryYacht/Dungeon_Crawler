@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bkpunvdiyqa8x"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_85j3d"]
+[ext_resource type="Texture2D" uid="uid://bj45dybotuy5d" path="res://Textures/Enemies/Spider/spider_skin_underbelly_color.png" id="2_m80rq"]
+[ext_resource type="Texture2D" uid="uid://ct0h4ux18bf7d" path="res://Textures/Enemies/Spider/spider_skin.png" id="3_mtbdo"]
+[ext_resource type="Texture2D" uid="uid://ura33awydsdo" path="res://Textures/Enemies/Spider/spider_skin_underbelly_bake_normal.png" id="4_kjde1"]
+[ext_resource type="Texture2D" uid="uid://dxwxqus1v1tmm" path="res://Textures/Enemies/Spider/spider_skin_bake_normal.png" id="5_dbm2k"]
+[ext_resource type="Texture2D" uid="uid://dn1l27wrorxoe" path="res://Textures/Enemies/Spider/spider_skin_underbelly_bake_roughness.png" id="6_gyc7n"]
+[ext_resource type="Texture2D" uid="uid://csu46o73ug3wy" path="res://Textures/Enemies/Spider/spider_skin_bake_roughness.png" id="7_jdmn0"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_85j3d")
+shader_parameter/Albedo_1 = ExtResource("2_m80rq")
+shader_parameter/Albedo_2 = ExtResource("3_mtbdo")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("6_gyc7n")
+shader_parameter/Roughness_2 = ExtResource("7_jdmn0")
+shader_parameter/MapBrightness = 1.0
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("4_kjde1")
+shader_parameter/Normal_Map_2 = ExtResource("5_dbm2k")

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bupn21qi1usbp"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_nek6v"]
+[ext_resource type="ArrayMesh" uid="uid://45f1ypurdnek" path="res://Models/Collectables/potion.obj" id="2_vah0e"]
+[ext_resource type="Shader" uid="uid://bbpkkc27gyusr" path="res://Shader_Materials/Glass_Shader.tres" id="3_h77fk"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="4_61qq7"]
+[ext_resource type="Texture2D" uid="uid://15rgkvyhiq1q" path="res://Textures/Collectables/Cork/cork_color.png" id="5_lal3x"]
+[ext_resource type="Texture2D" uid="uid://7hitegj0nvj0" path="res://Textures/Collectables/Cork/cork_bake_normal.png" id="6_rf3w1"]
+[ext_resource type="Texture2D" uid="uid://cy8hl1rt1i8u0" path="res://Textures/Collectables/Cork/cork_bake_roughness.png" id="7_a0437"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kpru6"]
+render_priority = 0
+shader = ExtResource("3_h77fk")
+shader_parameter/Content_Color = Color(0, 0.5888383, 0.16984117, 1)
+shader_parameter/Glass_Thickness = 10.0
+shader_parameter/Glass_Color = Color(0, 0.3027266, 0.40322942, 1)
+shader_parameter/Roughness = 0.12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f15qv"]
+render_priority = 0
+shader = ExtResource("4_61qq7")
+shader_parameter/Albedo_2 = ExtResource("5_lal3x")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_2 = ExtResource("7_a0437")
+shader_parameter/MapBrightness = 1.0
+shader_parameter/UseVertexColor = false
+shader_parameter/Normal_Map_2 = ExtResource("6_rf3w1")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7w3jt"]
+radius = 0.061523438
+height = 0.31530762
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4suv0"]
+radius = 0.35
+
+[node name="StaminaPotion" type="Area3D" unique_id=1891449754]
+script = ExtResource("1_nek6v")
+type = "item"
+item_name = "stamina_potion"
+
+[node name="Usable" type="Node" parent="." unique_id=1034337268]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1090581119]
+mesh = ExtResource("2_vah0e")
+surface_material_override/0 = SubResource("ShaderMaterial_kpru6")
+surface_material_override/1 = SubResource("ShaderMaterial_f15qv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=517070018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14520264, 0)
+shape = SubResource("CapsuleShape3D_7w3jt")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1153927201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13811001, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=724017599]
+shape = SubResource("SphereShape3D_4suv0")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1607466222]

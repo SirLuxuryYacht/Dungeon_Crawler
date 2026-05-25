@@ -1,0 +1,33 @@
+extends Node3D
+
+var item_name = "marionette_punch"
+
+var weapon_type = "melee"
+
+var attack_type = "light"
+
+var area_type = "hurt_box"
+
+var store_collision = []
+
+var damage = [0,0,0,0]
+
+var light_damage = [150,0,0,0] #standard,fire,dark,lightning
+
+var heavy_damage = [200,0,0,0]
+
+var light_stamina_cost = 60
+
+var heavy_stamina_cost = 120
+
+var attacking = false
+
+var has_hit = false
+
+@onready var HurtBox = null
+
+#@onready var TestSword = $TestSword
+#@onready var Placeholder = $Placeholder
+
+func get_hurt_box() -> Node:
+	return HurtBox #returns a collisionshape3d

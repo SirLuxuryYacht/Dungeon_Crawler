@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://ccssqcdwtmo0y"]
+
+[ext_resource type="ArrayMesh" uid="uid://dgtvfx4n2q8oc" path="res://Models/Small_Stuff/water_surface.obj" id="1_4nxss"]
+[ext_resource type="Script" uid="uid://c0pjjyvappwvk" path="res://Scripts/Gameplay/Environment/water.gd" id="1_ms04i"]
+[ext_resource type="Shader" uid="uid://38ua2qn3vdxj" path="res://Shader_Materials/Water_Shader.res" id="1_wag6x"]
+[ext_resource type="Texture2D" uid="uid://db4ljjh48hji6" path="res://Textures/Atlas_Textures/Water_Surfaces/Water_1/waves_color.png" id="2_weekq"]
+[ext_resource type="Texture2D" uid="uid://drf58bbklvfnr" path="res://Textures/Atlas_Textures/Water_Surfaces/Water_1/waves_bake_normal.png" id="3_seypt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_weekq"]
+render_priority = 0
+shader = ExtResource("1_wag6x")
+shader_parameter/amplitude = 0.05
+shader_parameter/wave_speed = 1.0
+shader_parameter/wave_number = Vector2(0.1, 0.1)
+shader_parameter/UV_Scrolling = Vector2(-0.1, 0.1)
+shader_parameter/Albedo = ExtResource("2_weekq")
+shader_parameter/Normal = ExtResource("3_seypt")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y2cj6"]
+size = Vector3(20, 14, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ms04i"]
+size = Vector3(20, 13, 20)
+
+[node name="Water" type="Area3D" unique_id=2145971260]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_ms04i")
+
+[node name="Water" type="Node" parent="." unique_id=2064714236]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=426652075]
+mesh = ExtResource("1_4nxss")
+surface_material_override/0 = SubResource("ShaderMaterial_weekq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=789520069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0)
+shape = SubResource("BoxShape3D_y2cj6")
+
+[node name="DeepWater" type="Area3D" parent="." unique_id=1022307471]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeepWater" unique_id=1162940947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
+shape = SubResource("BoxShape3D_ms04i")
+
+[connection signal="body_entered" from="DeepWater" to="." method="_on_deep_water_body_entered"]
+[connection signal="body_exited" from="DeepWater" to="." method="_on_deep_water_body_exited"]

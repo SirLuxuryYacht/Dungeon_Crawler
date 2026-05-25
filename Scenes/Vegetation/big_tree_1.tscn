@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://diwi6pjap8v5h"]
+
+[ext_resource type="ArrayMesh" uid="uid://bqfg6oruk134c" path="res://Models/Vegetation/big_tree_1.obj" id="1_ofuqi"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="2_qb2ff"]
+[ext_resource type="Texture2D" uid="uid://bkcooj1y826jn" path="res://Textures/Atlas_Textures/Vegetation/Tree_Bark_2/tree_bark_2_color.png" id="3_ofuqi"]
+[ext_resource type="Texture2D" uid="uid://hpp2jtxl50t" path="res://Textures/Atlas_Textures/Vegetation/Tree_Bark_2/tree_bark_2_ivy_color.png" id="4_qb2ff"]
+[ext_resource type="Texture2D" uid="uid://cmryj6pkq5nso" path="res://Textures/Atlas_Textures/Vegetation/Tree_Bark_2/tree_bark_2_bake_normal.png" id="5_qq5l2"]
+[ext_resource type="Texture2D" uid="uid://dqg2v77jygjpv" path="res://Textures/Atlas_Textures/Vegetation/Tree_Bark_2/tree_bark_2_ivy_bake_normal.png" id="6_kqkse"]
+[ext_resource type="Texture2D" uid="uid://qp321l4qhs8c" path="res://Textures/Atlas_Textures/Vegetation/Tree_Bark_2/tree_bark_2_roughness.png" id="7_srhck"]
+[ext_resource type="Texture2D" uid="uid://bttwdnhki4n60" path="res://Textures/Atlas_Textures/Vegetation/Tree_Bark_2/tree_bark_2_ivy_roughness.png" id="8_1kdf6"]
+[ext_resource type="Texture2D" uid="uid://cccvapaxqysgv" path="res://Textures/Atlas_Textures/Vegetation/Tree_Twigs_1/leaves_1.png" id="9_qb2ff"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rmvhk"]
+render_priority = 0
+shader = ExtResource("2_qb2ff")
+shader_parameter/Albedo_1 = ExtResource("3_ofuqi")
+shader_parameter/Albedo_2 = ExtResource("4_qb2ff")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("7_srhck")
+shader_parameter/Roughness_2 = ExtResource("8_1kdf6")
+shader_parameter/MapBrightness = 1.0
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("5_qq5l2")
+shader_parameter/Normal_Map_2 = ExtResource("6_kqkse")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmvhk"]
+transparency = 1
+albedo_texture = ExtResource("9_qb2ff")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofuqi"]
+radius = 0.72802734
+height = 5.0
+
+[node name="BigTree1" type="StaticBody3D" unique_id=1048841718]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=41240932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+mesh = ExtResource("1_ofuqi")
+surface_material_override/0 = SubResource("ShaderMaterial_rmvhk")
+surface_material_override/1 = SubResource("StandardMaterial3D_rmvhk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=764063672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_ofuqi")

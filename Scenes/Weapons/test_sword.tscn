@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://x8evpwwiwwfj"]
+
+[ext_resource type="ArrayMesh" uid="uid://c5evp2wt08mhh" path="res://Models/Items/Test_Items/test_sword.obj" id="1_p5afm"]
+[ext_resource type="Script" uid="uid://cqsd0gt8wqunt" path="res://Scripts/Weapons/test_sword.gd" id="1_swfud"]
+[ext_resource type="AudioStream" uid="uid://61lo6cm5kbkr" path="res://Sounds/Weapon_Swing/deliberate_swing_light.ogg" id="3_846d0"]
+[ext_resource type="AudioStream" uid="uid://cekvkdmlvbdmh" path="res://Sounds/Weapon_Swing/deliberate_swing_heavy.ogg" id="4_ndcmq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p5afm"]
+radius = 0.1
+height = 1.6
+
+[node name="TestSword" type="Node3D" unique_id=213646714]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_swfud")
+
+[node name="Weapon" type="Area3D" parent="." unique_id=1576323862]
+collision_layer = 528
+collision_mask = 0
+
+[node name="HurtBox" type="CollisionShape3D" parent="Weapon" unique_id=585707392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76220703, 0)
+shape = SubResource("CapsuleShape3D_p5afm")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Weapon" unique_id=158626250]
+mesh = ExtResource("1_p5afm")
+skeleton = NodePath("")
+
+[node name="Light" type="AudioStreamPlayer3D" parent="Weapon" unique_id=792128742]
+stream = ExtResource("3_846d0")
+
+[node name="Heavy" type="AudioStreamPlayer3D" parent="Weapon" unique_id=400575646]
+stream = ExtResource("4_ndcmq")
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="Weapon" unique_id=2136781019]
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1192766719]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)

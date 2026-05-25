@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dqbpxsow1e4oq"
+path="res://.godot/imported/StairwellTowerUpper_export.obj-c54af5d9eac8dd28c0f89762168decdc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/StairwellTowerUpper_export.obj-c54af5d9eac8dd28c0f89762168decdc.mesh"]
+
+source_file="res://Models/Buildings/Mountains/GothicTower_Bake/StairwellTowerUpper_export.obj"
+dest_files=["res://.godot/imported/StairwellTowerUpper_export.obj-c54af5d9eac8dd28c0f89762168decdc.mesh", "res://.godot/imported/StairwellTowerUpper_export.obj-c54af5d9eac8dd28c0f89762168decdc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

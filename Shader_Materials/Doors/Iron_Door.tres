@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c02jdr5vn8y27"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_hrouw"]
+[ext_resource type="Texture2D" uid="uid://dbvvap6qc2dy6" path="res://Textures/Atlas_Textures/Iron_Door/iron_door_bake_color.png" id="2_tlimd"]
+[ext_resource type="Texture2D" uid="uid://dsta8t5jx8xje" path="res://Textures/Atlas_Textures/Iron_Door/iron_door_bake_normal.png" id="3_30qs6"]
+[ext_resource type="Texture2D" uid="uid://bxbtgxe34apqj" path="res://Textures/Atlas_Textures/Iron_Door/iron_door_bake_roughness.png" id="4_r7mpk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hrouw")
+shader_parameter/Albedo_2 = ExtResource("2_tlimd")
+shader_parameter/Roughness_2 = ExtResource("4_r7mpk")
+shader_parameter/RoughnessEffect = 0.50000002375
+shader_parameter/RoughnesMultiplier = true
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 1.0
+shader_parameter/MapBrightness = 0.8
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_2 = ExtResource("3_30qs6")

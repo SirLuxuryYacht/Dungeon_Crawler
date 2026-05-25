@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dt7kv8yrs064g"
+path="res://.godot/imported/tramway_tunnel_rail_supports.obj-8d8663a65c3a5536e832f43794f4b4d9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tramway_tunnel_rail_supports.obj-8d8663a65c3a5536e832f43794f4b4d9.mesh"]
+
+source_file="res://Models/Buildings/Tramway/tramway_tunnel_rail_supports.obj"
+dest_files=["res://.godot/imported/tramway_tunnel_rail_supports.obj-8d8663a65c3a5536e832f43794f4b4d9.mesh", "res://.godot/imported/tramway_tunnel_rail_supports.obj-8d8663a65c3a5536e832f43794f4b4d9.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

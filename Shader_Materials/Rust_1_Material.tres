@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bgleahsboff02"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_7g45h"]
+[ext_resource type="Texture2D" uid="uid://dt0h3h05n21y4" path="res://Textures/Geometry/Architecture/Rust_1/rust_1_color.png" id="2_h7seg"]
+[ext_resource type="Texture2D" uid="uid://c4ehw06nkyrii" path="res://Textures/Geometry/Architecture/Rust_1/rust_1_bake_normal.png" id="3_h67om"]
+[ext_resource type="Texture2D" uid="uid://d3bj4pdw224vu" path="res://Textures/Geometry/Architecture/Rust_1/rust_1_bake_roughness.png" id="4_4r7ee"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7g45h")
+shader_parameter/Albedo_1 = ExtResource("2_h7seg")
+shader_parameter/Albedo_2 = ExtResource("2_h7seg")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_2 = ExtResource("4_4r7ee")
+shader_parameter/MapBrightness = 0.0
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_2 = ExtResource("3_h67om")

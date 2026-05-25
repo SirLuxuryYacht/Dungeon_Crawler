@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://do66crwhb425m"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_hxkrs"]
+[ext_resource type="Texture2D" uid="uid://bxe5drljnhyel" path="res://Textures/Atlas_Textures/Institute/Laboratory_Bricks/laboratory_brick_wall_color.png" id="2_4cx7d"]
+[ext_resource type="Texture2D" uid="uid://r7jejcgkofk3" path="res://Textures/Atlas_Textures/Institute/Laboratory_Bricks/laboratory_brick_wall_bake_normal.png" id="3_k8yvt"]
+[ext_resource type="Texture2D" uid="uid://cxgstfruq08ss" path="res://Textures/Atlas_Textures/Institute/Laboratory_Bricks/laboratory_brick_wall_bake_roughness.png" id="4_fitfu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hxkrs")
+shader_parameter/Albedo_2 = ExtResource("2_4cx7d")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Roughness_2 = ExtResource("4_fitfu")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.0
+shader_parameter/Normal_Map_2 = ExtResource("3_k8yvt")

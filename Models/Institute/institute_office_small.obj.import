@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bk7cv3um1f2dc"
+path="res://.godot/imported/institute_office_small.obj-697cf1f33ad19191d11b528242f68932.mesh"
+
+[deps]
+
+files=["res://.godot/imported/institute_office_small.obj-697cf1f33ad19191d11b528242f68932.mesh"]
+
+source_file="res://Models/Institute/institute_office_small.obj"
+dest_files=["res://.godot/imported/institute_office_small.obj-697cf1f33ad19191d11b528242f68932.mesh", "res://.godot/imported/institute_office_small.obj-697cf1f33ad19191d11b528242f68932.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

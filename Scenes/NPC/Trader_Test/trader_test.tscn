@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b4tn2pmgevkjk"]
+
+[ext_resource type="Script" uid="uid://bs66626ltyqda" path="res://Scripts/Gameplay/NPC/trader_test.gd" id="1_4mirs"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mn7f1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4mirs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mn7f1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mn7f1"]
+radius = 1.0
+
+[node name="TraderTest" type="CharacterBody3D" unique_id=1008827689]
+script = ExtResource("1_4mirs")
+trader_cheapness = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=967200652]
+mesh = SubResource("CapsuleMesh_mn7f1")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1635004762]
+shape = SubResource("CapsuleShape3D_4mirs")
+
+[node name="HitBox" type="Area3D" parent="." unique_id=947919378]
+collision_layer = 16
+collision_mask = 16
+
+[node name="HitBox" type="CollisionShape3D" parent="HitBox" unique_id=1392566498]
+shape = SubResource("CapsuleShape3D_mn7f1")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=861414326]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=656497385]
+shape = SubResource("SphereShape3D_mn7f1")

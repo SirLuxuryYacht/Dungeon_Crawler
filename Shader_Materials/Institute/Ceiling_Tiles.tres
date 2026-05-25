@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dnjfbschg34rn"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_rxmb7"]
+[ext_resource type="Texture2D" uid="uid://fb5qrho7un3v" path="res://Textures/Atlas_Textures/Institute/Ceiling_Tiles/ceiling_tiles_color.png" id="2_dia26"]
+[ext_resource type="Texture2D" uid="uid://c8c5n0du5opjh" path="res://Textures/Atlas_Textures/Institute/Ceiling_Tiles/ceiling_tiles_bake_normal.png" id="3_db5w5"]
+[ext_resource type="Texture2D" uid="uid://dvll1cikkikr1" path="res://Textures/Atlas_Textures/Institute/Ceiling_Tiles/ceiling_tiles_bake_roughness.png" id="4_2vc2n"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_rxmb7")
+shader_parameter/Albedo_2 = ExtResource("2_dia26")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Roughness_2 = ExtResource("4_2vc2n")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.0
+shader_parameter/Normal_Map_2 = ExtResource("3_db5w5")

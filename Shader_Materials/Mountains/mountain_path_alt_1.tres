@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://clnt7h4ftyk8"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_uij3a"]
+[ext_resource type="Texture2D" uid="uid://gf7wm8rqvkb8" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_1/mountain_rock_color.png" id="2_5irb3"]
+[ext_resource type="Texture2D" uid="uid://bylubbm4knl4h" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Gravel_1/mountain_gravel_1_color.png" id="3_tx3up"]
+[ext_resource type="Texture2D" uid="uid://t8kenytjt0h6" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_1/mountain_rock_bake_normal.png" id="4_tlml2"]
+[ext_resource type="Texture2D" uid="uid://bm5ahxchl0dx5" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Gravel_1/mountain_gravel_1_bake_normal.png" id="5_o2wv4"]
+[ext_resource type="Texture2D" uid="uid://bmox8tvbmdnje" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_1/mountain_rock_bake_roughness.png" id="6_nyt4i"]
+[ext_resource type="Texture2D" uid="uid://bwlgk3o83ojar" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Gravel_1/mountain_gravel_1_bake_roughness.png" id="7_r3gx3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_uij3a")
+shader_parameter/Albedo_1 = ExtResource("2_5irb3")
+shader_parameter/Albedo_2 = ExtResource("3_tx3up")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("6_nyt4i")
+shader_parameter/Roughness_2 = ExtResource("7_r3gx3")
+shader_parameter/MapBrightness = 1.0
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("4_tlml2")
+shader_parameter/Normal_Map_2 = ExtResource("5_o2wv4")

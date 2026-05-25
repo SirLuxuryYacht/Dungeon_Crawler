@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://1nfnh7dedwxs"]
+
+[ext_resource type="Script" uid="uid://dty0g705uqb54" path="res://Scripts/Gameplay/Trade_Menu/trade_menu.gd" id="1_a7lv7"]
+[ext_resource type="Theme" uid="uid://1qb3glsvs1b8" path="res://Fonts/Themes/Theme_1.tres" id="2_d0p01"]
+
+[node name="TradeMenu" type="Control" unique_id=1570743787]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a7lv7")
+
+[node name="BuySubMenu" type="Control" parent="." unique_id=1437353622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BuySubMenu" unique_id=1184110683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8156863)
+
+[node name="TextBackground" type="ColorRect" parent="BuySubMenu" unique_id=216291067]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.53333336)
+
+[node name="TraderNameLabel" type="Label" parent="BuySubMenu" unique_id=415306879]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.025
+anchor_right = 0.05
+anchor_bottom = 0.1
+theme = ExtResource("2_d0p01")
+theme_override_font_sizes/font_size = 30
+
+[node name="CoinLabel" type="Label" parent="BuySubMenu" unique_id=1353978298]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.9
+anchor_right = 0.1
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+text = "Coins:"
+
+[node name="CoinAmount" type="Label" parent="BuySubMenu" unique_id=2044194834]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.9
+anchor_right = 0.25
+anchor_bottom = 0.9
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+
+[node name="CostLabel" type="Label" parent="BuySubMenu" unique_id=1286688394]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.8
+anchor_right = 0.1
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+text = "Cost:"
+
+[node name="CostAmount" type="Label" parent="BuySubMenu" unique_id=687856311]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.8
+anchor_right = 0.25
+anchor_bottom = 0.8
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+
+[node name="Quantity" type="Label" parent="BuySubMenu" unique_id=1394353166]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.4
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+text = "Available:"
+
+[node name="QuantityAmount" type="Label" parent="BuySubMenu" unique_id=331371440]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+
+[node name="ItemNameLabel" type="Label" parent="BuySubMenu" unique_id=1427446251]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.7
+anchor_right = 0.2
+anchor_bottom = 0.7
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+
+[node name="BuyButton" type="Button" parent="BuySubMenu" unique_id=258683750]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.7
+anchor_right = 0.9
+anchor_bottom = 0.8
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+text = "Buy"
+
+[node name="CloseButton" type="Button" parent="BuySubMenu" unique_id=1368123410]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.9
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+text = "Close"
+
+[node name="TalkButton" type="Button" parent="BuySubMenu" unique_id=109304855]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 0.9
+anchor_right = 0.65
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+text = "Talk
+"
+
+[node name="SellButton" type="Button" parent="BuySubMenu" unique_id=520147097]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d0p01")
+text = "Sell Items
+
+"
+
+[node name="ItemPicture" type="TextureRect" parent="BuySubMenu" unique_id=389599566]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ItemDescriptionLabel" type="Label" parent="BuySubMenu" unique_id=877815567]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.6
+theme = ExtResource("2_d0p01")
+text = "Test description. This is a test description. This is a test description, it will use the test description."
+autowrap_mode = 3
+
+[connection signal="button_up" from="BuySubMenu/BuyButton" to="." method="_on_buy_button_button_up"]
+[connection signal="button_up" from="BuySubMenu/CloseButton" to="." method="_on_close_button_button_up"]
+[connection signal="button_up" from="BuySubMenu/TalkButton" to="." method="_on_talk_button_button_up"]
+[connection signal="button_up" from="BuySubMenu/SellButton" to="." method="_on_sell_button_button_up"]

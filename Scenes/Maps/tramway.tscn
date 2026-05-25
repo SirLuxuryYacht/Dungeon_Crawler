@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://burh4ggol55lg"]
+
+[ext_resource type="PackedScene" uid="uid://bwehhhaopcid2" path="res://Scenes/Maps/MapTransition/Individual_Transitions/tramway_entrance.tscn" id="1_2n0dq"]
+[ext_resource type="PackedScene" uid="uid://72lrumdojtpb" path="res://Scenes/Set_Pieces/Tramway/tram_tunnel.tscn" id="1_5u11q"]
+[ext_resource type="PackedScene" uid="uid://co05ixm8lrn5j" path="res://Scenes/Gameplay_Scenes/Environment/cave_machine.tscn" id="2_yf70k"]
+[ext_resource type="PackedScene" uid="uid://dlmhugajpotle" path="res://Scenes/Maps/MapTransition/Individual_Transitions/snowpeak_entrance.tscn" id="3_fujl1"]
+
+[sub_resource type="Environment" id="Environment_5u11q"]
+background_mode = 2
+ambient_light_source = 1
+
+[node name="tramway" type="Node3D" unique_id=208651426]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=316968003]
+environment = SubResource("Environment_5u11q")
+
+[node name="Origin" type="Node3D" parent="." unique_id=1182980753]
+
+[node name="TramTunnel" parent="Origin" unique_id=838745216 instance=ExtResource("1_5u11q")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -26, -10, 80)
+
+[node name="CaveMachine" parent="Origin" unique_id=1331809071 instance=ExtResource("2_yf70k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, 40)
+
+[node name="TramwayEntrance" parent="." unique_id=236145919 instance=ExtResource("1_2n0dq")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -35, -9, 94)
+visible = false
+
+[node name="SnowpeakEntrance" parent="." unique_id=1643756276 instance=ExtResource("3_fujl1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 164, -2, -36)
+visible = false

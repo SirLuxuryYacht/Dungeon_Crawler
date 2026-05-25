@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dhfxmwxrdttt"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_0dthq"]
+[ext_resource type="Texture2D" uid="uid://dhrxife5kmpnb" path="res://Textures/Doors/Stone_Door/stone_door_door_color.png" id="2_db1yg"]
+[ext_resource type="Texture2D" uid="uid://b74u1k5lxpgtp" path="res://Textures/Doors/Stone_Door/stone_door_door_bake_normal.png" id="3_0s01j"]
+[ext_resource type="Texture2D" uid="uid://bkneuokg8qnn8" path="res://Textures/Doors/Stone_Door/stone_door_door_bake_roughness.png" id="4_t3rvr"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0dthq")
+shader_parameter/Albedo_2 = ExtResource("2_db1yg")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_2 = ExtResource("4_t3rvr")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_2 = ExtResource("3_0s01j")

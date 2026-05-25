@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ckmqiwvkk5tb6"]
+
+[ext_resource type="Script" uid="uid://cujwgllqpfmne" path="res://Scripts/Gameplay/Environment/thunder_machine.gd" id="1_88lgo"]
+[ext_resource type="AudioStream" uid="uid://bsnetu41guj4i" path="res://Sounds/Environment/Weather/Thunder/far_thunder_1.ogg" id="2_thdk3"]
+[ext_resource type="AudioStream" uid="uid://duy1lj71gh6ks" path="res://Sounds/Environment/Weather/Thunder/far_thunder_2.ogg" id="3_lui6j"]
+[ext_resource type="AudioStream" uid="uid://du734auxgsstf" path="res://Sounds/Environment/Weather/Thunder/far_thunder_3.ogg" id="4_tnn5c"]
+[ext_resource type="AudioStream" uid="uid://delge3udg481t" path="res://Sounds/Environment/Weather/Thunder/far_thunder_4.ogg" id="5_rt46b"]
+[ext_resource type="AudioStream" uid="uid://b1pmmnw3elwy8" path="res://Sounds/Environment/Weather/Thunder/far_thunder_5.ogg" id="6_1u2sf"]
+[ext_resource type="AudioStream" uid="uid://cwdonusww62di" path="res://Sounds/Environment/Weather/Thunder/far_thunder_6.ogg" id="7_2yklj"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q8jqq"]
+streams_count = 6
+stream_0/stream = ExtResource("2_thdk3")
+stream_1/stream = ExtResource("3_lui6j")
+stream_2/stream = ExtResource("4_tnn5c")
+stream_3/stream = ExtResource("5_rt46b")
+stream_4/stream = ExtResource("6_1u2sf")
+stream_5/stream = ExtResource("7_2yklj")
+
+[node name="ThunderMachine" type="Node3D" unique_id=2135864436]
+script = ExtResource("1_88lgo")
+
+[node name="SoundMachine" type="AudioStreamPlayer3D" parent="." unique_id=542207596]
+stream = SubResource("AudioStreamRandomizer_q8jqq")
+attenuation_model = 3
+
+[node name="Pause" type="Timer" parent="." unique_id=430885560]
+
+[connection signal="timeout" from="Pause" to="." method="_on_pause_timeout"]

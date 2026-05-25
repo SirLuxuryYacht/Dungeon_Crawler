@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d36xtqc01rsdd"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_53gb4"]
+[ext_resource type="Texture2D" uid="uid://bmkle2xen3wqn" path="res://Textures/Atlas_Textures/Living_Quarters/Ceiling/wood_ceiling_color.png" id="2_q8eg0"]
+[ext_resource type="Texture2D" uid="uid://pfbdjjgf4og8" path="res://Textures/Atlas_Textures/Living_Quarters/Ceiling/wood_ceiling_bake_normal.png" id="3_bbci7"]
+[ext_resource type="Texture2D" uid="uid://54666cjnbst4" path="res://Textures/Atlas_Textures/Living_Quarters/Ceiling/wood_ceiling_bake_roughness.png" id="4_ipghn"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_53gb4")
+shader_parameter/Albedo_1 = ExtResource("2_q8eg0")
+shader_parameter/Albedo_2 = ExtResource("2_q8eg0")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("4_ipghn")
+shader_parameter/Roughness_2 = ExtResource("4_ipghn")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("3_bbci7")
+shader_parameter/Normal_Map_2 = ExtResource("3_bbci7")

@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cxw0hdrlpei5s"]
+
+[ext_resource type="Script" uid="uid://cqgef186dbrwr" path="res://Scripts/Clutter and Environmental/institute_clock.gd" id="1_ufqk1"]
+[ext_resource type="ArrayMesh" uid="uid://jx50dbtasire" path="res://Models/Furniture/Remnant/institute_clock.obj" id="1_yswww"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="2_7o5i8"]
+[ext_resource type="Texture2D" uid="uid://dca4aix3lm2xp" path="res://Textures/Generic/flat_normal.png" id="3_hm0pc"]
+[ext_resource type="Texture2D" uid="uid://cinl5h8oqc7bm" path="res://Textures/Clutter_and_Furniture/Clutter/Remnant/clock.png" id="4_ufqk1"]
+[ext_resource type="Texture2D" uid="uid://bh4nqvu80au60" path="res://Textures/Generic/dark_grey_plane.png" id="5_u0kp6"]
+[ext_resource type="ArrayMesh" uid="uid://cgnxmtnh11ojh" path="res://Models/Furniture/Remnant/institute_clock_minute.obj" id="6_u0kp6"]
+[ext_resource type="ArrayMesh" uid="uid://cjlon3vk2e0ht" path="res://Models/Furniture/Remnant/institute_clock_hour.obj" id="8_gr1vx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gr1vx"]
+render_priority = 0
+shader = ExtResource("2_7o5i8")
+shader_parameter/Generic_Albedo = Color(0.4680037, 0.4497338, 0.28704703, 1)
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.0
+shader_parameter/Normal_Map_1 = ExtResource("3_hm0pc")
+shader_parameter/Normal_Map_2 = ExtResource("3_hm0pc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ucwe"]
+render_priority = 0
+shader = ExtResource("2_7o5i8")
+shader_parameter/Albedo_2 = ExtResource("4_ufqk1")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Roughness_2 = ExtResource("4_ufqk1")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.0
+shader_parameter/Normal_Map_1 = ExtResource("3_hm0pc")
+shader_parameter/Normal_Map_2 = ExtResource("3_hm0pc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7lmq4"]
+render_priority = 0
+shader = ExtResource("2_7o5i8")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Roughness_2 = ExtResource("5_u0kp6")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 1.0
+shader_parameter/Normal_Map_2 = ExtResource("3_hm0pc")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ufqk1"]
+height = 0.05
+radius = 0.25
+
+[node name="InstituteClock" type="StaticBody3D" unique_id=1379088807]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_ufqk1")
+
+[node name="Metal" type="Node" parent="." unique_id=1706462150]
+
+[node name="ClockBody" type="MeshInstance3D" parent="." unique_id=174305714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = ExtResource("1_yswww")
+surface_material_override/0 = SubResource("ShaderMaterial_gr1vx")
+surface_material_override/1 = SubResource("ShaderMaterial_5ucwe")
+
+[node name="MinuteHand" type="MeshInstance3D" parent="." unique_id=1461819486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = ExtResource("6_u0kp6")
+surface_material_override/0 = SubResource("ShaderMaterial_7lmq4")
+
+[node name="HourHand" type="MeshInstance3D" parent="." unique_id=1845690197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = ExtResource("8_gr1vx")
+surface_material_override/0 = SubResource("ShaderMaterial_7lmq4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1974652560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+shape = SubResource("CylinderShape3D_ufqk1")
+
+[node name="Timer" type="Timer" parent="." unique_id=279717151]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

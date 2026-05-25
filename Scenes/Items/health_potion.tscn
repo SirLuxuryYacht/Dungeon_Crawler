@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dlmw4vih8sb2"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_ogw2f"]
+[ext_resource type="ArrayMesh" uid="uid://45f1ypurdnek" path="res://Models/Collectables/potion.obj" id="1_trvg6"]
+[ext_resource type="Shader" uid="uid://bbpkkc27gyusr" path="res://Shader_Materials/Glass_Shader.tres" id="2_kcdmg"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="3_e7gh7"]
+[ext_resource type="Texture2D" uid="uid://15rgkvyhiq1q" path="res://Textures/Collectables/Cork/cork_color.png" id="4_ogw2f"]
+[ext_resource type="Texture2D" uid="uid://7hitegj0nvj0" path="res://Textures/Collectables/Cork/cork_bake_normal.png" id="5_a7e7k"]
+[ext_resource type="Texture2D" uid="uid://cy8hl1rt1i8u0" path="res://Textures/Collectables/Cork/cork_bake_roughness.png" id="6_xm3ir"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y23yh"]
+render_priority = 0
+shader = ExtResource("2_kcdmg")
+shader_parameter/Content_Color = Color(0.38452226, 2.5599543e-06, 0.0027294469, 1)
+shader_parameter/Glass_Thickness = 10.0
+shader_parameter/Glass_Color = Color(0, 0.3027266, 0.40322942, 1)
+shader_parameter/Roughness = 0.12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hcrkb"]
+render_priority = 0
+shader = ExtResource("3_e7gh7")
+shader_parameter/Albedo_2 = ExtResource("4_ogw2f")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_2 = ExtResource("6_xm3ir")
+shader_parameter/MapBrightness = 1.0
+shader_parameter/UseVertexColor = false
+shader_parameter/Normal_Map_2 = ExtResource("5_a7e7k")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e7gh7"]
+radius = 0.061523438
+height = 0.31530762
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e7gh7"]
+radius = 0.35
+
+[node name="HealthPotion" type="Area3D" unique_id=1605177083]
+script = ExtResource("1_ogw2f")
+type = "item"
+item_name = "health_potion"
+
+[node name="Usable" type="Node" parent="." unique_id=820822479]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=585791758]
+mesh = ExtResource("1_trvg6")
+surface_material_override/0 = SubResource("ShaderMaterial_y23yh")
+surface_material_override/1 = SubResource("ShaderMaterial_hcrkb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1805946647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14520264, 0)
+shape = SubResource("CapsuleShape3D_e7gh7")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1837167621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13811001, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=695638636]
+shape = SubResource("SphereShape3D_e7gh7")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=741324121]

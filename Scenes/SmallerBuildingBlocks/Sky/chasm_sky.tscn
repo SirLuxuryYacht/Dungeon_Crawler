@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://o74jnhuqm25e"]
+
+[ext_resource type="Shader" uid="uid://bh2awegpmrrsc" path="res://Shader_Materials/Sky_Shader.res" id="1_3yype"]
+[ext_resource type="Texture2D" uid="uid://b0y5w4mi5f3cb" path="res://Textures/Sky/institute_chasm_sky_clouds.png" id="2_0pb87"]
+[ext_resource type="Texture2D" uid="uid://b652cu62u131f" path="res://Textures/Sky/institute_chasm_sky_vibrancy.png" id="3_f6krw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8ox5f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfeu4"]
+render_priority = 0
+shader = ExtResource("1_3yype")
+shader_parameter/LightTexture = ExtResource("3_f6krw")
+shader_parameter/Cloud_Scroll_Speed = -0.1
+shader_parameter/CloudTexture = ExtResource("2_0pb87")
+
+[node name="Chasm_Sky" type="MeshInstance3D"]
+transform = Transform3D(500, 0, 0, 0, -2.1855694e-05, 500, 0, -500, -2.1855694e-05, 0, 0, 0)
+mesh = SubResource("QuadMesh_8ox5f")
+surface_material_override/0 = SubResource("ShaderMaterial_vfeu4")

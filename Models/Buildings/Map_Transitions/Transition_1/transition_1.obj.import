@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cral4fdqevn4o"
+path="res://.godot/imported/transition_1.obj-706cd6073c59a782f93a5622e727716e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/transition_1.obj-706cd6073c59a782f93a5622e727716e.mesh"]
+
+source_file="res://Models/Buildings/Map_Transitions/Transition_1/transition_1.obj"
+dest_files=["res://.godot/imported/transition_1.obj-706cd6073c59a782f93a5622e727716e.mesh", "res://.godot/imported/transition_1.obj-706cd6073c59a782f93a5622e727716e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://67a67qpqtpw1"]
+
+[ext_resource type="AudioStream" uid="uid://bjgna48eah02q" path="res://Sounds/Impacts/water_impact_medium.ogg" id="1_oghfw"]
+[ext_resource type="Script" uid="uid://ef2e1pi4cnpb" path="res://Scripts/Gameplay/Dynamic_Objects/ricochet.gd" id="1_phcb0"]
+
+[node name="Splash" type="AudioStreamPlayer3D" unique_id=1286976929]
+stream = ExtResource("1_oghfw")
+script = ExtResource("1_phcb0")
+
+[node name="Timeout" type="Timer" parent="." unique_id=148384709]
+wait_time = 0.5
+one_shot = true

@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://n3ajsp7126fs"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_m7twg"]
+[ext_resource type="Texture2D" uid="uid://dwhj4s0v1ys5l" path="res://Textures/Geometry/Architecture/Wood_1/wood_1_color.png" id="2_n6yid"]
+[ext_resource type="Texture2D" uid="uid://cj753k3t4prf8" path="res://Textures/Geometry/Architecture/Wood_1/wood_1_bake_normal.png" id="3_rbifr"]
+[ext_resource type="Texture2D" uid="uid://bcd5asmjcbwks" path="res://Textures/Geometry/Architecture/Wood_1/wood_1_bake_roughness.png" id="4_urces"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_m7twg")
+shader_parameter/Albedo_1 = ExtResource("2_n6yid")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("4_urces")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("3_rbifr")

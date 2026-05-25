@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://m6kxv7q86od0"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_ijiyy"]
+[ext_resource type="Texture2D" uid="uid://cg3w4iqlsqj2a" path="res://Textures/Atlas_Textures/Snow_1/snow_1_color.png" id="2_pfbil"]
+[ext_resource type="Texture2D" uid="uid://bqq1kam3rr7n4" path="res://Textures/Atlas_Textures/Sandstone_1/sandstone_1_color.png" id="3_5udr0"]
+[ext_resource type="Texture2D" uid="uid://bfbu2mbd84inw" path="res://Textures/Atlas_Textures/Snow_1/snow_1_bake_normal.png" id="4_h6qno"]
+[ext_resource type="Texture2D" uid="uid://50rmau24aexv" path="res://Textures/Atlas_Textures/Sandstone_1/sandstone_1_bake_normal.png" id="5_72oou"]
+[ext_resource type="Texture2D" uid="uid://cudvi504sp26x" path="res://Textures/Atlas_Textures/Snow_1/snow_1_bake_roughness.png" id="6_sr8pi"]
+[ext_resource type="Texture2D" uid="uid://cfdldgd7ef3b6" path="res://Textures/Atlas_Textures/Sandstone_1/sandstone_1_bake_roughness.png" id="7_hhmi8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ijiyy")
+shader_parameter/Albedo_1 = ExtResource("2_pfbil")
+shader_parameter/Albedo_2 = ExtResource("3_5udr0")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("6_sr8pi")
+shader_parameter/Roughness_2 = ExtResource("7_hhmi8")
+shader_parameter/MapBrightness = 1.0
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("4_h6qno")
+shader_parameter/Normal_Map_2 = ExtResource("5_72oou")

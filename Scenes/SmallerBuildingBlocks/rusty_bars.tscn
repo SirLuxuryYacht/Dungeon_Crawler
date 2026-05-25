@@ -1,0 +1,76 @@
+[gd_scene load_steps=14 format=3 uid="uid://cuk14j6hf6opo"]
+
+[ext_resource type="ArrayMesh" uid="uid://c4j5w1agte30c" path="res://Models/Small_Stuff/rusty_bars.obj" id="1_mq0cr"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="2_mulei"]
+[ext_resource type="Texture2D" uid="uid://dt0h3h05n21y4" path="res://Textures/Geometry/Architecture/Rust_1/rust_1_color.png" id="3_6hrks"]
+[ext_resource type="Texture2D" uid="uid://c4ehw06nkyrii" path="res://Textures/Geometry/Architecture/Rust_1/rust_1_bake_normal.png" id="4_d7cel"]
+[ext_resource type="Texture2D" uid="uid://d3bj4pdw224vu" path="res://Textures/Geometry/Architecture/Rust_1/rust_1_bake_roughness.png" id="5_ggf6s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mg310"]
+render_priority = 0
+shader = ExtResource("2_mulei")
+shader_parameter/Albedo_1 = ExtResource("3_6hrks")
+shader_parameter/Roughness_1 = ExtResource("5_ggf6s")
+shader_parameter/Normal_Map_1 = ExtResource("4_d7cel")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5wv2"]
+radius = 0.075
+height = 2.380371
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h1tb6"]
+radius = 0.075
+height = 0.90649414
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m50hx"]
+radius = 0.075
+height = 0.39526367
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7202u"]
+radius = 0.075
+height = 1.0355225
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4awtv"]
+radius = 0.075
+height = 0.98583984
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ak1gh"]
+radius = 0.075
+height = 2.3911133
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_stlfm"]
+radius = 0.075
+height = 2.3828125
+
+[node name="RustyBars" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_mq0cr")
+surface_material_override/0 = SubResource("ShaderMaterial_mg310")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013427734, 1.0665665, 0.5388458)
+shape = SubResource("CapsuleShape3D_f5wv2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3326416, 0)
+shape = SubResource("CapsuleShape3D_h1tb6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.060669, 0)
+shape = SubResource("CapsuleShape3D_m50hx")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3887329, -0.2287235)
+shape = SubResource("CapsuleShape3D_7202u")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7736816, -0.22872305)
+shape = SubResource("CapsuleShape3D_4awtv")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0749512, 0.23704049)
+shape = SubResource("CapsuleShape3D_ak1gh")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0625, -0.4865565)
+shape = SubResource("CapsuleShape3D_stlfm")

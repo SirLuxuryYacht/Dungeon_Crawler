@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://fkwqu6owwxf0"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_5nkd0"]
+[ext_resource type="ArrayMesh" uid="uid://b3rivagypvq5p" path="res://Models/Collectables/lantern.obj" id="1_tcaph"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="3_qscvo"]
+[ext_resource type="Texture2D" uid="uid://cb6rsbqco3qjp" path="res://Textures/Collectables/Lantern/lantern_color.png" id="4_ehpub"]
+[ext_resource type="Texture2D" uid="uid://cl2tu33rrfxe4" path="res://Textures/Collectables/Lantern/lantern_bake_normal.png" id="5_2ktoh"]
+[ext_resource type="Texture2D" uid="uid://fdnibuk05j1" path="res://Textures/Collectables/Lantern/lantern_bake_roughness.png" id="6_qe3mn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qi4k4"]
+render_priority = 0
+shader = ExtResource("3_qscvo")
+shader_parameter/Albedo_2 = ExtResource("4_ehpub")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_2 = ExtResource("6_qe3mn")
+shader_parameter/MapBrightness = 0.5
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_2 = ExtResource("5_2ktoh")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tcaph"]
+radius = 0.2
+height = 0.46538162
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5nkd0"]
+radius = 1.0
+
+[node name="Lantern" type="Area3D" unique_id=984498546]
+script = ExtResource("1_5nkd0")
+type = "item"
+item_name = "lantern"
+
+[node name="Usable" type="Node" parent="." unique_id=1774209553]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=121291136]
+mesh = ExtResource("1_tcaph")
+surface_material_override/0 = SubResource("ShaderMaterial_qi4k4")
+surface_material_override/1 = SubResource("ShaderMaterial_qi4k4")
+surface_material_override/2 = SubResource("ShaderMaterial_qi4k4")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="." unique_id=763327630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23223686, 0)
+shape = SubResource("CapsuleShape3D_tcaph")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=874459574]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=2082274661]
+shape = SubResource("SphereShape3D_5nkd0")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1288180205]

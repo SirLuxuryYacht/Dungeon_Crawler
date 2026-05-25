@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dd8yu0cl13tq4"]
+
+[ext_resource type="Texture2D" uid="uid://pewmx7nfct62" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/grass_1_color.png" id="1_t0pvk"]
+[ext_resource type="Texture2D" uid="uid://dbmw6f6wfrjnh" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/grass_1_bake_normal.png" id="2_tw2pn"]
+
+[resource]
+albedo_texture = ExtResource("1_t0pvk")
+albedo_texture_force_srgb = true
+emission_enabled = true
+emission_texture = ExtResource("1_t0pvk")
+normal_enabled = true
+normal_texture = ExtResource("2_tw2pn")

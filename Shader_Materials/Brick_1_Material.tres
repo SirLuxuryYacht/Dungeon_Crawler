@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://k3cv1pmqswoa"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_v3463"]
+[ext_resource type="Texture2D" uid="uid://chm7jg6k74k75" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/Brick_1_small_roughness.png" id="2_1lt2p"]
+[ext_resource type="Texture2D" uid="uid://b74x7aw0b0iu3" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/Brick_1_small_color..png" id="2_jwmmb"]
+[ext_resource type="Texture2D" uid="uid://bia5tfpj76mhg" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/brick_1_bake_normal.png" id="3_ef73m"]
+[ext_resource type="Texture2D" uid="uid://mtonx40qdt6p" path="res://Textures/Geometry/Ground/Dry_Dirt_2/dry_dirt_2_color.png" id="3_hc1g7"]
+[ext_resource type="Texture2D" uid="uid://buxbh37du4byk" path="res://Textures/Geometry/Ground/Dry_Dirt_2/dirt_2_bake_normal.png" id="5_kvqb7"]
+[ext_resource type="Texture2D" uid="uid://pcmb34d20a3b" path="res://Textures/Geometry/Ground/Dry_Dirt_2/dirt_2_bake_roughness.png" id="7_qbxbm"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_v3463")
+shader_parameter/Albedo_1 = ExtResource("2_jwmmb")
+shader_parameter/Albedo_2 = ExtResource("3_hc1g7")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Roughness_1 = ExtResource("2_1lt2p")
+shader_parameter/Roughness_2 = ExtResource("7_qbxbm")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 1.0
+shader_parameter/Normal_Map_1 = ExtResource("3_ef73m")
+shader_parameter/Normal_Map_2 = ExtResource("5_kvqb7")

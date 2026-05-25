@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cijusirgqtej"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnkvlbr7v3wyw" path="res://Models/Small_Stuff/tree_1.obj" id="1_t3hvl"]
+[ext_resource type="Shader" uid="uid://djap51ieuxay8" path="res://PS2_Shader.tres" id="2_wf8p5"]
+[ext_resource type="Texture2D" uid="uid://kwbnp6j16a75" path="res://Textures/_Flat_Textures/Wood/wood_2.png" id="3_flgth"]
+[ext_resource type="Shader" uid="uid://blchvmkbnxy5q" path="res://Shader_Materials/Tree_Leave_Shader.tres" id="6_bhbq5"]
+[ext_resource type="Texture2D" uid="uid://d1fg310tbp5wu" path="res://Textures/Atlas_Textures/Vegetation/Tree_Leaves/leaves_color.png" id="7_h5nmf"]
+[ext_resource type="Texture2D" uid="uid://cafpswr0ba8gt" path="res://Textures/Atlas_Textures/Vegetation/Tree_Leaves/leaves_bake_roughness.png" id="8_sklus"]
+[ext_resource type="Texture2D" uid="uid://cdoftx5tggxl3" path="res://Textures/Atlas_Textures/Vegetation/Tree_Leaves/leaves_bake_normal.png" id="9_7tvxc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h5nmf"]
+render_priority = 0
+shader = ExtResource("2_wf8p5")
+shader_parameter/Albedo_1_uv_2 = false
+shader_parameter/Albedo = ExtResource("3_flgth")
+shader_parameter/Albedo_2_uv_2 = false
+shader_parameter/OverallBrightness = 0.750000035625
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wf8p5"]
+render_priority = 0
+shader = ExtResource("6_bhbq5")
+shader_parameter/Mask = ExtResource("8_sklus")
+shader_parameter/Roughness = ExtResource("8_sklus")
+shader_parameter/Albedo = ExtResource("7_h5nmf")
+shader_parameter/Normal_Map = ExtResource("9_7tvxc")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h5nmf"]
+radius = 0.46142578
+height = 9.518402
+
+[node name="Tree1" type="StaticBody3D" unique_id=2034088665]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1593713431]
+mesh = ExtResource("1_t3hvl")
+surface_material_override/0 = SubResource("ShaderMaterial_h5nmf")
+surface_material_override/1 = SubResource("ShaderMaterial_wf8p5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1238767944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1304295, 4.4865537, -0.17384887)
+shape = SubResource("CapsuleShape3D_h5nmf")

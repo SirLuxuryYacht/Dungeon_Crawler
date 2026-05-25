@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://djehr68oalcto"]
+
+[ext_resource type="PackedScene" uid="uid://cl7klqaafby8d" path="res://Scenes/Set_Pieces/Valley_3/valley_3.tscn" id="1_qbmpa"]
+[ext_resource type="Environment" uid="uid://bj3btc3dgd0wa" path="res://WorldEnvironments/Dark_Sunrise.tres" id="2_bp5is"]
+[ext_resource type="PackedScene" uid="uid://b8ryixcacmoom" path="res://Scenes/Gameplay_Scenes/Environment/clouds.tscn" id="3_ofn2r"]
+
+[node name="village" type="Node3D"]
+
+[node name="Valley_3" parent="." instance=ExtResource("1_qbmpa")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_bp5is")
+
+[node name="CloudPlane" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Clouds" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 0, 35, -4.172325e-06)
+skeleton = NodePath("../..")
+
+[node name="Clouds2" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 0, 35.00001, 99.99999)
+skeleton = NodePath("../..")
+
+[node name="Clouds3" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 0, 34.99999, -100.00001)
+skeleton = NodePath("../..")
+
+[node name="Clouds4" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 35, -4.172325e-06)
+skeleton = NodePath("../..")
+
+[node name="Clouds5" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 35.00001, 99.99999)
+skeleton = NodePath("../..")
+
+[node name="Clouds6" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 34.99999, -100.00001)
+skeleton = NodePath("../..")
+
+[node name="Clouds7" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -100, 35, -4.172325e-06)
+skeleton = NodePath("../..")
+
+[node name="Clouds8" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -100, 35.00001, 99.99999)
+skeleton = NodePath("../..")
+
+[node name="Clouds9" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -100, 34.99999, -100.00001)
+skeleton = NodePath("../..")
+
+[node name="Clouds10" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 0, 34.99999, -200)
+skeleton = NodePath("../..")
+
+[node name="Clouds11" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 34.99999, -200)
+skeleton = NodePath("../..")
+
+[node name="Clouds12" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -100, 34.99999, -201)
+skeleton = NodePath("../..")
+
+[node name="Clouds13" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 200, 35, -4.172325e-06)
+skeleton = NodePath("../..")
+
+[node name="Clouds14" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 200, 35.00001, 99.99999)
+skeleton = NodePath("../..")
+
+[node name="Clouds15" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 200, 34.99999, -100.00001)
+skeleton = NodePath("../..")
+
+[node name="Clouds17" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -200, 35, -4.172325e-06)
+skeleton = NodePath("../..")
+
+[node name="Clouds18" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -200, 35.00001, 99.99999)
+skeleton = NodePath("../..")
+
+[node name="Clouds19" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -200, 34.99999, -100.00001)
+skeleton = NodePath("../..")
+
+[node name="Clouds21" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 0, 35.00001, 200)
+skeleton = NodePath("../..")
+
+[node name="Clouds22" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 35.00001, 200)
+skeleton = NodePath("../..")
+
+[node name="Clouds23" parent="CloudPlane" instance=ExtResource("3_ofn2r")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -100, 35.00001, 200)
+skeleton = NodePath("../..")
+
+[node name="MapItems" type="Node3D" parent="."]

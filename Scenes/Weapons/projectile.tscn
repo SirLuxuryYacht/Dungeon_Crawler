@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://db267jjt6vr35"]
+
+[ext_resource type="Script" uid="uid://b0pmtratcpe1p" path="res://Scripts/Weapons/projectile.gd" id="1_4lkvf"]
+[ext_resource type="AudioStream" uid="uid://8k76yjsshot0" path="res://Sounds/Weapon_Swing/fast_swing_light.ogg" id="2_hyri1"]
+[ext_resource type="AudioStream" uid="uid://b2nu4sinswiui" path="res://Sounds/Weapon_Swing/fast_swing_heavy.ogg" id="3_qtxjg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hyri1"]
+radius = 0.025
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyri1"]
+albedo_color = Color(1, 0.48731148, 0.39488536, 1)
+emission_enabled = true
+emission = Color(0.99451, 0.7056079, 0.43621978, 1)
+emission_energy_multiplier = 11.78
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hyri1"]
+radius = 0.15
+height = 4.0
+
+[node name="Projectile" type="CharacterBody3D" unique_id=1064467763]
+script = ExtResource("1_4lkvf")
+
+[node name="Weapon" type="Area3D" parent="." unique_id=127493735]
+collision_layer = 528
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Weapon" unique_id=136728553]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("SphereMesh_hyri1")
+surface_material_override/0 = SubResource("StandardMaterial3D_hyri1")
+
+[node name="Light" type="AudioStreamPlayer3D" parent="Weapon" unique_id=95717130]
+stream = ExtResource("2_hyri1")
+
+[node name="Heavy" type="AudioStreamPlayer3D" parent="Weapon" unique_id=217107770]
+stream = ExtResource("3_qtxjg")
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="Weapon" unique_id=194346581]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Weapon" unique_id=162688691]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_hyri1")
+debug_color = Color(0.68669516, 0, 0.3380332, 0.41960785)
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1573402098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=405574684]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -2)
+shape = SubResource("CapsuleShape3D_hyri1")
+debug_color = Color(0.68669516, 0, 0.3380332, 0.41960785)
+
+[node name="RayCast3D" type="RayCast3D" parent="InteractionArea" unique_id=644546732]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -5.5, 0)
+collision_mask = 4
+hit_from_inside = true
+hit_back_faces = false
+collide_with_areas = true
+debug_shape_custom_color = Color(3.1766297e-06, 0.6494266, 0.31240708, 1)
+
+[node name="Lifetime" type="Timer" parent="." unique_id=1153526714]
+
+[node name="Glow" type="OmniLight3D" parent="." unique_id=31440669]
+light_color = Color(0.9999997, 0.86470973, 0.5915765, 1)
+omni_attenuation = 2.0
+
+[connection signal="body_entered" from="Weapon" to="." method="_on_weapon_body_entered"]
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

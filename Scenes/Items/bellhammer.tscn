@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://oheq43uib1pe"]
+
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_mnyve"]
+[ext_resource type="ArrayMesh" uid="uid://djuji1s0fs817" path="res://Models/Items/Weapons/Player/bellhammer.obj" id="2_553bw"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="3_ofi1s"]
+[ext_resource type="Texture2D" uid="uid://23i3mev0syyp" path="res://Textures/Collectables/Weapons/Bellhammer/bellhammer_bake_normal.png" id="4_553bw"]
+[ext_resource type="Texture2D" uid="uid://cw8l1e362xer8" path="res://Textures/Collectables/Weapons/Bellhammer/bellhammer_roughness_3.png" id="5_ynvq4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yyrfb"]
+render_priority = 0
+shader = ExtResource("3_ofi1s")
+shader_parameter/Generic_Albedo = Color(0.99999994, 0.6007178, 0.2406221, 1)
+shader_parameter/Roughness_1 = ExtResource("5_ynvq4")
+shader_parameter/Roughness_2 = ExtResource("5_ynvq4")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = true
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 1.0
+shader_parameter/MapBrightness = 0.6000000285
+shader_parameter/Normal_Map_1 = ExtResource("4_553bw")
+shader_parameter/Normal_Map_2 = ExtResource("4_553bw")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mc1kw"]
+radius = 0.068847656
+height = 1.6636238
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kg88u"]
+radius = 1.0
+
+[node name="Bellhammer" type="Area3D" unique_id=1238633931]
+script = ExtResource("1_mnyve")
+type = "item"
+item_name = "bellhammer"
+
+[node name="Weapon" type="Node" parent="." unique_id=1845565645]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=344142684]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("2_553bw")
+surface_material_override/0 = SubResource("ShaderMaterial_yyrfb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1678916669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6803303, 0)
+shape = SubResource("CapsuleShape3D_mc1kw")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1106914142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=583847589]
+shape = SubResource("SphereShape3D_kg88u")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1244735696]

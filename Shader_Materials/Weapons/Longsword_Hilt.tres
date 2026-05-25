@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dav2cnaaa5gku"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_db8hp"]
+[ext_resource type="Texture2D" uid="uid://dnj4oj2kdb1dx" path="res://Textures/Collectables/Weapons/Longsword/longsword_hilt_color.png" id="2_82c6n"]
+[ext_resource type="Texture2D" uid="uid://dknexrgrurw2d" path="res://Textures/Collectables/Weapons/Longsword/longsword_hilt_bake_normal.png" id="3_72m8n"]
+[ext_resource type="Texture2D" uid="uid://clfv05pckv6j8" path="res://Textures/Collectables/Weapons/Longsword/longsword_hilt_bake_roughness.png" id="4_402dk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_db8hp")
+shader_parameter/Albedo_2 = ExtResource("2_82c6n")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_2 = ExtResource("4_402dk")
+shader_parameter/MapBrightness = 0.5
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_2 = ExtResource("3_72m8n")

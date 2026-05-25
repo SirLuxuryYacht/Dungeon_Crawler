@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bmv56gunt1iyl"
+path="res://.godot/imported/unarmed.obj-0c3a82c5953ed6fa29847fd4fbbf1025.mesh"
+
+[deps]
+
+files=["res://.godot/imported/unarmed.obj-0c3a82c5953ed6fa29847fd4fbbf1025.mesh"]
+
+source_file="res://Models/Items/Weapons/Player/unarmed.obj"
+dest_files=["res://.godot/imported/unarmed.obj-0c3a82c5953ed6fa29847fd4fbbf1025.mesh", "res://.godot/imported/unarmed.obj-0c3a82c5953ed6fa29847fd4fbbf1025.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

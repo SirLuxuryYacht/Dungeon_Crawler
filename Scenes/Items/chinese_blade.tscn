@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cqvgaicr41dn8"]
+
+[ext_resource type="ArrayMesh" uid="uid://cmu1h3r2bioa5" path="res://Models/Items/Weapons/Player/chinese_sword.obj" id="1_lesqq"]
+[ext_resource type="Script" uid="uid://dtbmantphtp2o" path="res://Scripts/Items/field_item.gd" id="1_s42ju"]
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="2_33pe7"]
+[ext_resource type="Texture2D" uid="uid://damr2t82ho8ea" path="res://Textures/Atlas_Textures/Weapon_Textures/Hilt/hilt_bandages_bake_color.png" id="3_f83f3"]
+[ext_resource type="Texture2D" uid="uid://cyu3q6d5c3y0d" path="res://Textures/Atlas_Textures/Weapon_Textures/Hilt/hilt_bandages_bake_normal.png" id="4_4p8gn"]
+[ext_resource type="Texture2D" uid="uid://b32bw4vjg8b80" path="res://Textures/Atlas_Textures/Weapon_Textures/Hilt/hilt_bandages_bake_roughness.png" id="5_52krd"]
+[ext_resource type="Texture2D" uid="uid://dca4aix3lm2xp" path="res://Textures/Generic/flat_normal.png" id="6_8yi8j"]
+[ext_resource type="Texture2D" uid="uid://css3gc62md7wg" path="res://Textures/Atlas_Textures/Weapon_Textures/Blades/blade_horizontal_unsharpened_bake_normal.png" id="7_s42ju"]
+[ext_resource type="Texture2D" uid="uid://ckvry1q66rtc8" path="res://Textures/Atlas_Textures/Weapon_Textures/Blades/blade_horizontal_streaks_bake_roughness.png" id="8_cydqg"]
+[ext_resource type="Texture2D" uid="uid://dmhv7ubpboqlb" path="res://Textures/Atlas_Textures/Weapon_Textures/Blades/blade_horizontal_unsharpened_bake_roughness.png" id="9_28b3u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8yi8j"]
+render_priority = 0
+shader = ExtResource("2_33pe7")
+shader_parameter/Albedo_1 = ExtResource("3_f83f3")
+shader_parameter/Albedo_2 = ExtResource("3_f83f3")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness_1 = ExtResource("5_52krd")
+shader_parameter/Roughness_2 = ExtResource("5_52krd")
+shader_parameter/MapBrightness = 0.2
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("4_4p8gn")
+shader_parameter/Normal_Map_2 = ExtResource("4_4p8gn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gtr54"]
+render_priority = 0
+shader = ExtResource("2_33pe7")
+shader_parameter/Generic_Albedo = Color(0.22578251, 0.18424043, 0.115482576, 1)
+shader_parameter/Use_Color = true
+shader_parameter/Metallic = 1.0
+shader_parameter/Roughness_1 = ExtResource("8_cydqg")
+shader_parameter/Roughness_2 = ExtResource("9_28b3u")
+shader_parameter/MapBrightness = 0.2
+shader_parameter/UseVertexColor = true
+shader_parameter/Normal_Map_1 = ExtResource("6_8yi8j")
+shader_parameter/Normal_Map_2 = ExtResource("7_s42ju")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f83f3"]
+radius = 0.068847656
+height = 1.6875992
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4p8gn"]
+radius = 1.0
+
+[node name="ChineseBlade" type="Area3D" unique_id=1798473928]
+script = ExtResource("1_s42ju")
+type = "item"
+item_name = "chinese_blade"
+
+[node name="Weapon" type="Node" parent="." unique_id=378358621]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=226302825]
+mesh = ExtResource("1_lesqq")
+surface_material_override/0 = SubResource("ShaderMaterial_8yi8j")
+surface_material_override/1 = SubResource("ShaderMaterial_gtr54")
+surface_material_override/2 = SubResource("ShaderMaterial_gtr54")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=699847443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4697609, 0)
+shape = SubResource("CapsuleShape3D_f83f3")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=741217532]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea" unique_id=1693849658]
+shape = SubResource("SphereShape3D_4p8gn")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=834159180]

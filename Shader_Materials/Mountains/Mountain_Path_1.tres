@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://0478jlhg7vrt"]
+
+[ext_resource type="Shader" uid="uid://box166q7wvjnn" path="res://Shader_Materials/Non_Tiling.tres" id="1_gs4hd"]
+[ext_resource type="Texture2D" uid="uid://gf7wm8rqvkb8" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_1/mountain_rock_color.png" id="2_p2rcs"]
+[ext_resource type="Texture2D" uid="uid://8i7prchl4o4k" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_2/mountain_rock_2_color.png" id="3_xarkb"]
+[ext_resource type="Texture2D" uid="uid://c0npe1oidnfep" path="res://Textures/Atlas_Textures/Dry_Dirt_1/dry_grass_1_color.png" id="4_wpqt0"]
+[ext_resource type="Texture2D" uid="uid://t8kenytjt0h6" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_1/mountain_rock_bake_normal.png" id="5_2q6ee"]
+[ext_resource type="Texture2D" uid="uid://cm5mncr6vdy6a" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_2/mountain_rock_bake_normal.png" id="6_v5cxr"]
+[ext_resource type="Texture2D" uid="uid://uckoo5w6r8l0" path="res://Textures/Atlas_Textures/Dry_Dirt_1/dry_dirt_1_bake_normal.png" id="7_ixm1d"]
+[ext_resource type="Texture2D" uid="uid://bmox8tvbmdnje" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_1/mountain_rock_bake_roughness.png" id="8_cagst"]
+[ext_resource type="Texture2D" uid="uid://doej41r7346b8" path="res://Textures/Atlas_Textures/_Large_Textures/Mountain_Rock_2/mountain_rock_2_detail.png" id="9_mr8hk"]
+[ext_resource type="Texture2D" uid="uid://c4kmyjl0h6qsm" path="res://Textures/Atlas_Textures/Dry_Dirt_1/dry_grass_1_roughness.png" id="10_6dt62"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gs4hd")
+shader_parameter/Albedo_3 = ExtResource("4_wpqt0")
+shader_parameter/Albedo_1 = ExtResource("2_p2rcs")
+shader_parameter/Albedo_2 = ExtResource("3_xarkb")
+shader_parameter/Roughness_3 = ExtResource("10_6dt62")
+shader_parameter/Roughness_1 = ExtResource("8_cagst")
+shader_parameter/Roughness_2 = ExtResource("9_mr8hk")
+shader_parameter/Normal_Map_3 = ExtResource("7_ixm1d")
+shader_parameter/Normal_Map_1 = ExtResource("5_2q6ee")
+shader_parameter/Normal_Map_2 = ExtResource("6_v5cxr")

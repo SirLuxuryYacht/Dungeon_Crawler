@@ -1,0 +1,512 @@
+[gd_scene format=3 uid="uid://bcid4urbiufl4"]
+
+[ext_resource type="Script" uid="uid://d2cu0n25co4nq" path="res://Scripts/General_Scripts/QuestUpdateEvents.gd" id="1_n3bbo"]
+[ext_resource type="PackedScene" uid="uid://b8ryixcacmoom" path="res://Scenes/Gameplay_Scenes/Environment/clouds.tscn" id="4_40bug"]
+[ext_resource type="PackedScene" uid="uid://dfw2oeojkdeq" path="res://Scenes/Set_Pieces/Gate_1/gate_1.tscn" id="4_h0kst"]
+[ext_resource type="Environment" uid="uid://bj3btc3dgd0wa" path="res://WorldEnvironments/Dark_Sunrise.tres" id="4_vhgie"]
+[ext_resource type="PackedScene" uid="uid://b7hsbti8lc038" path="res://Scenes/SmallerBuildingBlocks/stone_doorway.tscn" id="8_8jhqi"]
+[ext_resource type="PackedScene" uid="uid://54u7q1cfysr" path="res://Scenes/Set_Pieces/Castle/castle_trench.tscn" id="8_d10jg"]
+[ext_resource type="PackedScene" uid="uid://dnrrlvg2kcrly" path="res://Scenes/Set_Pieces/Castle/castle_backyard.tscn" id="9_8jhqi"]
+[ext_resource type="PackedScene" uid="uid://btq1oixrdueit" path="res://Scenes/Set_Pieces/Castle/castle_cliff.tscn" id="9_fuxk1"]
+[ext_resource type="Script" uid="uid://d2lxfw5othnhm" path="res://Scripts/Gameplay/Environment/voids.gd" id="9_ipngy"]
+[ext_resource type="PackedScene" uid="uid://ckgnbsvvu8av5" path="res://Scenes/Set_Pieces/Castle/Castle_Yard_1/castle_yard.tscn" id="10_fuxk1"]
+[ext_resource type="PackedScene" uid="uid://d1afhva32rja4" path="res://Scenes/Set_Pieces/Castle/castle_living_quarters.tscn" id="11_0yx3f"]
+[ext_resource type="PackedScene" uid="uid://crenwdyjry0j4" path="res://Scenes/Set_Pieces/Castle/castle_graveyard.tscn" id="12_fbj7f"]
+[ext_resource type="PackedScene" uid="uid://dycid238xnt1d" path="res://Scenes/SmallerBuildingBlocks/Doors/stone_door.tscn" id="13_4mfaf"]
+[ext_resource type="PackedScene" uid="uid://5x1sa16y48g7" path="res://Scenes/NPC/Warrior1/warrior_1.tscn" id="14_j5gx2"]
+[ext_resource type="PackedScene" uid="uid://drnl4485uggc" path="res://Scenes/Set_Pieces/Castle/castle_moat.tscn" id="16_gf8ch"]
+[ext_resource type="PackedScene" uid="uid://diwi6pjap8v5h" path="res://Scenes/Vegetation/big_tree_1.tscn" id="17_v2n7r"]
+[ext_resource type="PackedScene" uid="uid://c414jql6tkhes" path="res://Scenes/Set_Pieces/Castle/castle_entrance.tscn" id="18_64n4n"]
+[ext_resource type="PackedScene" uid="uid://cv28vobjlt3mm" path="res://Scenes/SmallerBuildingBlocks/Doors/mirror_broken_part.tscn" id="18_efq72"]
+[ext_resource type="ArrayMesh" uid="uid://dcbgdsmm3n04a" path="res://Models/Buildings/Castle/Castle_Mountain_Backdrop/castle_mountain_backdrop.obj" id="19_irt3q"]
+[ext_resource type="PackedScene" uid="uid://obg50wpv0kql" path="res://Scenes/SmallerBuildingBlocks/Doors/iron_door.tscn" id="20_8suep"]
+[ext_resource type="PackedScene" uid="uid://dolssx1cpgrrw" path="res://Scenes/Set_Pieces/Castle/castle_mirror_hall.tscn" id="20_adveg"]
+[ext_resource type="PackedScene" uid="uid://io4j1p8v3k40" path="res://Scenes/Set_Pieces/Castle/castle_sanctum.tscn" id="23_b4agm"]
+[ext_resource type="PackedScene" uid="uid://cjvw1080uyfr0" path="res://Scenes/Set_Pieces/Castle/castle_tower.tscn" id="25_fso6f"]
+[ext_resource type="PackedScene" uid="uid://b4tn2pmgevkjk" path="res://Scenes/NPC/Trader_Test/trader_test.tscn" id="26_qmovr"]
+[ext_resource type="PackedScene" uid="uid://t6b8ir7mtowx" path="res://Scenes/Set_Pieces/Ballroom/ballroom.tscn" id="27_wog51"]
+[ext_resource type="PackedScene" uid="uid://cexw1x803fl6c" path="res://Scenes/Set_Pieces/Castle/castle_backyard_access.tscn" id="29_ovc1y"]
+[ext_resource type="PackedScene" uid="uid://dkd5xtipqh8mx" path="res://Scenes/Set_Pieces/Castle/castle_prison.tscn" id="30_va8tq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irt3q"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_d10jg"]
+size = Vector3(32, 16, 32)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jhqi"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fbj7f"]
+size = Vector3(32, 8, 32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_64n4n"]
+size = Vector3(256, 16, 256)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64n4n"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_irt3q"]
+size = Vector3(256, 17, 256)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_efq72"]
+radius = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_wog51"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wog51"]
+data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fuxk1"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4agm"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[node name="test" type="Node3D" unique_id=1726360397]
+script = ExtResource("1_n3bbo")
+map_brightness = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=969605949]
+environment = ExtResource("4_vhgie")
+
+[node name="Origin" type="Node3D" parent="." unique_id=1825438251]
+
+[node name="Gate1" parent="Origin" unique_id=598171442 instance=ExtResource("4_h0kst")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, -4, -41)
+
+[node name="CloudPlane" type="Node3D" parent="Origin" unique_id=42214377]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -148)
+
+[node name="Clouds" parent="Origin/CloudPlane" unique_id=1803607265 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 0, 35, -4.172325e-06)
+skeleton = NodePath("../../..")
+
+[node name="Clouds2" parent="Origin/CloudPlane" unique_id=21335177 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 0, 35.00001, 99.99999)
+skeleton = NodePath("../../..")
+
+[node name="Clouds4" parent="Origin/CloudPlane" unique_id=449401083 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 35, -4.172325e-06)
+skeleton = NodePath("../../..")
+
+[node name="Clouds5" parent="Origin/CloudPlane" unique_id=108661738 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 35.00001, 99.99999)
+skeleton = NodePath("../../..")
+
+[node name="Clouds6" parent="Origin/CloudPlane" unique_id=2056413533 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 34.99999, -100.00001)
+skeleton = NodePath("../../..")
+
+[node name="Clouds7" parent="Origin/CloudPlane" unique_id=2026863146 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -100, 35, -4.172325e-06)
+skeleton = NodePath("../../..")
+
+[node name="Clouds8" parent="Origin/CloudPlane" unique_id=41232920 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -100, 35.00001, 99.99999)
+skeleton = NodePath("../../..")
+
+[node name="Clouds9" parent="Origin/CloudPlane" unique_id=786100943 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -100, 34.99999, -100.00001)
+skeleton = NodePath("../../..")
+
+[node name="Clouds10" parent="Origin/CloudPlane" unique_id=2091140325 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 0, 34.99999, -200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds11" parent="Origin/CloudPlane" unique_id=2060377680 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 34.99999, -200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds12" parent="Origin/CloudPlane" unique_id=1887744970 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -99.99999, 34.99999, -200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds13" parent="Origin/CloudPlane" unique_id=738581936 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 200, 35, -4.172325e-06)
+skeleton = NodePath("../../..")
+
+[node name="Clouds14" parent="Origin/CloudPlane" unique_id=1706790024 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 200, 35.00001, 99.99999)
+skeleton = NodePath("../../..")
+
+[node name="Clouds15" parent="Origin/CloudPlane" unique_id=1299889067 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 200, 34.99999, -100.00001)
+skeleton = NodePath("../../..")
+
+[node name="Clouds16" parent="Origin/CloudPlane" unique_id=1664107271 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 200, 34.99999, -200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds17" parent="Origin/CloudPlane" unique_id=982480623 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -200, 35, -4.172325e-06)
+skeleton = NodePath("../../..")
+
+[node name="Clouds18" parent="Origin/CloudPlane" unique_id=980070736 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -200, 35.00001, 99.99999)
+skeleton = NodePath("../../..")
+
+[node name="Clouds19" parent="Origin/CloudPlane" unique_id=1335300167 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -200, 34.99999, -100.00001)
+skeleton = NodePath("../../..")
+
+[node name="Clouds20" parent="Origin/CloudPlane" unique_id=1764929831 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -200, 34.99999, -200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds21" parent="Origin/CloudPlane" unique_id=2083162946 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 0, 35.00001, 200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds22" parent="Origin/CloudPlane" unique_id=82362265 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100, 35.00001, 200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds23" parent="Origin/CloudPlane" unique_id=35677023 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -100, 35.00001, 200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds24" parent="Origin/CloudPlane" unique_id=1356824682 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 200, 35.00001, 200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds25" parent="Origin/CloudPlane" unique_id=1639402763 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -200, 35.00001, 200)
+skeleton = NodePath("../../..")
+
+[node name="Clouds26" parent="Origin/CloudPlane" unique_id=580892010 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -8.742245e-08, 34.99999, -300)
+skeleton = NodePath("../../..")
+
+[node name="Clouds27" parent="Origin/CloudPlane" unique_id=823266315 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100.00001, 34.99999, -300)
+skeleton = NodePath("../../..")
+
+[node name="Clouds28" parent="Origin/CloudPlane" unique_id=648674132 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -99.99999, 34.99999, -300)
+skeleton = NodePath("../../..")
+
+[node name="Clouds29" parent="Origin/CloudPlane" unique_id=1616027985 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 200, 34.99999, -300)
+skeleton = NodePath("../../..")
+
+[node name="Clouds30" parent="Origin/CloudPlane" unique_id=615035284 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -200, 34.99999, -300)
+skeleton = NodePath("../../..")
+
+[node name="Clouds31" parent="Origin/CloudPlane" unique_id=1164882637 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 300, 35, 1.5258789e-05)
+skeleton = NodePath("../../..")
+
+[node name="Clouds32" parent="Origin/CloudPlane" unique_id=581061068 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 299.99994, 35.00001, 100)
+skeleton = NodePath("../../..")
+
+[node name="Clouds33" parent="Origin/CloudPlane" unique_id=1372218654 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 300, 34.99999, -100)
+skeleton = NodePath("../../..")
+
+[node name="Clouds34" parent="Origin/CloudPlane" unique_id=676507594 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 299.99997, 34.99999, -199.99998)
+skeleton = NodePath("../../..")
+
+[node name="Clouds35" parent="Origin/CloudPlane" unique_id=814042253 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 299.99997, 35.00001, 200.00003)
+skeleton = NodePath("../../..")
+
+[node name="Clouds36" parent="Origin/CloudPlane" unique_id=1967779712 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 299.9999, 34.99999, -300)
+skeleton = NodePath("../../..")
+
+[node name="Clouds42" parent="Origin/CloudPlane" unique_id=1134708701 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 400, 35, 1.5258789e-05)
+skeleton = NodePath("../../..")
+
+[node name="Clouds43" parent="Origin/CloudPlane" unique_id=277252862 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 399.9999, 35.00001, 100)
+skeleton = NodePath("../../..")
+
+[node name="Clouds44" parent="Origin/CloudPlane" unique_id=774693693 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 400, 34.99999, -99.999985)
+skeleton = NodePath("../../..")
+
+[node name="Clouds45" parent="Origin/CloudPlane" unique_id=224587865 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 399.99994, 34.99999, -199.99998)
+skeleton = NodePath("../../..")
+
+[node name="Clouds46" parent="Origin/CloudPlane" unique_id=1488251010 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 399.99997, 35.00001, 200.00003)
+skeleton = NodePath("../../..")
+
+[node name="Clouds47" parent="Origin/CloudPlane" unique_id=981504177 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 399.99988, 34.99999, -300)
+skeleton = NodePath("../../..")
+
+[node name="Clouds37" parent="Origin/CloudPlane" unique_id=578978437 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 100.00002, 34.99999, -400)
+skeleton = NodePath("../../..")
+
+[node name="Clouds39" parent="Origin/CloudPlane" unique_id=798103265 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, 1.9710322e-05, 34.99999, -400)
+skeleton = NodePath("../../..")
+
+[node name="Clouds40" parent="Origin/CloudPlane" unique_id=1339267085 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -99.99998, 34.99999, -400)
+skeleton = NodePath("../../..")
+
+[node name="Clouds41" parent="Origin/CloudPlane" unique_id=1355890372 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -199.99998, 34.99999, -400)
+skeleton = NodePath("../../..")
+
+[node name="Clouds48" parent="Origin/CloudPlane" unique_id=663965429 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -300, 35, -1.5258789e-05)
+skeleton = NodePath("../../..")
+
+[node name="Clouds49" parent="Origin/CloudPlane" unique_id=1529150331 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -300.00003, 35.00001, 99.99997)
+skeleton = NodePath("../../..")
+
+[node name="Clouds50" parent="Origin/CloudPlane" unique_id=1620099987 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -300, 34.99999, -100.000015)
+skeleton = NodePath("../../..")
+
+[node name="Clouds51" parent="Origin/CloudPlane" unique_id=1842563668 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -300, 34.99999, -200.00002)
+skeleton = NodePath("../../..")
+
+[node name="Clouds52" parent="Origin/CloudPlane" unique_id=1736136676 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -300.00003, 35.00001, 199.99997)
+skeleton = NodePath("../../..")
+
+[node name="Clouds53" parent="Origin/CloudPlane" unique_id=1197191764 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -300.00003, 34.99999, -300)
+skeleton = NodePath("../../..")
+
+[node name="Clouds54" parent="Origin/CloudPlane" unique_id=808894370 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -299.99997, 34.99999, -400)
+skeleton = NodePath("../../..")
+
+[node name="Clouds38" parent="Origin/CloudPlane" unique_id=5528188 instance=ExtResource("4_40bug")]
+transform = Transform3D(1, 0, 0, 0, 1.1920929e-07, -1, 0, 1, 1.1920929e-07, -8.742277e-06, 34.99999, -100)
+skeleton = NodePath("../../..")
+
+[node name="CastleBackyard" parent="Origin" unique_id=1947279400 instance=ExtResource("9_8jhqi")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5, -4, -1)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Origin" unique_id=79387546]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0)
+visible = false
+
+[node name="CastleTrench" parent="Origin" unique_id=1875883441 instance=ExtResource("8_d10jg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5, -4, -11)
+
+[node name="StoneDoorway" parent="Origin" unique_id=1521727404 instance=ExtResource("8_8jhqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -4.58, -1)
+
+[node name="StoneDoorway2" parent="Origin" unique_id=1033985946 instance=ExtResource("8_8jhqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, -4.58, -21)
+
+[node name="StoneDoorway3" parent="Origin" unique_id=701873559 instance=ExtResource("8_8jhqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -4.58, -21)
+
+[node name="StoneDoorway4" parent="Origin" unique_id=1232148252 instance=ExtResource("8_8jhqi")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7, -4.58, -11)
+
+[node name="CastleCliff" parent="Origin" unique_id=1926686321 instance=ExtResource("9_fuxk1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -17.5, -4, -21)
+
+[node name="CastleYard" parent="Origin" unique_id=927473517 instance=ExtResource("10_fuxk1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, -4, -2.5)
+
+[node name="CastleLivingQuarters" parent="Origin" unique_id=1126191058 instance=ExtResource("11_0yx3f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 45.5, 2, 10)
+
+[node name="CastleMirrorHall" parent="Origin" unique_id=324941694 instance=ExtResource("20_adveg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 50.5, 2, -11)
+
+[node name="MirrorBrokenPart" parent="Origin" unique_id=895419120 instance=ExtResource("18_efq72")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 50.5, 2, -11)
+
+[node name="CastleSanctum" parent="Origin" unique_id=1184904578 instance=ExtResource("23_b4agm")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 50, 6, -78)
+
+[node name="CastleGraveyard" parent="Origin" unique_id=1235913387 instance=ExtResource("12_fbj7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -4, -48)
+
+[node name="CastleMoat" parent="Origin" unique_id=1570458288 instance=ExtResource("16_gf8ch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -4, 15)
+
+[node name="StoneDoorway5" parent="Origin" unique_id=1113935730 instance=ExtResource("8_8jhqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, -4.58, 0)
+
+[node name="CastleEntrance" parent="Origin" unique_id=782022478 instance=ExtResource("18_64n4n")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.5, -5, 35)
+
+[node name="StoneDoor" parent="Origin" unique_id=423006880 instance=ExtResource("13_4mfaf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, -4, -32)
+
+[node name="StoneDoor3" parent="Origin" unique_id=1310245461 instance=ExtResource("13_4mfaf")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 60.5, 6, -67.5)
+
+[node name="IronDoor" parent="Origin" unique_id=1982529583 instance=ExtResource("20_8suep")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15, -4, 35)
+
+[node name="IronDoor2" parent="Origin" unique_id=584297238 instance=ExtResource("20_8suep")]
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, 40, 6, -88)
+
+[node name="IronDoor3" parent="Origin" unique_id=2138480244 instance=ExtResource("20_8suep")]
+transform = Transform3D(-0.9999999, 0, -1.4702741e-07, 0, 1, 0, 1.4702741e-07, 0, -0.9999999, 30.5, 2, 25)
+
+[node name="MountainBackdrop" type="MeshInstance3D" parent="Origin" unique_id=1790716272]
+transform = Transform3D(-0.966551, 0, 0.2564749, 0, 1, 0, -0.2564749, 0, -0.966551, -194, -12, 173.55542)
+mesh = ExtResource("19_irt3q")
+surface_material_override/0 = SubResource("StandardMaterial3D_irt3q")
+
+[node name="Voids" type="Node3D" parent="Origin" unique_id=1104845580]
+script = ExtResource("9_ipngy")
+
+[node name="Void1" type="Area3D" parent="Origin/Voids" unique_id=512624258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, -16, -60)
+collision_layer = 256
+collision_mask = 256
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Origin/Voids/Void1" unique_id=1601498171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -5, -15)
+mesh = SubResource("BoxMesh_d10jg")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8jhqi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Origin/Voids/Void1" unique_id=914160863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_fbj7f")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Origin/Voids/Void1" unique_id=416900786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 23)
+mesh = SubResource("BoxMesh_d10jg")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8jhqi")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Origin/Voids/Void1" unique_id=316406399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 4.5, 38)
+shape = SubResource("BoxShape3D_fbj7f")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Origin/Voids/Void1" unique_id=1664072687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, -8.5, 84)
+mesh = SubResource("BoxMesh_d10jg")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8jhqi")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Origin/Voids/Void1" unique_id=341243209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, -8.5, 84)
+shape = SubResource("BoxShape3D_fbj7f")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Origin/Voids/Void1" unique_id=73463161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, -26, 119)
+mesh = SubResource("BoxMesh_64n4n")
+surface_material_override/0 = SubResource("StandardMaterial3D_64n4n")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Origin/Voids/Void1" unique_id=1000386176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, -25.5, 119)
+shape = SubResource("BoxShape3D_irt3q")
+
+[node name="Warrior1" parent="Origin" unique_id=1637409692 instance=ExtResource("14_j5gx2")]
+transform = Transform3D(0.41151437, 0, -0.9114033, 0, 1, 0, 0.9114033, 0, 0.41151437, -5, -4, 9)
+
+[node name="Trees" type="Node3D" parent="Origin" unique_id=1749937809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -133)
+
+[node name="BigTree1" parent="Origin/Trees" unique_id=2024730461 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="BigTree2" parent="Origin/Trees" unique_id=1898686694 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.860611, 0, 2.4113464)
+
+[node name="BigTree3" parent="Origin/Trees" unique_id=731876099 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -13.815945, 0, -14.322952)
+
+[node name="BigTree4" parent="Origin/Trees" unique_id=624875995 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -36.815945, 0, -10.322952)
+
+[node name="QuestUpdaterTest" type="Area3D" parent="Origin" unique_id=436382338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -2, -21)
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Origin/QuestUpdaterTest" unique_id=1247808411]
+shape = SubResource("SphereShape3D_efq72")
+
+[node name="CastleTower" parent="Origin" unique_id=826199152 instance=ExtResource("25_fso6f")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 27, 1, 41)
+
+[node name="TraderTest" parent="Origin" unique_id=1008827689 instance=ExtResource("26_qmovr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -3, 2)
+
+[node name="SanctumTrees" type="Node3D" parent="Origin" unique_id=1293880896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -42)
+
+[node name="BigTree1" parent="Origin/SanctumTrees" unique_id=1048841718 instance=ExtResource("17_v2n7r")]
+
+[node name="BigTree2" parent="Origin/SanctumTrees" unique_id=1611279860 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(0.6376526, 0, -0.77032405, 0, 1, 0, 0.77032405, 0, 0.6376526, 11, 0.9560213, 5)
+
+[node name="BigTree3" parent="Origin/SanctumTrees" unique_id=1357801709 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(0.9434255, 0.052335955, 0.32742813, -0.049442843, 0.9986295, -0.017159782, -0.32787746, -1.110223e-16, 0.9447202, 21, -3.5508614, 9)
+
+[node name="BigTree4" parent="Origin/SanctumTrees" unique_id=1111151131 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, -4.1986885, 0)
+
+[node name="BigTree5" parent="Origin/SanctumTrees" unique_id=701016766 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(0.9075284, 0, 0.4199907, 0, 1, 0, -0.4199907, 0, 0.9075284, 29, -8.156891, 0)
+
+[node name="BigTree6" parent="Origin/SanctumTrees" unique_id=807316963 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(-0.40412006, 0, -0.91470593, 0, 1, 0, 0.91470593, 0, -0.40412006, 39, 0.70326805, 4)
+
+[node name="BigTree7" parent="Origin/SanctumTrees" unique_id=670691654 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(-0.9905838, 0, -0.13690856, 0, 1, 0, 0.13690856, 0, -0.9905838, 53.418335, 0, -60.430428)
+
+[node name="BigTree8" parent="Origin/SanctumTrees" unique_id=426334409 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(-0.7371122, 0, 0.6757704, 0, 1, 0, -0.6757704, 0, -0.7371122, 41.837368, 0.9560213, -63.87735)
+
+[node name="BigTree9" parent="Origin/SanctumTrees" unique_id=801427360 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(-0.88965285, -0.05184315, -0.4536853, -0.049442846, 0.9986296, -0.017159782, 0.45395312, 0.007165241, -0.89099693, 31.383896, -3.5508614, -66.470604)
+
+[node name="BigTree10" parent="Origin/SanctumTrees" unique_id=539153444 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(-0.9905838, 0, -0.13690856, 0, 1, 0, 0.13690856, 0, -0.9905838, 36.578407, -4.1986885, -58.10298)
+
+[node name="BigTree11" parent="Origin/SanctumTrees" unique_id=111431237 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(-0.8414825, 0, -0.54028434, 0, 1, 0, 0.54028434, 0, -0.8414825, 24.691402, -8.156891, -56.460075)
+
+[node name="BigTree12" parent="Origin/SanctumTrees" unique_id=277353396 instance=ExtResource("17_v2n7r")]
+transform = Transform3D(0.27508366, 0, 0.9614203, 0, 1, 0, -0.9614203, 0, 0.27508366, 14.23793, 0.70326805, -59.05332)
+
+[node name="CastleBackyardAccess" parent="Origin" unique_id=2140963017 instance=ExtResource("29_ovc1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 7)
+
+[node name="CastlePrison" parent="Origin" unique_id=131175684 instance=ExtResource("30_va8tq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, -24, 40)
+
+[node name="Ballroom" parent="Origin" unique_id=958804594 instance=ExtResource("27_wog51")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17.5, 2, 2)
+
+[node name="WhiteBox1" type="StaticBody3D" parent="Origin" unique_id=1028124556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 1, 24)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Origin/WhiteBox1" unique_id=24279799]
+mesh = SubResource("BoxMesh_wog51")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Origin/WhiteBox1" unique_id=2125193913]
+shape = SubResource("ConcavePolygonShape3D_wog51")
+
+[node name="Probe" type="MeshInstance3D" parent="." unique_id=1436077890]
+visible = false
+mesh = SubResource("SphereMesh_fuxk1")
+surface_material_override/0 = SubResource("StandardMaterial3D_b4agm")
+
+[connection signal="area_entered" from="Origin/Voids/Void1" to="Origin/Voids" method="_on_void_1_area_entered"]
+[connection signal="body_entered" from="Origin/Voids/Void1" to="Origin/Voids" method="_on_void_1_body_entered"]
+[connection signal="body_entered" from="Origin/QuestUpdaterTest" to="." method="_on_quest_updater_test_body_entered"]

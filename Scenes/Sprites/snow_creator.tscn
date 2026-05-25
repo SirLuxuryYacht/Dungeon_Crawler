@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cemp7tqs06om5"]
+
+[ext_resource type="Script" uid="uid://dow2yw5xvbo4s" path="res://Scripts/Gameplay/Sprites/snow.gd" id="1_6j8t2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6j8t2"]
+radius = 35.0
+
+[node name="SnowCreator" type="Node3D" unique_id=1785591583]
+script = ExtResource("1_6j8t2")
+mean_lifetime = 2.0
+float_direction = Vector3(1, -0.5, 0)
+wind_velocity = 30.0
+snow_radius = 20.0
+snow_density = 1.0
+snow_multiplicity = 5
+
+[node name="Area3D" type="Area3D" parent="." unique_id=663381179]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=656954295]
+shape = SubResource("SphereShape3D_6j8t2")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

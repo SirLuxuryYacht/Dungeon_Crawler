@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bld3co8bi0ilb"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_t0bt3"]
+[ext_resource type="Texture2D" uid="uid://dbmw6f6wfrjnh" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/grass_1_bake_normal.png" id="2_t0bt3"]
+[ext_resource type="Texture2D" uid="uid://pewmx7nfct62" path="res://Textures/Atlas_Textures/Grass_1 + Brick_1/grass_1_color.png" id="2_wpjun"]
+[ext_resource type="Texture2D" uid="uid://c0npe1oidnfep" path="res://Textures/Atlas_Textures/Dry_Dirt_1/dry_grass_1_color.png" id="3_4swut"]
+[ext_resource type="Texture2D" uid="uid://uckoo5w6r8l0" path="res://Textures/Atlas_Textures/Dry_Dirt_1/dry_dirt_1_bake_normal.png" id="5_4swut"]
+[ext_resource type="Texture2D" uid="uid://c4kmyjl0h6qsm" path="res://Textures/Atlas_Textures/Dry_Dirt_1/dry_grass_1_roughness.png" id="6_3oy07"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_t0bt3")
+shader_parameter/Albedo_1 = ExtResource("2_wpjun")
+shader_parameter/Albedo_2 = ExtResource("3_4swut")
+shader_parameter/Generic_Albedo = Color(0.883834, 0.50709, 2e-06, 1)
+shader_parameter/Roughness_2 = ExtResource("6_3oy07")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 1.0
+shader_parameter/Normal_Map_1 = ExtResource("2_t0bt3")
+shader_parameter/Normal_Map_2 = ExtResource("5_4swut")

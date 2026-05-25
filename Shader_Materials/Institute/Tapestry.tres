@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://7mxv0n6wni5m"]
+
+[ext_resource type="Shader" uid="uid://duhtm8c51qnr7" path="res://Shader_Materials/Albedo_Mask_Shader.tres" id="1_8jjo6"]
+[ext_resource type="Texture2D" uid="uid://cm1d8ix4krc3g" path="res://Textures/Atlas_Textures/Institute/Tapestry/institute_tapestry_color.png" id="2_dbyg2"]
+[ext_resource type="Texture2D" uid="uid://bydxwmgbr87rk" path="res://Textures/Atlas_Textures/Institute/Tapestry/institute_tapestry_bake_normal.png" id="3_5wueb"]
+[ext_resource type="Texture2D" uid="uid://bngg6hgcxgu7r" path="res://Textures/Atlas_Textures/Institute/Tapestry/institute_tapestry_bake_roughness.png" id="4_p17xd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8jjo6")
+shader_parameter/Albedo_2 = ExtResource("2_dbyg2")
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/Roughness_2 = ExtResource("4_p17xd")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 0.0
+shader_parameter/Normal_Map_2 = ExtResource("3_5wueb")
