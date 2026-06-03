@@ -39,7 +39,7 @@ stream = ExtResource("3_qtxjg")
 [node name="Hit" type="AudioStreamPlayer3D" parent="Weapon" unique_id=194346581]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Weapon" unique_id=162688691]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 8.742278e-08, -2)
 shape = SubResource("CapsuleShape3D_hyri1")
 debug_color = Color(0.68669516, 0, 0.3380332, 0.41960785)
 
@@ -49,12 +49,12 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=405574684]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -2)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 8.742278e-08, -4)
 shape = SubResource("CapsuleShape3D_hyri1")
 debug_color = Color(0.68669516, 0, 0.3380332, 0.41960785)
 
 [node name="RayCast3D" type="RayCast3D" parent="InteractionArea" unique_id=644546732]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 8.742278e-08, -2)
 target_position = Vector3(0, -5.5, 0)
 collision_mask = 4
 hit_from_inside = true
