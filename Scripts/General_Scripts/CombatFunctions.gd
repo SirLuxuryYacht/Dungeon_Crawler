@@ -68,12 +68,14 @@ func resistanceCurve(lvl: float) -> float: #lvl is composed of general level and
 	return snapped(5 * (1 + tanh((lvl - 25.7)/5.2)) + sqrt(lvl + 2) - 0.7327993,0.05) #extremely arbitrary function with a bump at around lvl 26 with a steep increase in resistance
 
 
-func fireProjectile(Gameplay: Node, Projectile: CharacterBody3D, radius: float, damage: Array, velocity: Vector3,damping: float, lifetime: float,where: Vector3, rotation: Vector3) -> void:
+func fireProjectile(Gameplay: Node, Projectile: CharacterBody3D, radius: float, damage: Array, velocity: Vector3,damping: float,damp_inhibiting_time: float, lifetime: float,damping_affect: bool,where: Vector3, rotation: Vector3) -> void:
 	Projectile.initial_velocity = velocity
 	Projectile.lifetime = lifetime
 	Projectile.damage = damage
 	Projectile.damping = damping
 	Projectile.radius = radius
+	Projectile.damping_affect = damping_affect
+	Projectile.damp_inhibiting_time = damp_inhibiting_time
 	Projectile.get_node("Weapon").rotation.x = rotation.x
 	Projectile.get_node("InteractionArea").rotation.x = rotation.x
 	Gameplay.addMisc(Projectile,where,rotation)

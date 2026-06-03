@@ -94,7 +94,7 @@ func fire() -> void:
 	if attack_type == "heavy":
 		firing_damage = heavy_damage
 	var shot_direction = Muzzle2.global_position - Muzzle.global_position
-	CombatFunctions.fireProjectile(Gameplay,load("res://Scenes/Weapons/projectile.tscn").instantiate(),projectile_radius,firing_damage,Gameplay.getPlayer().velocity + projectileSpeed(attack_type) * shot_direction,0.005,7,Muzzle.global_position,Vector3(0,Muzzle.global_rotation.y,0))
+	CombatFunctions.fireProjectile(Gameplay,load("res://Scenes/Weapons/projectile.tscn").instantiate(),projectile_radius,firing_damage,Gameplay.getPlayer().velocity + projectileSpeed(attack_type) * shot_direction,0.005,0.15,7,false,Muzzle.global_position,Vector3(0,Muzzle.global_rotation.y,0))
 	CombatFunctions.particleImpact(Gameplay,"medium",Muzzle2.global_position,"dust",shot_direction,true)
 	$FlashDuration.start()
 

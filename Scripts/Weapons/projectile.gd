@@ -40,14 +40,23 @@ var radius
 
 var bounce_amount = 0
 
+var damping_affect
+
+var damp_inhibiting_time
+
 @onready var Gameplay = get_tree().root.get_node("Main/Gameplay")
 @onready var Weapon = $Weapon
 @onready var GeometryInteractor = $InteractionArea
+@onready var DampInhibitor = $DampInhibitor
 
 func _ready() -> void:
 	velocity = initial_velocity
 	start_velocity = initial_velocity
 	initial_damage = damage
+	
+	if damping_affect == false:
+		DampInhibitor.start(damp_inhibiting_time)
+	
 	$Lifetime.start(lifetime)
 	if model != null:
 		$Weapon/MeshInstance3D.mesh = model
@@ -57,7 +66,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
-	velocity += delta * (gravitation - damping * (velocity.length())**2 * velocity.normalized())
+	if damping_affect:
+		velocity += delta * (gravitation - damping * (velocity.length())**2 * velocity.normalized())
 	var temp_damage = []
 	for i in damage.size():
 		if i == 0:
@@ -118,3 +128,7 @@ func _on_interaction_area_area_entered(area: Area3D) -> void: #mainly for water,
 
 func _on_weapon_body_entered(body: Node3D) -> void:
 	Gameplay.addMisc(load("res://Scenes/SoundPlayers/ricochet.tscn").instantiate(),position,Vector3.ZERO)
+
+
+func _on_damp_inhibitor_timeout() -> void:
+	damping_affect = true

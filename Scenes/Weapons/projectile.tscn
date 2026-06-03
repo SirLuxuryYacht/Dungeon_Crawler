@@ -64,6 +64,9 @@ debug_shape_custom_color = Color(3.1766297e-06, 0.6494266, 0.31240708, 1)
 
 [node name="Lifetime" type="Timer" parent="." unique_id=1153526714]
 
+[node name="DampInhibitor" type="Timer" parent="." unique_id=1110105105]
+one_shot = true
+
 [node name="Glow" type="OmniLight3D" parent="." unique_id=31440669]
 light_color = Color(0.9999997, 0.86470973, 0.5915765, 1)
 omni_attenuation = 2.0
@@ -72,3 +75,4 @@ omni_attenuation = 2.0
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
+[connection signal="timeout" from="DampInhibitor" to="." method="_on_damp_inhibitor_timeout"]
