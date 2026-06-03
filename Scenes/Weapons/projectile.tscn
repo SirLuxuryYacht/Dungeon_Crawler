@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://b2nu4sinswiui" path="res://Sounds/Weapon_Swing/fast_swing_heavy.ogg" id="3_qtxjg"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_hyri1"]
-radius = 0.025
+radius = 0.013
 height = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyri1"]
