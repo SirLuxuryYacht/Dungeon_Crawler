@@ -39,7 +39,7 @@ func _ready() -> void:
 	HurtBox.set_deferred("disabled",true)
 
 
-func getPivotAnimation() -> Node3D:
+func getPivotAnimation() -> Node:
 	return $AnimationPlayer
 
 

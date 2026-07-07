@@ -61,7 +61,7 @@ func projectileSpeed(attack_type_: String) -> float:
 	return speed
 
 
-func getPivotAnimation() -> Node3D:
+func getPivotAnimation() -> Node:
 	return $AnimationPlayer
 
 
