@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://mar4kdkuiqaq"]
+
+[ext_resource type="Shader" uid="uid://djap51ieuxay8" path="res://PS2_Shader.tres" id="1_orjre"]
+[ext_resource type="Texture2D" uid="uid://sum2kejrojss" path="res://Textures/_Flat_Textures/Metals/rusty_metal_1.png" id="2_c03b0"]
+[ext_resource type="Texture2D" uid="uid://cu27au2e8by8c" path="res://Textures/_Flat_Textures/Ground/rocky_ground_3.png" id="3_dn1df"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_orjre")
+shader_parameter/Albedo_1_uv_2 = false
+shader_parameter/Albedo1 = ExtResource("2_c03b0")
+shader_parameter/UseBlueChannel = false
+shader_parameter/Tint_1 = Color(1, 1, 1, 1)
+shader_parameter/Albedo_2_uv_2 = false
+shader_parameter/Albedo2 = ExtResource("3_dn1df")
+shader_parameter/Tint_2 = Color(1, 1, 1, 1)
+shader_parameter/Fullbright = false
+shader_parameter/OverallBrightness = 1.0

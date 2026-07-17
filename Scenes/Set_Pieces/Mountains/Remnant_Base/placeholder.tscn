@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bgnfn81wmy30n"]
+
+[node name="placeholder" type="Node3D" unique_id=1183899951]
+
+[node name="Stone_Wall" type="StaticBody3D" parent="." unique_id=872835016]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Stone" type="Node" parent="Stone_Wall" unique_id=285644748]
+
+[node name="Doorframes" type="StaticBody3D" parent="." unique_id=1920759134]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Metal" type="Node" parent="Doorframes" unique_id=1405751975]
+
+[node name="Wall_Panels" type="StaticBody3D" parent="." unique_id=1426632446]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Metal" type="Node" parent="Wall_Panels" unique_id=1027655833]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=189367766]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Metal" type="Node" parent="Floor" unique_id=1379320359]
+
+[node name="Ceiling" type="StaticBody3D" parent="." unique_id=1600110037]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Metal" type="Node" parent="Ceiling" unique_id=622927252]
+
+[node name="Stairs" type="StaticBody3D" parent="." unique_id=886464396]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Metal" type="Node" parent="Stairs" unique_id=1241215809]

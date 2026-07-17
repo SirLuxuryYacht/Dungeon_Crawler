@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b5rkpgeyql8v2"]
+
+[ext_resource type="Shader" uid="uid://djap51ieuxay8" path="res://PS2_Shader.tres" id="1_up0yg"]
+[ext_resource type="Texture2D" uid="uid://mkysty8belx8" path="res://Textures/_Flat_Textures/Rocks_and_Stones/rock_3.png" id="2_6xjbj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_up0yg")
+shader_parameter/Albedo_1_uv_2 = false
+shader_parameter/Albedo1 = ExtResource("2_6xjbj")
+shader_parameter/UseBlueChannel = false
+shader_parameter/Tint_1 = Color(1, 1, 1, 1)
+shader_parameter/Albedo_2_uv_2 = false
+shader_parameter/Tint_2 = Color(1, 1, 1, 1)
+shader_parameter/Fullbright = true
+shader_parameter/OverallBrightness = 1.0
