@@ -44,18 +44,27 @@ var damping_affect
 
 var damp_inhibiting_time
 
+var brightness = 12
+
+var bullet_material
+
 @onready var Gameplay = get_tree().root.get_node("Main/Gameplay")
 @onready var Weapon = $Weapon
 @onready var GeometryInteractor = $InteractionArea
 @onready var DampInhibitor = $DampInhibitor
+@onready var BulletVisibility = $BulletVisibility
 
 func _ready() -> void:
+	
+	bullet_material = $Weapon/MeshInstance3D.get_active_material(0)
+	
 	velocity = initial_velocity
 	start_velocity = initial_velocity
 	initial_damage = damage
-	
 	if damping_affect == false:
 		DampInhibitor.start(damp_inhibiting_time)
+	
+	$CollisionAdjustmentAnimation.play("collision_adjustment",-1,initial_velocity.length() / 4)
 	
 	$Lifetime.start(lifetime)
 	if model != null:
@@ -77,13 +86,20 @@ func _physics_process(delta: float) -> void:
 	light_damage = temp_damage 
 	heavy_damage = temp_damage #this could be solved more elegantly, but for now its ok (this wont get changed anyway)
 	timer += delta
-	var flight_rotation = atan2(velocity.y,sqrt(velocity.x**2 + velocity.z**2))
-	Weapon.rotation.x = flight_rotation
-	GeometryInteractor.rotation.x = flight_rotation
-	if !projectile_visible:
-		projectile_visible = true
-		$Weapon/MeshInstance3D.visible = true
-
+	var flight_rotation_y = atan2(velocity.x,velocity.z)
+	var flight_rotation_x = atan2(velocity.y,-sqrt(velocity.x**2 + velocity.z**2))
+	global_rotation.y = flight_rotation_y
+	Weapon.rotation.x = flight_rotation_x
+	#GeometryInteractor.rotation.y = flight_rotation_y
+	GeometryInteractor.rotation.x = flight_rotation_x
+		
+	if timer > 0.5: 
+		if brightness > 0:
+			brightness -= delta
+			bullet_material.emission_energy_multiplier = brightness
+		else:
+			brightness = 0
+			bullet_material.emission_energy_multiplier = brightness
 
 func setDamage(value: Array) -> void:
 	damage = value
@@ -96,9 +112,12 @@ func _on_lifetime_timeout() -> void:
 func _on_interaction_area_body_entered(body: Node3D) -> void:
 	var impact_position = $InteractionArea/RayCast3D.get_collision_point()
 	var normal_vector = $InteractionArea/RayCast3D.get_collision_normal().normalized()
+	if normal_vector == Vector3.ZERO:
+		normal_vector = Vector3(0,1,0)
 	var material = body.get_child(0).get_name()
+	var impact_angle = abs(acos(-velocity.normalized().dot(normal_vector)))
 	if (material == "Stone" or material == "Metal") and bounce_amount <= 3: #not all projectiles shoult bounce off, some should immediately have an effect
-		if abs(acos(-velocity.normalized().dot(normal_vector))) > randf_range(1.1,1.3) and normal_vector != Vector3.ZERO: #1.3 is about 60 degrees
+		if impact_angle > randf_range(1.1,1.3) and normal_vector != Vector3.ZERO: #1.3 is about 60 degrees
 			velocity = -velocity.rotated(normal_vector,PI)
 			bounce_amount += 1
 		else:
@@ -106,24 +125,26 @@ func _on_interaction_area_body_entered(body: Node3D) -> void:
 	else:
 		self.queue_free()
 	if velocity.length() > 10:
-		CombatFunctions.particleImpact(Gameplay,"medium",impact_position,"dust",normal_vector,true)
+		CombatFunctions.particleImpact2(Gameplay,"bullet",impact_position,normal_vector,impact_angle)
 		Gameplay.addMisc(load("res://Scenes/SoundPlayers/ricochet.tscn").instantiate(),position,Vector3.ZERO)
 
 
 func _on_interaction_area_area_entered(area: Area3D) -> void: #mainly for water, maybe also for something else
-	var impact_position = $InteractionArea/RayCast3D.get_collision_point()
-	var normal_vector = $InteractionArea/RayCast3D.get_collision_normal().normalized()
-	var material = area.get_child(0).get_name()
-	if material == "Water" and bounce_amount <= 3:
-		if abs(acos(-velocity.normalized().dot(normal_vector))) > randf_range(1.4,1.5) and normal_vector != Vector3.ZERO: #1.3 is about 60 degrees
-			velocity = -0.5 * velocity.rotated(normal_vector,PI)
-			bounce_amount += 1
+	if $InteractionArea/RayCast3D.is_colliding():
+		var impact_position = $InteractionArea/RayCast3D.get_collision_point()
+		var normal_vector = $InteractionArea/RayCast3D.get_collision_normal().normalized()
+		var material = area.get_child(0).get_name()
+		var impact_angle = abs(acos(-velocity.normalized().dot(normal_vector)))
+		if material == "Water" and bounce_amount <= 3:
+			if impact_angle > randf_range(1.4,1.5) and normal_vector != Vector3.ZERO: #1.3 is about 60 degrees
+				velocity = -0.5 * velocity.rotated(normal_vector,PI)
+				bounce_amount += 1
+			else:
+				velocity = 0.05 * velocity
 		else:
-			velocity = 0.05 * velocity
-	else:
-		self.queue_free()
-	CombatFunctions.particleImpact(Gameplay,"medium",impact_position,"water",normal_vector,false)
-	Gameplay.addMisc(load("res://Scenes/SoundPlayers/splash.tscn").instantiate(),position,Vector3.ZERO)
+			self.queue_free()
+		CombatFunctions.particleImpact(Gameplay,"medium",impact_position,"water",normal_vector,false)
+		Gameplay.addMisc(load("res://Scenes/SoundPlayers/splash.tscn").instantiate(),position,Vector3.ZERO)
 
 
 func _on_weapon_body_entered(body: Node3D) -> void:
@@ -132,3 +153,9 @@ func _on_weapon_body_entered(body: Node3D) -> void:
 
 func _on_damp_inhibitor_timeout() -> void:
 	damping_affect = true
+
+
+func _on_bullet_visibility_timeout() -> void:
+	projectile_visible = true
+	$Weapon/MeshInstance3D.visible = true
+	CombatFunctions.addProjectileTrail(Gameplay,1.5,2,100,velocity,self)

@@ -235,6 +235,7 @@ func _on_hit_box_area_entered(area: Area3D) -> void:
 				_AnimationPlayer.play("Hit",1)
 				CombatFunctions.playHitSound(hitter_parent,self)
 				CombatFunctions.addHitExperience(Gameplay,area,self)
+				CombatFunctions.dropDecal("blood",position + Vector3(0,0.25,0),Gameplay)
 				Signals.take_damage.emit(area,self)
 				hitter_parent.store_collision.append(HitBox)
 			var health_posterior = health

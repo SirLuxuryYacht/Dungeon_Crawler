@@ -1,8 +1,8 @@
 extends Node
 
-const quest_stage_reference = ["test","nomad","test_trader_1"]
+const quest_stage_reference = ["test","nomad","test_trader_1","remnant_generator"]
 
-const quest_stages = [[1,1],[1,1],[1,1]] #the second entry is the dialogue stage of the character
+const quest_stages = [[1,1],[1,1],[1,1],[1,1]] #the second entry is the dialogue stage of the character
 
 
 func get_const(var_name: String) -> Array:
@@ -10,9 +10,9 @@ func get_const(var_name: String) -> Array:
 	return getter
 
 
-func getStage(character_name: String,quest_list: Array,is_dialogue: bool) -> int:
+func getStage(quest_name: String,quest_list: Array,is_dialogue: bool) -> int:
 	var index = 0
-	while character_name != quest_stage_reference[index]:
+	while quest_name != quest_stage_reference[index]:
 		index += 1
 	if is_dialogue:
 		return quest_list[index][1]
@@ -20,9 +20,9 @@ func getStage(character_name: String,quest_list: Array,is_dialogue: bool) -> int
 		return quest_list[index][0]
 
 
-func setStage(character_name: String,quest_list: Array,stage: int,is_dialogue: bool) -> void:
+func setStage(quest_name: String,quest_list: Array,stage: int,is_dialogue: bool) -> void:
 	var index = 0
-	while character_name != quest_stage_reference[index]:
+	while quest_name != quest_stage_reference[index]:
 		index += 1
 	if is_dialogue:
 		quest_list[index][1] = stage

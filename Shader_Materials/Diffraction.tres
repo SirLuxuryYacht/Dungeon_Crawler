@@ -20,6 +20,14 @@ source = 5
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_2oc7e"]
 operator = 2
 
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_fh435"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_sbkv7"]
+parameter_name = "EmissionStrength"
+hint = 1
+max = 10.0
+
 [sub_resource type="VisualShaderNodeFresnel" id="VisualShaderNodeFresnel_sbkv7"]
 default_input_values = [2, false, 3, 0.2]
 
@@ -54,6 +62,7 @@ parameter_name = "ColorParameter"
 input_name = "normal"
 
 [resource]
+modes/cull = 2
 nodes/vertex/2/node = SubResource("VisualShaderNodeColorParameter_qwgtx")
 nodes/vertex/2/position = Vector2(-60, 240)
 nodes/vertex/3/node = SubResource("VisualShaderNodeInput_nkqtq")
@@ -88,4 +97,8 @@ nodes/fragment/14/node = SubResource("VisualShaderNodeTexture_leraj")
 nodes/fragment/14/position = Vector2(940, 420)
 nodes/fragment/15/node = SubResource("VisualShaderNodeVectorOp_2oc7e")
 nodes/fragment/15/position = Vector2(1440, 180)
-nodes/fragment/connections = PackedInt32Array(5, 0, 2, 3, 6, 0, 7, 2, 8, 0, 7, 0, 2, 0, 10, 0, 2, 0, 10, 1, 13, 0, 12, 2, 11, 0, 14, 2, 12, 0, 0, 3, 12, 0, 0, 2, 10, 0, 15, 0, 15, 0, 0, 1, 12, 0, 15, 1, 4, 0, 0, 0, 9, 0, 12, 0, 14, 0, 12, 1)
+nodes/fragment/16/node = SubResource("VisualShaderNodeVectorOp_fh435")
+nodes/fragment/16/position = Vector2(1760, 640)
+nodes/fragment/17/node = SubResource("VisualShaderNodeFloatParameter_sbkv7")
+nodes/fragment/17/position = Vector2(1300, 800)
+nodes/fragment/connections = PackedInt32Array(5, 0, 2, 3, 6, 0, 7, 2, 8, 0, 7, 0, 2, 0, 10, 0, 2, 0, 10, 1, 13, 0, 12, 2, 11, 0, 14, 2, 12, 0, 0, 3, 12, 0, 0, 2, 10, 0, 15, 0, 12, 0, 15, 1, 4, 0, 0, 0, 9, 0, 12, 0, 14, 0, 12, 1, 4, 0, 16, 0, 16, 0, 0, 5, 17, 0, 16, 1, 15, 0, 0, 1)

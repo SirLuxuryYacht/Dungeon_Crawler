@@ -81,6 +81,24 @@ func fireProjectile(Gameplay: Node, Projectile: CharacterBody3D, radius: float, 
 	Gameplay.addMisc(Projectile,where,rotation)
 
 
+func addTracerLine(pos1: Vector3, pos2: Vector3, color: Color,cast_shadow: bool) -> MeshInstance3D:
+	var line_mesh = MeshInstance3D.new()
+	var material = ORMMaterial3D.new()
+	
+	line_mesh.mesh = ImmediateMesh.new()
+	line_mesh.cast_shadow = cast_shadow
+	line_mesh.mesh.surface_begin(Mesh.PRIMITIVE_LINES,material)
+	line_mesh.mesh.surface_add_vertex(pos1)
+	line_mesh.mesh.surface_add_vertex(pos2)
+	line_mesh.mesh.surface_end()
+	
+	material.albedo_color = color
+	material.emission_enabled = true
+	material.emission = color
+	
+	return line_mesh
+
+
 func updateLevel(Gameplay: Node,xp_meter: String) -> void:
 	var player_resistance = Gameplay.getPlayer().resistance
 	match xp_meter:
@@ -95,6 +113,16 @@ func updateLevel(Gameplay: Node,xp_meter: String) -> void:
 			for i in 3:
 				player_resistance[i+1] = magic_resistance
 	Gameplay.player_resistance = player_resistance #writes all the resistance info onto the gameplay node for saving
+
+
+func addProjectileTrail(Gameplay: Node, trail_vertices_duration: float,lifetime: float,intensity: int, trail_initial_velocity: Vector3,self_node: Node3D) -> void:
+	var trail_spawner = load("res://Scenes/Weapons/trail_spawner.tscn").instantiate()
+	trail_spawner.duration = trail_vertices_duration
+	trail_spawner.lifetime = lifetime
+	trail_spawner.intensity = intensity
+	trail_spawner.initial_velocity = trail_initial_velocity
+	trail_spawner.TrailParent = self_node
+	Gameplay.addMisc(trail_spawner,self_node.position,Vector3.ZERO)
 
 
 func particleImpact(Gameplay: Node, strength: String, where: Vector3,particle_type: String,normal_vector: Vector3,shading: bool) -> void:
@@ -125,6 +153,39 @@ func particleImpact(Gameplay: Node, strength: String, where: Vector3,particle_ty
 	Particles.shading = shading
 	Particles.normal_vector = normal_vector
 	Gameplay.addMisc(Particles,where,Vector3.ZERO)
+
+
+func muzzleFire() -> void:
+	pass
+
+
+func particleImpact2(gameplay_node: Node,impact_type: String,where: Vector3,normal_vector: Vector3,impact_angle: float) -> void:
+	var player_position = gameplay_node.getPlayer().position
+	var Particles = null
+	var sophisticated = false
+	match impact_type:
+		"bullet":
+			Particles = load("res://Scenes/Gameplay_Scenes/ParticleEffects/bullet_impact_particles.tscn").instantiate()
+			sophisticated = true
+		"muzzle":
+			Particles = load("res://Scenes/Gameplay_Scenes/ParticleEffects/muzzle_fire.tscn").instantiate()
+	if Particles != null:
+		if sophisticated:
+			Particles.normal_vector = normal_vector
+			Particles.player_position = player_position
+			Particles.impact_angle = impact_angle
+		gameplay_node.addMisc(Particles,where,Vector3.ZERO)
+
+
+func dropDecal(decal_type: String,where: Vector3,gameplay_node: Node) -> void:
+	var decal = load("res://Scenes/Decals/General/floor_decal.tscn").instantiate()
+	var decal_texture: Texture2D
+	match decal_type:
+		"blood":
+			var random_stain_id = randi_range(1,3) #there are three blood textures
+			decal_texture = load("res://Textures/Decals/Bloodstains/bloodstains_"+str(random_stain_id)+".png")
+	decal.setDecalTexture(decal_texture)
+	gameplay_node.addMisc(decal,where,Vector3.ZERO)
 
 
 func getSound(FromWho: Node3D,type: String) -> AudioStreamPlayer3D:

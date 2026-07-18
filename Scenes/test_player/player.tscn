@@ -52,9 +52,6 @@ height = 1.0
 radius = 0.25
 height = 1.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_p6vqv"]
-radius = 0.2
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_qd2lx"]
 radius = 0.225
 
@@ -132,13 +129,9 @@ shape = SubResource("CapsuleShape3D_ui1xp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_y70op")
 
-[node name="GroundDetector" type="Area3D" parent="LowerBodyCollision" unique_id=1716987523]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-collision_layer = 4
+[node name="GroundDetector" type="RayCast3D" parent="LowerBodyCollision" unique_id=1128301275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3069752, 0)
 collision_mask = 4
-
-[node name="GroundDetectorShape" type="CollisionShape3D" parent="LowerBodyCollision/GroundDetector" unique_id=771847807]
-shape = SubResource("SphereShape3D_p6vqv")
 
 [node name="UpperBodyCollision" type="CollisionShape3D" parent="." unique_id=1788300254]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
@@ -277,7 +270,6 @@ shape = SubResource("CapsuleShape3D_qd2lx")
 debug_color = Color(0.59442407, 0.546325, 7.70092e-07, 0.41960785)
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
-[connection signal="body_entered" from="LowerBodyCollision/GroundDetector" to="." method="_on_ground_detector_body_entered"]
 [connection signal="body_entered" from="UpperBodyCollision/CeilingDetector" to="." method="_on_ceiling_detector_body_entered"]
 [connection signal="body_exited" from="UpperBodyCollision/CeilingDetector" to="." method="_on_ceiling_detector_body_exited"]
 [connection signal="timeout" from="GameplayPromptHandler/DialoguePause" to="." method="_on_dialogue_pause_timeout"]

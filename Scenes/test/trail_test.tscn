@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dxmoj238tg2ta"]
+
+[ext_resource type="Script" uid="uid://ddjhd5fwoiye6" path="res://Scripts/Test/trail_test.gd" id="1_2kycb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fqr01"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kycb"]
+emission_enabled = true
+emission = Color(0.9670467, 0.7435369, 7.70092e-07, 1)
+emission_energy_multiplier = 16.0
+
+[node name="Trail_Test" type="Node3D" unique_id=2078959843]
+
+[node name="trail_test" type="CharacterBody3D" parent="." unique_id=941406591]
+script = ExtResource("1_2kycb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="trail_test" unique_id=1611616344]
+mesh = SubResource("SphereMesh_fqr01")
+surface_material_override/0 = SubResource("StandardMaterial3D_2kycb")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=516957111]
+transform = Transform3D(0.61415595, 0, -0.7891847, 0, 1, 0, 0.7891847, 0, 0.61415595, 0, 0, 41.28183)

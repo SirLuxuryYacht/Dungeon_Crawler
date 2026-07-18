@@ -34,6 +34,7 @@ Dialogues="*uid://rjf766bnigje"
 QuestStages="*uid://c0v8qxjnqwbr0"
 TraderInventories="*uid://cruw0kwriqemj"
 ParameterFunctions="*uid://cwix5yss8hkr5"
+GeomFuncs="*uid://h2mmtbmbms5e"
 
 [display]
 

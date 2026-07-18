@@ -439,8 +439,12 @@ func mouseAiming(delta,smoothing) -> Vector2:
 		return latent_mouse_distance
 
 
-func floorTypeDetector(floor_) -> void:
-	StepSound = get_node("FootstepSounds"+str(floor_.get_child(0).name)) #detect the collider (the floor type)
+func floorTypeDetector() -> void:
+	var floor
+	if GroundDetector.is_colliding():
+		floor = GroundDetector.get_collider().get_child(0).name
+		if "FootstepSounds"+str(floor) != StepSound.name:
+			StepSound = get_node("FootstepSounds"+str(floor)) #detect the collider (the floor type)
 
 
 func doForces(delta) -> Vector3: #gravity and air resistance
@@ -603,6 +607,8 @@ func _physics_process(delta: float) -> void:
 	interactionRayDetection()
 	if health <= 0:
 		killPlayer(delta)
+		
+	floorTypeDetector()
 
 
 func _on_hit_box_area_entered(area: Area3D) -> void:
@@ -612,11 +618,8 @@ func _on_hit_box_area_entered(area: Area3D) -> void:
 			if !(HitBox in hitter_parent.store_collision): #prevents the hurtbox from hitting twice if it is left during a single attack
 				Signals.take_damage.emit(area,self)
 				CombatFunctions.playHitSound(hitter_parent,self)
+				CombatFunctions.dropDecal("blood",position,Gameplay)
 				hitter_parent.store_collision.append(HitBox)
-
-
-func _on_ground_detector_body_entered(body: Node3D) -> void:
-	floorTypeDetector(body)
 
 
 func _on_interaction_region_area_entered(area: Area3D) -> void:

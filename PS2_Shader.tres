@@ -100,9 +100,9 @@ default_value = 1.0
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_1pqo4"]
 operator = 2
 
-[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_n13x7"]
-
 [resource]
+modes/specular = 2
+flags/ambient_light_disabled = true
 nodes/fragment/0/position = Vector2(2980, -120)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_n13x7")
 nodes/fragment/2/position = Vector2(-800, 740)
@@ -118,8 +118,6 @@ nodes/fragment/7/node = SubResource("VisualShaderNodeFloatParameter_tipfb")
 nodes/fragment/7/position = Vector2(920, -420)
 nodes/fragment/8/node = SubResource("VisualShaderNodeVectorOp_1pqo4")
 nodes/fragment/8/position = Vector2(2680, 220)
-nodes/fragment/9/node = SubResource("VisualShaderNodeFloatConstant_n13x7")
-nodes/fragment/9/position = Vector2(2320, -200)
 nodes/fragment/10/node = SubResource("VisualShaderNodeTexture2DParameter_n13x7")
 nodes/fragment/10/position = Vector2(-1820, 1180)
 nodes/fragment/11/node = SubResource("VisualShaderNodeMix_6qdf8")
@@ -164,4 +162,4 @@ nodes/fragment/30/node = SubResource("VisualShaderNodeMix_tipfb")
 nodes/fragment/30/position = Vector2(-200, -460)
 nodes/fragment/31/node = SubResource("VisualShaderNodeBooleanParameter_1pqo4")
 nodes/fragment/31/position = Vector2(-720, -680)
-nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 2, 0, 5, 0, 6, 0, 8, 0, 7, 0, 8, 1, 9, 0, 0, 4, 10, 0, 13, 2, 13, 0, 12, 0, 4, 2, 11, 2, 16, 0, 2, 0, 17, 0, 13, 0, 14, 0, 16, 0, 15, 0, 16, 1, 14, 0, 17, 0, 15, 0, 17, 1, 18, 0, 16, 2, 19, 0, 17, 2, 4, 2, 20, 2, 2, 4, 20, 0, 13, 4, 20, 1, 11, 0, 6, 0, 22, 0, 21, 1, 24, 0, 23, 1, 23, 0, 11, 1, 5, 0, 25, 0, 25, 0, 21, 0, 26, 0, 23, 0, 12, 0, 26, 0, 21, 0, 11, 0, 27, 0, 29, 2, 29, 0, 25, 1, 29, 0, 26, 1, 11, 0, 0, 0, 8, 0, 0, 5, 4, 3, 29, 1, 30, 0, 6, 1, 31, 0, 30, 2, 4, 1, 30, 0)
+nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 2, 0, 5, 0, 6, 0, 8, 0, 7, 0, 8, 1, 10, 0, 13, 2, 13, 0, 12, 0, 4, 2, 11, 2, 16, 0, 2, 0, 17, 0, 13, 0, 14, 0, 16, 0, 15, 0, 16, 1, 14, 0, 17, 0, 15, 0, 17, 1, 18, 0, 16, 2, 19, 0, 17, 2, 4, 2, 20, 2, 2, 4, 20, 0, 13, 4, 20, 1, 11, 0, 6, 0, 22, 0, 21, 1, 24, 0, 23, 1, 23, 0, 11, 1, 5, 0, 25, 0, 25, 0, 21, 0, 26, 0, 23, 0, 12, 0, 26, 0, 21, 0, 11, 0, 27, 0, 29, 2, 29, 0, 25, 1, 29, 0, 26, 1, 11, 0, 0, 0, 8, 0, 0, 5, 4, 3, 29, 1, 30, 0, 6, 1, 31, 0, 30, 2, 4, 1, 30, 0)

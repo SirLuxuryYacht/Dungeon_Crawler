@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://u56eavqh6r0v"]
+
+[ext_resource type="Script" uid="uid://c7ymkskbi445n" path="res://Scripts/Gameplay/Dynamic_Objects/impact_particles.gd" id="1_t33ix"]
+
+[sub_resource type="Curve" id="Curve_8mgf1"]
+_limits = [0.0, 40.0, 0.0, 1.0]
+_data = [Vector2(0, 40), 0.0, 0.0, 0, 0, Vector2(0.92822975, 0.37078655), -2.3483143, -2.3483143, 0, 0, Vector2(1, 0), -2.9353898, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lns23"]
+curve = SubResource("Curve_8mgf1")
+
+[sub_resource type="Gradient" id="Gradient_mmx8x"]
+offsets = PackedFloat32Array(0, 0.5081967, 1)
+colors = PackedColorArray(0.98610455, 0.70487154, 0, 1, 0.8597405, 0.14568573, 0, 1, 0.24911591, 0.17430848, 0.14976835, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r806m"]
+gradient = SubResource("Gradient_mmx8x")
+
+[sub_resource type="CurveTexture" id="CurveTexture_dibfm"]
+curve = SubResource("Curve_8mgf1")
+
+[sub_resource type="Curve" id="Curve_64v44"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.28089893), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4lw4i"]
+curve = SubResource("Curve_64v44")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yr8xc"]
+direction = Vector3(0, 1, 0)
+spread = 17.0
+initial_velocity_min = 4.0
+initial_velocity_max = 16.0
+gravity = Vector3(0, -9.81, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_4lw4i")
+color_ramp = SubResource("GradientTexture1D_r806m")
+alpha_curve = SubResource("CurveTexture_lns23")
+emission_curve = SubResource("CurveTexture_dibfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8ell"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_fqr01"]
+material = SubResource("StandardMaterial3D_d8ell")
+radius = 0.025
+height = 0.05
+radial_segments = 8
+rings = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw6kd"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t33ix"]
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.1
+collision_use_scale = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_ppkcc"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[node name="BulletImpactParticles" type="Node3D" unique_id=492456714]
+script = ExtResource("1_t33ix")
+
+[node name="GlowParticles" type="GPUParticles3D" parent="." unique_id=487336685]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_yr8xc")
+draw_pass_1 = SubResource("SphereMesh_fqr01")
+
+[node name="Debris" type="GPUParticles3D" parent="." unique_id=1113662684]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_sw6kd")
+emitting = false
+amount = 16
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_t33ix")
+draw_pass_1 = SubResource("PrismMesh_ppkcc")
+
+[node name="FrontViewSprite" type="AnimatedSprite3D" parent="." unique_id=1236966321]
+transform = Transform3D(0.75, 0, 0, 0, -3.278354e-08, 0.75, 0, -0.75, -3.278354e-08, 0, 0.25, 0)
+visible = false
+modulate = Color(0.64661133, 0.54572076, 0.4361733, 1)
+
+[node name="SideViewSprite" type="AnimatedSprite3D" parent="." unique_id=830212160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 1.25, 0)
+visible = false
+modulate = Color(0.64661133, 0.54572076, 0.4361733, 1)
+frame_progress = 1.0
+
+[node name="ImpactLight" type="OmniLight3D" parent="." unique_id=792434430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12, 0)
+light_color = Color(0.73153704, 0.58939475, 0.4881522, 1)
+
+[node name="SelfDelete" type="Timer" parent="." unique_id=1437425811]
+
+[node name="LightSwitch" type="Timer" parent="." unique_id=2131948839]
+wait_time = 0.12
+autostart = true
+
+[connection signal="timeout" from="SelfDelete" to="." method="_on_self_delete_timeout"]
+[connection signal="timeout" from="LightSwitch" to="." method="_on_light_switch_timeout"]

@@ -116,12 +116,13 @@ shader = ExtResource("2_nn2rt")
 shader_parameter/Albedo_1 = ExtResource("3_bjybj")
 shader_parameter/Albedo_2 = ExtResource("3_bjybj")
 shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
-shader_parameter/Use_Color = false
-shader_parameter/Metallic = 0.0
 shader_parameter/Roughness_1 = ExtResource("5_v855o")
 shader_parameter/Roughness_2 = ExtResource("5_v855o")
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
+shader_parameter/Use_Color = false
+shader_parameter/Metallic = 0.0
 shader_parameter/MapBrightness = 1.0
-shader_parameter/UseVertexColor = true
 shader_parameter/Normal_Map_1 = ExtResource("4_t1dep")
 shader_parameter/Normal_Map_2 = ExtResource("4_t1dep")
 

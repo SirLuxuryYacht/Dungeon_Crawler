@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://do7150jxh3obi"]
+
+[ext_resource type="Script" uid="uid://d17kjvu4vva0i" path="res://Scripts/Weapons/trail_spawner.gd" id="1_sq70l"]
+[ext_resource type="Texture2D" uid="uid://cvwd0m3janghc" path="res://Textures/Sprite/Smoke/smoke_1.png" id="2_b7n1k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7n1k"]
+transparency = 1
+albedo_texture = ExtResource("2_b7n1k")
+emission_enabled = true
+emission_energy_multiplier = 0.75
+emission_texture = ExtResource("2_b7n1k")
+billboard_mode = 3
+particles_anim_h_frames = 5
+particles_anim_v_frames = 15
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_djsge"]
+_data = [Vector2(1e-05, 0.26966298), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_15l8s"]
+curve = SubResource("Curve_djsge")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sq70l"]
+lifetime_randomness = 0.4
+angle_min = -720.0
+angle_max = 720.0
+use_rotation_3d = true
+rotation_3d_min = Vector3(0, 0, 0)
+rotation_3d_max = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_15l8s")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_sq70l"]
+size = Vector2(0.5, 0.5)
+
+[node name="trail_spawner" type="Node3D" unique_id=1203299025]
+script = ExtResource("1_sq70l")
+
+[node name="TrailManager" type="Node3D" parent="." unique_id=336960015]
+
+[node name="Timer" type="Timer" parent="." unique_id=1466180812]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=78551681]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=705095748]
+material_override = SubResource("StandardMaterial3D_b7n1k")
+cast_shadow = 0
+transform_align = 1
+transform_align_channel_filter = 1
+process_material = SubResource("ParticleProcessMaterial_sq70l")
+draw_pass_1 = SubResource("QuadMesh_sq70l")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
