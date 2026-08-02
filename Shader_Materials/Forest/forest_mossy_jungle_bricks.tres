@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d07m5a5uq5xk4"]
+
+[ext_resource type="Shader" uid="uid://djap51ieuxay8" path="res://PS2_Shader.tres" id="1_k2wqi"]
+[ext_resource type="Texture2D" uid="uid://e53i2favyxi2" path="res://Textures/_Flat_Textures/Bricks/jungle_bricks_1.png" id="2_r50tx"]
+[ext_resource type="Texture2D" uid="uid://cof2aufmrikwa" path="res://Textures/_Flat_Textures/Foliage and Wood/moss_1.png" id="3_rkc5k"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_k2wqi")
+shader_parameter/Albedo_1_uv_2 = false
+shader_parameter/Albedo1 = ExtResource("2_r50tx")
+shader_parameter/UseBlueChannel = false
+shader_parameter/Tint_1 = Color(1, 1, 1, 1)
+shader_parameter/Albedo_2_uv_2 = false
+shader_parameter/Albedo2 = ExtResource("3_rkc5k")
+shader_parameter/Tint_2 = Color(1, 1, 1, 1)
+shader_parameter/UseAlternativeTexture = false
+shader_parameter/DisableGreenChannel = false
+shader_parameter/Fullbright = false
+shader_parameter/OverallBrightness = 1.0

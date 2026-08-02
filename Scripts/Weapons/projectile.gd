@@ -125,7 +125,7 @@ func _on_interaction_area_body_entered(body: Node3D) -> void:
 	else:
 		self.queue_free()
 	if velocity.length() > 10:
-		CombatFunctions.particleImpact2(Gameplay,"bullet",impact_position,normal_vector,impact_angle)
+		CombatFunctions.particleImpact2(Gameplay,"bullet","standard",impact_position,normal_vector,impact_angle)
 		Gameplay.addMisc(load("res://Scenes/SoundPlayers/ricochet.tscn").instantiate(),position,Vector3.ZERO)
 
 
@@ -143,7 +143,7 @@ func _on_interaction_area_area_entered(area: Area3D) -> void: #mainly for water,
 				velocity = 0.05 * velocity
 		else:
 			self.queue_free()
-		CombatFunctions.particleImpact(Gameplay,"medium",impact_position,"water",normal_vector,false)
+		CombatFunctions.particleImpact2(Gameplay,"bullet","water",impact_position,normal_vector,impact_angle)
 		Gameplay.addMisc(load("res://Scenes/SoundPlayers/splash.tscn").instantiate(),position,Vector3.ZERO)
 
 
@@ -158,4 +158,4 @@ func _on_damp_inhibitor_timeout() -> void:
 func _on_bullet_visibility_timeout() -> void:
 	projectile_visible = true
 	$Weapon/MeshInstance3D.visible = true
-	CombatFunctions.addProjectileTrail(Gameplay,1.5,2,100,velocity,self)
+	CombatFunctions.addProjectileTrail(Gameplay,0.5,0.5,100,velocity,self)

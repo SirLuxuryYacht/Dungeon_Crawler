@@ -278,7 +278,7 @@ ambient_light_sky_contribution = 0.0
 script = ExtResource("1_m6567")
 
 [node name="Origin" type="Node3D" parent="." unique_id=1719963873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, -2, -185)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13, -10, -188)
 
 [node name="MainCrossing" type="StaticBody3D" parent="Origin" unique_id=1470612552]
 collision_layer = 5
@@ -335,6 +335,51 @@ surface_material_override/4 = ExtResource("6_fuaml")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Origin/Archive" unique_id=142079795]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043640137, 0, -10.006634)
 shape = SubResource("ConcavePolygonShape3D_tu32o")
+
+[node name="Archive_Furniture" type="Node3D" parent="Origin" unique_id=744211708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="RemnantShelf" parent="Origin/Archive_Furniture" unique_id=138178514 instance=ExtResource("50_qboow")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="RemnantShelf2" parent="Origin/Archive_Furniture" unique_id=1444896985 instance=ExtResource("50_qboow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0.5)
+
+[node name="RemnantShelf3" parent="Origin/Archive_Furniture" unique_id=1426250118 instance=ExtResource("50_qboow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -0.5)
+
+[node name="RemnantShelf4" parent="Origin/Archive_Furniture" unique_id=256845597 instance=ExtResource("50_qboow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="RemnantShelf5" parent="Origin/Archive_Furniture" unique_id=1033457576 instance=ExtResource("50_qboow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2.5)
+
+[node name="RemnantShelf6" parent="Origin/Archive_Furniture" unique_id=1222425614 instance=ExtResource("50_qboow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5.5)
+
+[node name="RemnantShelf7" parent="Origin/Archive_Furniture" unique_id=1816057232 instance=ExtResource("50_qboow")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, -9)
+
+[node name="BinderShelf" parent="Origin/Archive_Furniture" unique_id=708214201 instance=ExtResource("52_jgefl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4.5)
+
+[node name="BinderShelf2" parent="Origin/Archive_Furniture" unique_id=2037395098 instance=ExtResource("52_jgefl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1, 0, -8.8)
+
+[node name="BinderShelf3" parent="Origin/Archive_Furniture" unique_id=1601779813 instance=ExtResource("52_jgefl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 0, -8.8)
+
+[node name="BinderShelf4" parent="Origin/Archive_Furniture" unique_id=405272462 instance=ExtResource("52_jgefl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 0, -8.8)
+
+[node name="BinderShelf5" parent="Origin/Archive_Furniture" unique_id=1503510854 instance=ExtResource("52_jgefl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 0, -8.8)
+
+[node name="SmallRemnantTable" parent="Origin/Archive_Furniture" unique_id=246750412 instance=ExtResource("48_t4kjy")]
+transform = Transform3D(1, 0, 5.563627e-08, 0, 1, 0, -5.563627e-08, 0, 1, -7.28891, 0, -5.5259094)
+
+[node name="small_remnant_chair" parent="Origin/Archive_Furniture" unique_id=61739390 instance=ExtResource("49_wbl0s")]
+transform = Transform3D(0.43644682, 0, 0.8997301, 0, 1, 0, -0.8997301, 0, 0.43644682, -8.8852215, 0, -5.705504)
 
 [node name="Stairwell" type="StaticBody3D" parent="Origin" unique_id=1650360995]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.9999993, 0, -18)
@@ -444,7 +489,7 @@ shape = SubResource("ConcavePolygonShape3D_qxmwl")
 [node name="AdminOfficeFurniture" type="Node3D" parent="Origin" unique_id=614326506]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 31)
 
-[node name="BinderShelf" parent="Origin/AdminOfficeFurniture" unique_id=708214201 instance=ExtResource("52_jgefl")]
+[node name="BinderShelf" parent="Origin/AdminOfficeFurniture" unique_id=1221443588 instance=ExtResource("52_jgefl")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 0, -2.0000002)
 
 [node name="BinderShelf2" parent="Origin/AdminOfficeFurniture" unique_id=2058286116 instance=ExtResource("52_jgefl")]
@@ -462,7 +507,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93364, 0, -5.6269073)
 [node name="BinderShelf6" parent="Origin/AdminOfficeFurniture" unique_id=794734508 instance=ExtResource("52_jgefl")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.1128235, 0, -7.010987)
 
-[node name="RemnantShelf" parent="Origin/AdminOfficeFurniture" unique_id=138178514 instance=ExtResource("50_qboow")]
+[node name="RemnantShelf" parent="Origin/AdminOfficeFurniture" unique_id=530548930 instance=ExtResource("50_qboow")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3, 0, -8.742278e-08)
 
 [node name="RemnantShelf2" parent="Origin/AdminOfficeFurniture" unique_id=1559879821 instance=ExtResource("50_qboow")]
@@ -483,10 +528,10 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 8.973011, 0
 [node name="RemnantShelf7" parent="Origin/AdminOfficeFurniture" unique_id=68549235 instance=ExtResource("50_qboow")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 8.973011, 0, -3.4389794)
 
-[node name="SmallRemnantTable" parent="Origin/AdminOfficeFurniture" unique_id=246750412 instance=ExtResource("48_t4kjy")]
+[node name="SmallRemnantTable" parent="Origin/AdminOfficeFurniture" unique_id=1396952462 instance=ExtResource("48_t4kjy")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 5.585787, 0, -4.585787)
 
-[node name="small_remnant_chair" parent="Origin/AdminOfficeFurniture" unique_id=61739390 instance=ExtResource("49_wbl0s")]
+[node name="small_remnant_chair" parent="Origin/AdminOfficeFurniture" unique_id=1904960732 instance=ExtResource("49_wbl0s")]
 transform = Transform3D(-0.25881904, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.25881904, 6.179404, 0, -4.321947)
 
 [node name="small_remnant_chair2" parent="Origin/AdminOfficeFurniture" unique_id=609047446 instance=ExtResource("49_wbl0s")]

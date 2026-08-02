@@ -59,10 +59,16 @@ shadow_mesh = SubResource("ArrayMesh_5uhpk")
 render_priority = 0
 shader = ExtResource("3_um5w7")
 shader_parameter/Albedo_1_uv_2 = false
-shader_parameter/Albedo = ExtResource("4_bcmij")
+shader_parameter/Albedo1 = ExtResource("4_bcmij")
+shader_parameter/UseBlueChannel = false
+shader_parameter/Tint_1 = Color(1, 1, 1, 1)
 shader_parameter/Albedo_2_uv_2 = false
 shader_parameter/Albedo2 = ExtResource("5_wrluq")
-shader_parameter/OverallBrightness = 1.0
+shader_parameter/Tint_2 = Color(1, 1, 1, 1)
+shader_parameter/UseAlternativeTexture = false
+shader_parameter/DisableGreenChannel = false
+shader_parameter/Fullbright = true
+shader_parameter/OverallBrightness = 0.30000001425
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4p2jm"]
 vertex_color_use_as_albedo = true
@@ -138,9 +144,16 @@ shadow_mesh = SubResource("ArrayMesh_qpkrm")
 render_priority = 0
 shader = ExtResource("3_um5w7")
 shader_parameter/Albedo_1_uv_2 = false
-shader_parameter/Albedo = ExtResource("6_4lm6k")
+shader_parameter/Albedo1 = ExtResource("6_4lm6k")
+shader_parameter/UseBlueChannel = false
+shader_parameter/Tint_1 = Color(1, 1, 1, 1)
 shader_parameter/Albedo_2_uv_2 = false
-shader_parameter/OverallBrightness = 0.250000011875
+shader_parameter/Albedo2 = ExtResource("6_4lm6k")
+shader_parameter/Tint_2 = Color(1, 1, 1, 1)
+shader_parameter/UseAlternativeTexture = false
+shader_parameter/DisableGreenChannel = false
+shader_parameter/Fullbright = false
+shader_parameter/OverallBrightness = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_er5bk"]
 vertex_color_use_as_albedo = true
@@ -181,9 +194,15 @@ shadow_mesh = SubResource("ArrayMesh_66xmm")
 render_priority = 0
 shader = ExtResource("3_um5w7")
 shader_parameter/Albedo_1_uv_2 = false
-shader_parameter/Albedo = ExtResource("6_4lm6k")
+shader_parameter/Albedo1 = ExtResource("6_4lm6k")
+shader_parameter/UseBlueChannel = false
+shader_parameter/Tint_1 = Color(1, 1, 1, 1)
 shader_parameter/Albedo_2_uv_2 = false
 shader_parameter/Albedo2 = ExtResource("7_2bw03")
+shader_parameter/Tint_2 = Color(1, 1, 1, 1)
+shader_parameter/UseAlternativeTexture = false
+shader_parameter/DisableGreenChannel = false
+shader_parameter/Fullbright = false
 shader_parameter/OverallBrightness = 0.250000011875
 
 [node name="ForestEntrance" type="StaticBody3D" unique_id=1297441210]

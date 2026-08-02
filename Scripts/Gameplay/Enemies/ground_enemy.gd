@@ -4,6 +4,8 @@ var id: int
 
 var type = "NPC"
 
+@export var does_respawn: bool
+
 @export var enemy_name: String #"spider"
 
 @export var body_type = ""

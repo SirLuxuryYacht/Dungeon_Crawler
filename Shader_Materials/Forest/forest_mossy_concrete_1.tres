@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b7pcrkia12fud"]
+
+[ext_resource type="Shader" uid="uid://djap51ieuxay8" path="res://PS2_Shader.tres" id="1_yo5qv"]
+[ext_resource type="Texture2D" uid="uid://dm2602h5cbggj" path="res://Textures/_Flat_Textures/Concrete/concrete_1.png" id="2_yo5qv"]
+[ext_resource type="Texture2D" uid="uid://cof2aufmrikwa" path="res://Textures/_Flat_Textures/Foliage and Wood/moss_1.png" id="3_ylm8i"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_yo5qv")
+shader_parameter/Albedo_1_uv_2 = false
+shader_parameter/Albedo1 = ExtResource("2_yo5qv")
+shader_parameter/UseBlueChannel = false
+shader_parameter/Tint_1 = Color(1, 1, 1, 1)
+shader_parameter/Albedo_2_uv_2 = false
+shader_parameter/Albedo2 = ExtResource("3_ylm8i")
+shader_parameter/Tint_2 = Color(1, 1, 1, 1)
+shader_parameter/UseAlternativeTexture = false
+shader_parameter/DisableGreenChannel = false
+shader_parameter/Fullbright = false
+shader_parameter/OverallBrightness = 1.0

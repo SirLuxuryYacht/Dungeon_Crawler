@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://b2nu4sinswiui" path="res://Sounds/Weapon_Swing/fast_swing_heavy.ogg" id="3_qtxjg"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_hyri1"]
-radius = 0.02
-height = 0.5
+radius = 0.01
+height = 0.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyri1"]
 albedo_color = Color(0.2324112, 0.1816572, 0.1627608, 1)
@@ -95,6 +95,7 @@ collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Weapon" unique_id=136728553]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("SphereMesh_hyri1")
 surface_material_override/0 = SubResource("StandardMaterial3D_hyri1")
 

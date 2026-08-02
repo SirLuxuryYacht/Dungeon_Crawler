@@ -159,7 +159,17 @@ func muzzleFire() -> void:
 	pass
 
 
-func particleImpact2(gameplay_node: Node,impact_type: String,where: Vector3,normal_vector: Vector3,impact_angle: float) -> void:
+func doDrowning(is_drowning: bool, user: CharacterBody3D) -> void:
+	if is_drowning:
+		if user.has_node("Timers/DrownTimer"):
+			user.get_node("Timers/DrownTimer").start(user.time_till_drowning)
+	else:
+		if user.has_node("Timers/DrownTimer"):
+			user.get_node("Timers/DrownTimer").stop()
+		user.is_drowning = false
+
+
+func particleImpact2(gameplay_node: Node,impact_type: String,material_type: String,where: Vector3,normal_vector: Vector3,impact_angle: float) -> void:
 	var player_position = gameplay_node.getPlayer().position
 	var Particles = null
 	var sophisticated = false
@@ -174,6 +184,7 @@ func particleImpact2(gameplay_node: Node,impact_type: String,where: Vector3,norm
 			Particles.normal_vector = normal_vector
 			Particles.player_position = player_position
 			Particles.impact_angle = impact_angle
+			Particles.material_type = material_type
 		gameplay_node.addMisc(Particles,where,Vector3.ZERO)
 
 
@@ -208,5 +219,6 @@ func playHitSound(hitter,hit) -> void:
 		hit_effect = load("res://Sounds/Impacts/"+hit_body_type+"_"+hitter_type+".ogg")
 		if hitter_sound != null:
 			hitter_sound.stream = hit_effect
-	hitter_sound.pitch_scale = randf_range(0.9,1.1)
-	hitter_sound.play()
+	if hitter_sound != null:
+		hitter_sound.pitch_scale = randf_range(0.9,1.1)
+		hitter_sound.play()

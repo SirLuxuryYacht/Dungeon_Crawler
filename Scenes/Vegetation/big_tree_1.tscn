@@ -15,13 +15,14 @@ render_priority = 0
 shader = ExtResource("2_qb2ff")
 shader_parameter/Albedo_1 = ExtResource("3_ofuqi")
 shader_parameter/Albedo_2 = ExtResource("4_qb2ff")
-shader_parameter/Metallic = 0.0
+shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
 shader_parameter/Roughness_1 = ExtResource("7_srhck")
 shader_parameter/Roughness_2 = ExtResource("8_1kdf6")
-shader_parameter/MapBrightness = 1.0
-shader_parameter/Generic_Albedo = Color(0, 0, 0, 1)
+shader_parameter/RoughnessEffect = 1.0
+shader_parameter/RoughnesMultiplier = false
 shader_parameter/Use_Color = false
-shader_parameter/UseVertexColor = true
+shader_parameter/Metallic = 0.0
+shader_parameter/MapBrightness = 1.0
 shader_parameter/Normal_Map_1 = ExtResource("5_qq5l2")
 shader_parameter/Normal_Map_2 = ExtResource("6_kqkse")
 
@@ -34,6 +35,10 @@ radius = 0.72802734
 height = 5.0
 
 [node name="BigTree1" type="StaticBody3D" unique_id=1048841718]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Wood" type="Node" parent="." unique_id=78798568]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=41240932]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cnabwm2803bbq"]
+
+[ext_resource type="Script" uid="uid://b5amjbcpqscsj" path="res://Scripts/Gameplay/Environment/environment_sound_spawner.gd" id="1_028dl"]
+
+[node name="EnvironmentSoundSpawner" type="Node3D" unique_id=1689079344]
+script = ExtResource("1_028dl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=502462621]
+attenuation_model = 3

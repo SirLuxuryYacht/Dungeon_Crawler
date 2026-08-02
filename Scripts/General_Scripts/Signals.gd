@@ -11,3 +11,5 @@ signal use_item(item,User)
 signal show_level_up(xp_type)
 
 signal update_map_brightness(scene_root,CurrentMapNode)
+
+signal start_drowning(User)

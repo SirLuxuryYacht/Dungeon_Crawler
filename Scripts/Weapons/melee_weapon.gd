@@ -14,9 +14,9 @@ var store_collision = []
 
 var damage = [0,0,0,0]
 
-@export var light_damage = [60,0,0,15] #standard,fire,dark,lightning
+@export var light_damage: Array = [60,30,0,15] #standard,fire,dark,lightning
 
-@export var heavy_damage = [100,0,0,15]
+@export var heavy_damage: Array = [120,30,0,15]
 
 @export var light_stamina_cost = 120
 

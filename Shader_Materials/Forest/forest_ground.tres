@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bv1k2eickxy8v"]
+
+[ext_resource type="Shader" uid="uid://djap51ieuxay8" path="res://PS2_Shader.tres" id="1_1081u"]
+[ext_resource type="Texture2D" uid="uid://bofo0aai120o3" path="res://Textures/_Flat_Textures/Ground/grass_1.png" id="2_4oke4"]
+[ext_resource type="Texture2D" uid="uid://d2s5d0yf8nwx4" path="res://Textures/_Flat_Textures/Ground/cracked_ground_1.png" id="3_yjafg"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1081u")
+shader_parameter/Albedo_1_uv_2 = false
+shader_parameter/Albedo1 = ExtResource("2_4oke4")
+shader_parameter/UseBlueChannel = false
+shader_parameter/Tint_1 = Color(1, 1, 1, 1)
+shader_parameter/Albedo_2_uv_2 = false
+shader_parameter/Albedo2 = ExtResource("3_yjafg")
+shader_parameter/Tint_2 = Color(1, 1, 1, 1)
+shader_parameter/UseAlternativeTexture = false
+shader_parameter/DisableGreenChannel = false
+shader_parameter/Fullbright = false
+shader_parameter/OverallBrightness = 1.0

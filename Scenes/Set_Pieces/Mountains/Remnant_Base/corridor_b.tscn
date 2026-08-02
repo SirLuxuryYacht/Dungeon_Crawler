@@ -274,7 +274,7 @@ shape = SubResource("ConcavePolygonShape3D_l522j")
 collision_layer = 5
 collision_mask = 5
 
-[node name="Metal" type="Node" parent="Floor" unique_id=1057647527]
+[node name="Dirt" type="Node" parent="Floor" unique_id=1057647527]
 
 [node name="Corridor_B_Floor" type="MeshInstance3D" parent="Floor" unique_id=35124806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 3, 0)

@@ -22,9 +22,9 @@ var light_stamina_cost = 30 #change later to a sensible value
 
 var heavy_stamina_cost = 65 #dito
 
-var light_attack_blocker = 1.3 #default 1.3
+var light_attack_blocker = 0.1 #default 1.3
 
-var heavy_attack_blocker = 1.3
+var heavy_attack_blocker = 0.1 #default 1.3
 
 var heavy_ready_time = 0.1
 
@@ -95,7 +95,7 @@ func fire() -> void:
 		firing_damage = heavy_damage
 	var shot_direction = Muzzle2.global_position - Muzzle.global_position
 	CombatFunctions.fireProjectile(Gameplay,load("res://Scenes/Weapons/projectile.tscn").instantiate(),projectile_radius,firing_damage,Gameplay.getPlayer().velocity + projectileSpeed(attack_type) * shot_direction,0.005,0.15,7,false,Muzzle.global_position,Vector3(0,Muzzle.global_rotation.y,0))
-	CombatFunctions.particleImpact2(Gameplay,"muzzle",Muzzle2.global_position + 2 * shot_direction.normalized(),Vector3.UP,0)
+	CombatFunctions.particleImpact2(Gameplay,"muzzle","standard",Muzzle2.global_position + 2 * shot_direction.normalized(),Vector3.UP,0)
 	$FlashDuration.start()
 
 

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://8pd4gprk7fn5"]
+
+[ext_resource type="Script" uid="uid://dyyloo4a1uldq" path="res://Scripts/Texture_Modulation/leaf_color_randomizer.gd" id="1_2smuu"]
+[ext_resource type="ArrayMesh" uid="uid://dxdex67buhi1b" path="res://Models/Forest_2_0/Foliage/green_bush.obj" id="1_blou3"]
+[ext_resource type="Texture2D" uid="uid://07vv8n4spy55" path="res://Textures/_Flat_Textures/Foliage and Wood/leaves_1.png" id="2_hh3hl"]
+[ext_resource type="Shader" uid="uid://dl06yhea2bcvj" path="res://Shader_Materials/PS2_Alpha_Shaders_Code.res" id="3_f288x"]
+[ext_resource type="AudioStream" uid="uid://ccqxqbuwtksp7" path="res://Sounds/Environment/Foliage/rustle_1.ogg" id="4_f288x"]
+[ext_resource type="AudioStream" uid="uid://b23w71tgs7q26" path="res://Sounds/Environment/Foliage/rustle_2.ogg" id="5_fsmq0"]
+[ext_resource type="AudioStream" uid="uid://cqk7famcm0wx8" path="res://Sounds/Environment/Foliage/rustle_3.ogg" id="6_ri5pd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mivfu"]
+render_priority = 0
+shader = ExtResource("3_f288x")
+shader_parameter/Albedo_1_uv_2 = false
+shader_parameter/Albedo = ExtResource("2_hh3hl")
+shader_parameter/Albedo_2_uv_2 = true
+shader_parameter/Albedo2 = ExtResource("2_hh3hl")
+shader_parameter/Tint = Color(0.90817475, 0.75210774, 0.5950097, 1)
+shader_parameter/OverallBrightness = 0.8800000418
+shader_parameter/is_windy = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_86c32"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6f0in"]
+streams_count = 3
+stream_0/stream = ExtResource("4_f288x")
+stream_1/stream = ExtResource("5_fsmq0")
+stream_2/stream = ExtResource("6_ri5pd")
+
+[node name="Forest_Broad_Bush_2" type="Area3D" unique_id=1160505953]
+collision_layer = 0
+script = ExtResource("1_2smuu")
+is_shrubbery = true
+
+[node name="Leaves" type="MeshInstance3D" parent="." unique_id=65902447]
+mesh = ExtResource("1_blou3")
+surface_material_override/0 = SubResource("ShaderMaterial_mivfu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1455582974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_86c32")
+
+[node name="RustleNoise" type="AudioStreamPlayer3D" parent="." unique_id=1104123779]
+stream = SubResource("AudioStreamRandomizer_6f0in")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

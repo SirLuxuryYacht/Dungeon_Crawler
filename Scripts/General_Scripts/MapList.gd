@@ -6,7 +6,7 @@ var map_positions = [Vector3(0,0,0),Vector3(103,-4,-56),Vector3(0,0,0),Vector3(0
 
 var map_rotations = [Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0)] #rotations should be zero, otherwise the placement of enemies and items is busted (some strange transforms)
 
-var map_soundtracks = ["track_1","track_2","track_4","track_6","track_4","track_10","track_3","track_3","","track_9",""]
+var map_soundtracks = ["track_1","track_2","track_4","track_11","track_4","track_10","track_3","track_3","","track_9",""]
 
 
 func showTransitions(transition_list: Array, MapTransitions: Node3D) -> void:

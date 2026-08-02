@@ -3,6 +3,8 @@ extends AudioStreamPlayer
 @onready var Silence = $Silence
 @onready var Fade = $Fade
 
+@onready var Gameplay = get_tree().root.get_node("Main/Gameplay")
+
 var new_track = ""
 
 func _ready() -> void:
@@ -13,7 +15,7 @@ func soundtrackChanger(track) -> void:
 	new_track = track
 
 func _on_silence_timeout() -> void:
-	volume_linear = 1
+	volume_linear = Gameplay.music_volume / 100
 	stream = load("res://Soundtrack/"+str(new_track)+".ogg")
 	play()
 
@@ -23,7 +25,7 @@ func _on_fade_timeout() -> void:
 
 func _process(_delta: float) -> void:
 	if !Fade.is_stopped():
-		volume_linear = Fade.get_time_left() / Fade.get_wait_time()
+		volume_linear = Gameplay.music_volume / 100 * Fade.get_time_left() / Fade.get_wait_time()
 
 
 func _on_finished() -> void:

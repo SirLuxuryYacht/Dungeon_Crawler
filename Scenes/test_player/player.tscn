@@ -39,6 +39,7 @@
 [ext_resource type="AudioStream" uid="uid://ck3lpvt2h8co" path="res://Sounds/Player/Movement/Footsteps/Metal/metal_3.ogg" id="34_a8iy7"]
 [ext_resource type="AudioStream" uid="uid://bs5fyjtxl14h2" path="res://Sounds/Player/Movement/Footsteps/Metal/metal_4.ogg" id="35_opfxo"]
 [ext_resource type="AudioStream" uid="uid://8y47h6xa1yme" path="res://Sounds/Player/Movement/Footsteps/Metal/metal_5.ogg" id="36_mnaj0"]
+[ext_resource type="Script" uid="uid://b2y50fjl5hf30" path="res://Scripts/Gameplay/HUD/overlay_effects.gd" id="38_a8iy7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1yq8q"]
 radius = 0.25
@@ -104,6 +105,96 @@ stream_4/stream = ExtResource("36_mnaj0")
 
 [sub_resource type="AudioStream" id="AudioStream_1yq8q"]
 
+[sub_resource type="Animation" id="Animation_mnaj0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnderWater:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UnderWater:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_opfxo"]
+resource_name = "under_water_remove"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnderWater:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UnderWater:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.016666668, 0.033333335, 0.05, 0.06666667, 0.083333336, 0.1, 0.11666667, 0.13333334, 0.15, 0.16666667, 0.18333334, 0.2, 0.21666667, 0.23333333, 0.25, 0.26666668, 0.28333333, 0.3, 0.31666666, 0.33333334, 0.35, 0.36666667, 0.38333333, 0.4, 0.41666666, 0.43333334, 0.45, 0.46666667, 0.48333332, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.016666668, 0.033333335, 0.05, 0.06666667, 0.083333336, 0.1, 0.11666667, 0.13333334, 0.15, 0.16666667, 0.18333334, 0.2, 0.21666667, 0.23333333, 0.25, 0.26666668, 0.28333333, 0.3, 0.31666666, 0.33333334, 0.35, 0.36666667, 0.38333333, 0.4, 0.41666666, 0.43333334, 0.45, 0.46666667, 0.48333332, 0.5]
+}
+
+[sub_resource type="Animation" id="Animation_a8iy7"]
+resource_name = "under_water_remove"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnderWater:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UnderWater:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.016666668, 0.033333335, 0.05, 0.06666667, 0.083333336, 0.1, 0.11666667, 0.13333334, 0.15, 0.16666667, 0.18333334, 0.2, 0.21666667, 0.23333333, 0.25, 0.26666668, 0.28333333, 0.3, 0.31666666, 0.33333334, 0.35, 0.36666667, 0.38333333, 0.4, 0.41666666, 0.43333334, 0.45, 0.46666667, 0.48333332, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.5, 0.483333332464099, 0.46666666492819786, 0.44999999925494194, 0.4333333298563957, 0.4166666641831398, 0.3999999985098839, 0.383333332836628, 0.36666665971279144, 0.35, 0.3333333283662796, 0.31666666, 0.29999999701976776, 0.28333333, 0.2666666656732559, 0.25, 0.23333332, 0.21666667, 0.19999999, 0.18333334, 0.16666666, 0.15, 0.13333333, 0.116666675, 0.099999994, 0.08333334, 0.06666666, 0.050000012, 0.03333333, 0.01666668, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mnaj0"]
+_data = {
+&"RESET": SubResource("Animation_mnaj0"),
+&"under_water_add": SubResource("Animation_opfxo"),
+&"under_water_remove": SubResource("Animation_a8iy7")
+}
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qd2lx"]
 radius = 0.3
 height = 1.9
@@ -111,6 +202,7 @@ height = 1.9
 [node name="Player" type="CharacterBody3D" unique_id=221654239]
 collision_layer = 481
 collision_mask = 449
+wall_min_slide_angle = 0.08726646
 script = ExtResource("1_p6vqv")
 
 [node name="HitBox" type="Area3D" parent="." unique_id=1236293700]
@@ -195,6 +287,31 @@ stream = SubResource("AudioStreamRandomizer_exb1l")
 [node name="PickUpSoundPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1082177927]
 stream = SubResource("AudioStream_1yq8q")
 
+[node name="OverlayEffects" type="Control" parent="." unique_id=1176093441]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("38_a8iy7")
+
+[node name="UnderWater" type="ColorRect" parent="OverlayEffects" unique_id=2106024811]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23137255, 0.41568628, 0.46666667, 0.5)
+
+[node name="OverlayAnimations" type="AnimationPlayer" parent="OverlayEffects" unique_id=2053071313]
+libraries/ = SubResource("AnimationLibrary_mnaj0")
+
 [node name="GameplayPromptHandler" type="Control" parent="." unique_id=1611715543]
 layout_mode = 3
 anchors_preset = 15
@@ -260,6 +377,9 @@ wait_time = 0.075
 one_shot = true
 autostart = true
 
+[node name="DrownTimer" type="Timer" parent="Timers" unique_id=756112642]
+wait_time = 30.0
+
 [node name="SpawnHurtBox" type="Area3D" parent="." unique_id=1766856351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 collision_layer = 16
@@ -277,3 +397,4 @@ debug_color = Color(0.59442407, 0.546325, 7.70092e-07, 0.41960785)
 [connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Timers/AttackBlocker" to="." method="_on_attack_blocker_timeout"]
 [connection signal="timeout" from="Timers/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/DrownTimer" to="." method="_on_drown_timer_timeout"]

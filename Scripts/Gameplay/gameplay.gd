@@ -40,6 +40,8 @@ var usables_quantities = [0,0,0]
 
 ################### settings variables
 @onready var camera_sensitivity = Main.camera_sensitivity
+
+@onready var music_volume = Main.music_volume
 ###################
 
 
@@ -550,6 +552,10 @@ func advanceDialogue() -> void:
 		closeDialogue()
 
 
+func getSoundtrack() -> AudioStreamPlayer:
+	return Soundtrack
+
+
 func soundtrackFinder(map) -> String:
 	var index = 0
 	while MapList.map_list[index] != map:
@@ -833,10 +839,35 @@ func loadGame(selected_file) -> void:
 			player_magic_xp = file.get_var()
 			
 			for map in MapList.map_list:
-				set("pickup_status_"+map,file.get_var())
-				set("container_status_"+map,file.get_var())
-				set("door_status_"+map,file.get_var())
-				set("permanency_status_"+map,file.get_var())
+				var pickup_status_map = file.get_var()
+				var container_status_map = file.get_var()
+				var door_status_map = file.get_var()
+				var permanency_status_map = file.get_var()
+				
+				if pickup_status_map == null: ## for unsaved changes during development. 
+					pickup_status_map = ItemReference.get_const("pickup_status_"+map)
+				elif pickup_status_map.size() != ItemReference.get_const("pickup_status_"+map).size():
+					pickup_status_map = ItemReference.get_const("pickup_status_"+map)
+					
+				if container_status_map == null: ## for unsaved changes during development. 
+					container_status_map = ItemReference.get_const("container_status_"+map)
+				elif container_status_map.size() != ItemReference.get_const("container_status_"+map).size():
+					container_status_map = ItemReference.get_const("container_status_"+map)
+					
+				if door_status_map == null: ## for unsaved changes during development. 
+					door_status_map = DoorReference.get_const("door_status_"+map)
+				elif door_status_map.size() != DoorReference.get_const("door_status_"+map).size():
+					door_status_map = DoorReference.get_const("door_status_"+map)
+					
+				if permanency_status_map == null: ## for unsaved changes during development. 
+					permanency_status_map = EnemyReference.get_const("permanency_status_"+map)
+				elif permanency_status_map.size() != EnemyReference.get_const("permanency_status_"+map).size():
+					permanency_status_map = EnemyReference.get_const("permanency_status_"+map)
+					
+				set("pickup_status_"+map,pickup_status_map)
+				set("container_status_"+map,container_status_map)
+				set("door_status_"+map,door_status_map)
+				set("permanency_status_"+map,permanency_status_map)
 				
 			trade_inventories = file.get_var()
 			
@@ -935,11 +966,14 @@ func spawnCoin(spawn_position,amount): #test function for save feature
 
 
 func spawnEnemy(spawn_position,spawn_rotation,enemy_name,id):
-	var enemy = load("res://Scenes/Enemies/"+enemy_name+".tscn").instantiate()
-	enemy.position = spawn_position
-	enemy.rotation = spawn_rotation
-	enemy.id = id
-	SpawnedEnemies.add_child(enemy)
+	var enemy_load = load("res://Scenes/Enemies/"+enemy_name+".tscn")
+	var enemy
+	if enemy_load != null:
+		enemy = enemy_load.instantiate()
+		enemy.position = spawn_position
+		enemy.rotation = spawn_rotation
+		enemy.id = id
+		SpawnedEnemies.add_child(enemy)
 
 
 func createWorld(loaded_map_) -> void:
@@ -1016,11 +1050,12 @@ func fillMapWithItems(map_name) -> void:
 func fillMapWithEnemies(map_name) -> void:
 	var enemies_on_map = EnemyReference.get("enemies_"+str(map_name))
 	var enemies_on_map_positions = EnemyReference.get("enemy_positions_"+str(map_name))
+	var enemies_on_map_rotations = EnemyReference.get("enemy_rotations_"+str(map_name))
 	var enemies_on_map_ids = EnemyReference.get("enemy_ids_"+str(map_name))
 	var actual_enemies = self.get("permanency_status_"+str(map_name))
 	for i in enemies_on_map.size():
 		if actual_enemies[i] == true: #checks if the enemy can respawn, false if not
-			spawnEnemy(enemies_on_map_positions[i],Vector3.ZERO,enemies_on_map[i],enemies_on_map_ids[i])
+			spawnEnemy(enemies_on_map_positions[i],enemies_on_map_rotations[i],enemies_on_map[i],enemies_on_map_ids[i])
 
 
 func coinCalculator(base: int,max_deviation: float) -> int:
@@ -1170,6 +1205,7 @@ func startGame() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	loadGame(Main.selected_file)
 	Soundtrack.stream = load("res://Soundtrack/"+str(soundtrackFinder(loaded_map))+".ogg")
+	Soundtrack.volume_linear = (music_volume / 100)
 	Soundtrack.play()
 	Player.setHealth(player_health)
 	EquippedWeapon.text = str(Player.weapon_in_hand)

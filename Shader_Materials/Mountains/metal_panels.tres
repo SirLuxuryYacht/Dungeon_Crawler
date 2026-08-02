@@ -14,5 +14,7 @@ shader_parameter/Tint_1 = Color(1, 1, 1, 1)
 shader_parameter/Albedo_2_uv_2 = false
 shader_parameter/Albedo2 = ExtResource("3_nupwn")
 shader_parameter/Tint_2 = Color(1, 1, 1, 1)
+shader_parameter/UseAlternativeTexture = false
+shader_parameter/DisableGreenChannel = false
 shader_parameter/Fullbright = false
 shader_parameter/OverallBrightness = 1.0

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://crenwdyjry0j4"]
 
-[ext_resource type="Texture2D" uid="uid://dm2602h5cbggj" path="res://Textures/_Flat_Textures/Concrete/concrete.png" id="5_mdmul"]
+[ext_resource type="Texture2D" uid="uid://dm2602h5cbggj" path="res://Textures/_Flat_Textures/Concrete/concrete_1.png" id="5_mdmul"]
 [ext_resource type="Texture2D" uid="uid://kwbnp6j16a75" path="res://Textures/_Flat_Textures/Wood/wood_2.png" id="6_i3g4d"]
 [ext_resource type="Texture2D" uid="uid://07vv8n4spy55" path="res://Textures/_Flat_Textures/Foliage and Wood/leaves_1.png" id="8_i3g4d"]
 [ext_resource type="Shader" uid="uid://bu4730gudtqsw" path="res://Shader_Materials/PS2_Alpha_Shaders.res" id="9_1oane"]

@@ -131,6 +131,10 @@ var usable_selector = 0
 
 var jump_coefficient = 250
 
+var time_till_drowning: float = 3.0
+
+var is_drowning = false
+
 var airborne = false
 
 var fall_damage = 0
@@ -593,6 +597,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if is_drowning and health > 0:
+		health -= 10 * delta
 	crouchPositioning(delta)
 	itemSway(delta)
 	landerHandler(delta)
@@ -708,4 +714,7 @@ func _on_ceiling_detector_body_exited(_body: Node3D) -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	$SpawnHurtBox/CollisionShape3D.set_deferred("disabled",true)
-	
+
+
+func _on_drown_timer_timeout() -> void:
+	is_drowning = true

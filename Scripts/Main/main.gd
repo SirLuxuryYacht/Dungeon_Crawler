@@ -8,6 +8,8 @@ var display_mode = "Fullscreen"
 
 ################# settings variables
 var camera_sensitivity = 15 #initial camera sensitivity upon first startup of the game and if no save file is available
+
+var music_volume = 100 #initial music volume
 #################
 
 
@@ -19,6 +21,7 @@ func loadSettings() -> void:
 		settings_file = FileAccess.open("/home/olai/Desktop/saves/settings.dat", FileAccess.READ)
 	if settings_file != null:
 		camera_sensitivity = settings_file.get_var()
+		music_volume = settings_file.get_var()
 
 
 func loadLastSaveSelector() -> void:

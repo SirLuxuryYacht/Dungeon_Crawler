@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dqsoe8mp13cip" path="res://Scenes/Set_Pieces/Mountains/Remnant_Base/generator_observatory.tscn" id="12_w8iow"]
 [ext_resource type="PackedScene" uid="uid://drqmyk23a57fl" path="res://Scenes/Set_Pieces/Mountains/Remnant_Base/sun_chamber.tscn" id="13_1cudw"]
 [ext_resource type="PackedScene" uid="uid://bfj2xao12stvm" path="res://Scenes/Set_Pieces/Mountains/Remnant_Base/door_hallway.tscn" id="14_4ulln"]
+[ext_resource type="PackedScene" uid="uid://clhsvv84qngxb" path="res://Scenes/Clutter and Furniture/Furniture/remnant_base_table.tscn" id="14_7t8og"]
+[ext_resource type="PackedScene" uid="uid://ssuuhjj1b1qo" path="res://Scenes/Clutter and Furniture/Furniture/remnant_base_control_panel.tscn" id="15_kenjt"]
 [ext_resource type="PackedScene" uid="uid://ddrgiciyyfjdx" path="res://Scenes/Set_Pieces/Mountains/Remnant_Base/control_room.tscn" id="16_6h1ys"]
 [ext_resource type="PackedScene" uid="uid://c6apd5m2xtghl" path="res://Scenes/Set_Pieces/Mountains/Remnant_Base/volcanic_cave.tscn" id="17_4sxoa"]
 [ext_resource type="PackedScene" uid="uid://72tcge1s5ale" path="res://Scenes/Set_Pieces/Mountains/Remnant_Base/mountains_and_terrain.tscn" id="18_b8oja"]
@@ -79,6 +81,26 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.0
 
 [node name="generator_observatory" parent="Origin/Remnant_Base" unique_id=1997916865 instance=ExtResource("12_w8iow")]
 
+[node name="Furniture" type="Node3D" parent="Origin/Remnant_Base/generator_observatory" unique_id=468759830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 3, 0)
+
+[node name="RemnantBaseTable" parent="Origin/Remnant_Base/generator_observatory/Furniture" unique_id=1441618418 instance=ExtResource("14_7t8og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.742278e-08, 0, 6)
+
+[node name="RemnantBaseTable2" parent="Origin/Remnant_Base/generator_observatory/Furniture" unique_id=589046528 instance=ExtResource("14_7t8og")]
+transform = Transform3D(-0.22287667, 0, 0.97484666, 0, 1, 0, -0.97484666, 0, -0.22287667, 2.3400977, 0, 6.040203)
+
+[node name="RemnantBaseControlPanel" parent="Origin/Remnant_Base/generator_observatory/Furniture" unique_id=1325709893 instance=ExtResource("15_kenjt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="RemnantBaseControlPanel2" parent="Origin/Remnant_Base/generator_observatory/Furniture" unique_id=1932841112 instance=ExtResource("15_kenjt")]
+
+[node name="RemnantBaseControlPanel3" parent="Origin/Remnant_Base/generator_observatory/Furniture" unique_id=1717012225 instance=ExtResource("15_kenjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="RemnantBaseControlPanel4" parent="Origin/Remnant_Base/generator_observatory/Furniture" unique_id=878496231 instance=ExtResource("15_kenjt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -3)
+
 [node name="sun_chamber" parent="Origin/Remnant_Base" unique_id=623199168 instance=ExtResource("13_1cudw")]
 
 [node name="door_hallway" parent="Origin/Remnant_Base" unique_id=1372833885 instance=ExtResource("14_4ulln")]
@@ -99,11 +121,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92, -22, 0)
 [node name="Entrance_Valley" type="Node3D" parent="Origin" unique_id=645930053]
 
 [node name="entrance_valley" parent="Origin/Entrance_Valley" unique_id=585130673 instance=ExtResource("20_6h1ys")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=190569328]
-transform = Transform3D(1, 0, 0, 0, 0.95811796, 0.2863741, 0, -0.2863741, 0.95811796, 0, 0, 0)
-visible = false
-light_color = Color(0.88645613, 0.71463406, 0.7235596, 1)
 
 [node name="Probe" type="MeshInstance3D" parent="." unique_id=1201686548]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 1, 116)

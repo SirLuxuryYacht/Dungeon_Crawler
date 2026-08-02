@@ -92,9 +92,9 @@ visible = false
 modulate = Color(0.64661133, 0.54572076, 0.4361733, 1)
 
 [node name="SideViewSprite" type="AnimatedSprite3D" parent="." unique_id=830212160]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 1.25, 0)
 visible = false
-modulate = Color(0.64661133, 0.54572076, 0.4361733, 1)
+modulate = Color(0.9296683, 0.75999373, 0.67344564, 1)
+frame = 49
 frame_progress = 1.0
 
 [node name="ImpactLight" type="OmniLight3D" parent="." unique_id=792434430]

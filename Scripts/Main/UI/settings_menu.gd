@@ -8,6 +8,9 @@ extends Control
 @onready var LookSensitivityLabel = $LookSensitivityLabel
 @onready var LookSensitivitySlider = $LookSensitivitySlider
 @onready var LookSensitivityNumberLabel = $LookSensitivityNumberLabel
+@onready var MusicVolumeLabel = $MusicVolumeLabel
+@onready var MusicVolumeSlider = $MusicVolumeSlider
+@onready var MusicVolumeNumberLabel = $MusicVolumeNumberLabel
 @onready var SettingsHandlerColorRect = $SettingsHandlerColorRect
 
 
@@ -18,6 +21,7 @@ func saveSettings() -> void:
 	if OS.get_name() == "Linux":
 		settings_file = FileAccess.open("/home/olai/Desktop/saves/settings.dat", FileAccess.WRITE)
 	settings_file.store_var(LookSensitivitySlider.value) #stores the look sensitivity
+	settings_file.store_var(MusicVolumeSlider.value) #stores the music volume
 
 
 func updateDisplayMode() -> void:
@@ -41,30 +45,45 @@ func displayModeText() -> void:
 
 func changeCameraSensitivity() -> void:
 	if LookSensitivitySlider.value == 0:
-		LookSensitivitySlider.value = 1
+		LookSensitivitySlider.value = 1 #dont know, maybe sets the look sensitivity not to zero in order to still be "playable"?
 	if LookSensitivityNumberLabel.text != str(LookSensitivitySlider.value):
 		LookSensitivityNumberLabel.text = str(int(LookSensitivitySlider.value))
+
+
+func changeMusicVolume() -> void:
+	#if LookSensitivitySlider.value == 0:
+		#LookSensitivitySlider.value = 1 #dont know, maybe sets the look sensitivity not to zero in order to still be "playable"?
+	if MusicVolumeNumberLabel.text != str(MusicVolumeSlider.value):
+		MusicVolumeNumberLabel.text = str(int(MusicVolumeSlider.value))
+
 
 
 func writeSettingChangesOnExit() -> void:
 	if ExitSettingsButton.button_pressed or Input.is_action_just_pressed("pause"):
 		Main.camera_sensitivity = LookSensitivitySlider.value
+		Main.music_volume = MusicVolumeSlider.value
 		if Main.has_node("Gameplay"):
-			Main.get_node("Gameplay").getPlayer().camera_sensitivity = LookSensitivitySlider.value
-		#Gameplay.getPlayer().camera_sensitivity = LookSensitivitySlider.value
+			Main.get_node("Gameplay").getPlayer().camera_sensitivity = LookSensitivitySlider.value #writes directly to the player
+			Main.get_node("Gameplay").music_volume = MusicVolumeSlider.value
 		saveSettings()
 		quitSettingsMenu()
+	elif Main.has_node("Gameplay"):
+		Main.get_node("Gameplay").getSoundtrack().volume_linear = MusicVolumeSlider.value / 100
+		#Gameplay.getPlayer().camera_sensitivity = LookSensitivitySlider.value
+		
 
 
 func _ready() -> void:
 	DisplayMode.text = Main.display_mode
 	DisplayMode.select(0)
 	LookSensitivitySlider.value = Main.camera_sensitivity
+	MusicVolumeSlider.value = Main.music_volume
 	SettingsHandlerColorRect.visible = false
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	changeCameraSensitivity()
+	changeMusicVolume()
 	writeSettingChangesOnExit()
 
 

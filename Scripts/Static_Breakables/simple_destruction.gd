@@ -5,12 +5,16 @@ extends Node3D
 
 @export var disappears: bool = false
 @export var disappearance_time: float = 1
+@export var keeps_collision: bool = false
+@export var allow_texture_flipping: bool = false
 
 
 func makeInactive() -> void:
 	for i in HitBox.get_child_count():
+		if !keeps_collision:
+			Model.get_child(i+1).set_deferred("disabled",true)
 		HitBox.get_child(i).set_deferred("disabled",true)
-		Model.get_child(i+1).set_deferred("disabled",true)
+		
 
 
 func destructionSequence() -> void:

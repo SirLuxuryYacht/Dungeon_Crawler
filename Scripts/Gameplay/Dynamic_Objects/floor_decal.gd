@@ -41,6 +41,7 @@ func gravity(delta) -> void:
 
 func setDecalTexture(texture: Texture2D) -> void:
 	$Decal.texture_albedo = texture
+	$Decal.texture_emission = texture
 
 
 func projectDecal() -> void:

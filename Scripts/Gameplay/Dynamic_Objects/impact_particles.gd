@@ -28,8 +28,11 @@ var is_frontal: bool
 
 var sprite_fader: float = 0
 
+var material_type: String = "standard"
+
+var view_type: String = "frontal"
+
 func _ready() -> void:
-	
 	GlowParticles.amount = particle_amount
 	GlowParticles.lifetime = lifetime
 	GlowParticles.process_material.set_param_min(0,initial_particle_velocity_min)
@@ -40,24 +43,35 @@ func _ready() -> void:
 	Debris.process_material.set_param_min(0,initial_particle_velocity_min / 4)
 	Debris.process_material.set_param_max(0,initial_particle_velocity_max / 4)
 	
-	GlowParticles.emitting = true
-	Debris.emitting = true
+	
 	
 	if impact_angle < 0.6: #about 35 degrees
 		Sprite = $FrontViewSprite
-		Sprite.sprite_frames = preload("res://SpriteSequences/bullet_impact_frontal.tres")
 	else:
 		Sprite = $SideViewSprite
-		Sprite.sprite_frames = preload("res://SpriteSequences/bullet_impact_side.tres")
-		
+		view_type = "side"
+	
+	Sprite.sprite_frames = load("res://SpriteSequences/bullet_impact_"+material_type+"_"+view_type+".tres")
+	
+	match material_type:
+		"standard":
+			Sprite.modulate = Color(0.64,0.54,0.43,1)
+			Sprite.scale = Vector3(1,1,1)
+			Sprite.position = Vector3(0.15,1.25,0.0)
+			GlowParticles.emitting = true
+			Debris.emitting = true
+			Debris.lifetime = debris_lifetime
+		"water":
+			Sprite.scale = Vector3(2,2,2)
+			Sprite.position = Vector3(0.0,3.5,0.0)
+	
+	
 	Sprite.visible = true
 	Sprite.scale = randf_range(0.75,1.2) * Sprite.scale
 	
 	Sprite.play()
 	SelfDelete.start(debris_lifetime)
 	LightSwitch.start()
-	print("Position: "+str(global_position))
-	print("Target: " +str(global_position + normal_vector))
 	
 	GeomFuncs.changeBasis(normal_vector,player_position - global_position,self)
 	#changeBasis(normal_vector,player_position - global_position)

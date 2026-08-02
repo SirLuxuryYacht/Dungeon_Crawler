@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://diisb2mw2cr10"]
 
 [ext_resource type="Script" uid="uid://chpmklw6arld8" path="res://Scripts/Gameplay/Dynamic_Objects/floor_decal.gd" id="1_mb0b8"]
-[ext_resource type="Texture2D" uid="uid://cus2f0jwyqfid" path="res://Textures/Sprite/Snow/snow.png" id="2_aopgu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fqr01"]
 radius = 0.1
@@ -17,5 +16,4 @@ collision_mask = 4
 [node name="Decal" type="Decal" parent="." unique_id=1042357662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 size = Vector3(2, 0.4, 2)
-texture_albedo = ExtResource("2_aopgu")
 cull_mask = 1

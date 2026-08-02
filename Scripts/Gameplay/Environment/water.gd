@@ -15,9 +15,14 @@ func _process(_delta: float) -> void:
 func _on_deep_water_body_entered(body: Node3D) -> void:
 	if "in_water" in body:
 		body.in_water = true
+		CombatFunctions.doDrowning(true,body)
+		if body.name == "Player":
+			body.get_node("OverlayEffects").addOrRemoveOverlay("add","under_water")
 
 
 func _on_deep_water_body_exited(body: Node3D) -> void:
 	if "in_water" in body:
-		if body.position.y >= global_position.y - 1:
-			body.in_water = false
+		body.in_water = false
+		CombatFunctions.doDrowning(false,body)
+		if body.name == "Player":
+			body.get_node("OverlayEffects").addOrRemoveOverlay("remove","under_water")

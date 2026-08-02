@@ -20,9 +20,9 @@ const door_positions_village = [Vector3(0,0,0)]
 const door_status_village = [false] #already opened? this is false by default, only updated during gameplay
 
 #forest
-const doors_forest = []
-const door_positions_forest = []
-const door_status_forest = [] #already opened? this is false by default, only updated during gameplay
+const doors_forest = ["iron_gate"]
+const door_positions_forest = [Vector3(0,0,17)]
+const door_status_forest = [false] #already opened? this is false by default, only updated during gameplay
 
 #institute
 const doors_institute = ["remnant_wooden_door","remnant_wooden_door","remnant_wooden_door","remnant_wooden_door","remnant_wooden_door","remnant_wooden_door","remnant_wooden_door","remnant_heavy_door"]
